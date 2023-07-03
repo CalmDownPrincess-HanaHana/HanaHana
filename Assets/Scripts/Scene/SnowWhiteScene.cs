@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainScene : BaseScene
+public class SnowWhiteScene : BaseScene
 {
     protected override void Init()
     {
         base.Init();
-        SceneType = Define.Scene.MainScene;
+        SceneType = Define.Scene.SnowWhiteMap;
+    }
+
+    public override void Clear()
+    {
+        
     }
 }
