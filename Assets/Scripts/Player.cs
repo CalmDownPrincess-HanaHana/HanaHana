@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer sprite_renderer;
     Animator anim;
+
     public bool isJumpButton=false;
     public bool isLeftButton = false;
     public bool isRightButton = false;
@@ -22,8 +23,10 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sprite_renderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        max_speed = 3;
-        jump_power = 8;
+        max_speed = 5;
+        jump_power = 15;
+
+
     }
 
     // Update is called once per frame
@@ -32,9 +35,11 @@ public class Player : MonoBehaviour
         //점프
         if ((Input.GetButtonDown("Jump")&&!anim.GetBool("isJump")))
         {
-            rigid.AddForce(Vector2.up * jump_power, ForceMode2D.Impulse);
+            rigid.velocity = new Vector2(rigid.velocity.x, jump_power);
             anim.SetBool("isJump", true);
         }
+      
+
         //브레이크
         if (Input.GetButtonUp("Horizontal"))
         {
@@ -81,7 +86,7 @@ public class Player : MonoBehaviour
                 //점프
                 if (!anim.GetBool("isJump"))
                 {
-                    rigid.AddForce(Vector2.up * jump_power, ForceMode2D.Impulse);
+                    rigid.velocity = new Vector2(rigid.velocity.x, jump_power);
                     anim.SetBool("isJump", true);
                 }
             }
@@ -89,7 +94,7 @@ public class Player : MonoBehaviour
             {
                 rigid.AddForce(Vector2.right * -1, ForceMode2D.Impulse);
 
-                if (rigid.velocity.x < max_speed * (-1))//?占쏙옙占??
+                if (rigid.velocity.x < max_speed * (-1))
                 {
                     rigid.velocity = new Vector2(max_speed * (-1), rigid.velocity.y);
                 }
@@ -98,7 +103,7 @@ public class Player : MonoBehaviour
             {
                 rigid.AddForce(Vector2.right * 1, ForceMode2D.Impulse);
 
-                if (rigid.velocity.x > max_speed)//?占쏙옙瑜몄そ
+                if (rigid.velocity.x > max_speed)
                 {
                     rigid.velocity = new Vector2(max_speed, rigid.velocity.y);
                 }
@@ -106,14 +111,10 @@ public class Player : MonoBehaviour
         }
 
     }
-
+ 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform")
-        {
-            anim.SetBool("isJump", false);
-        }
-
+        
         if(collision.gameObject.tag == "Enemy")
         { 
             onDamaged(collision.transform.position);
