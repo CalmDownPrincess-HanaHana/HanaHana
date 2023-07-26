@@ -21,4 +21,18 @@ public class Define
         Walk,
         Idle
     }
+    
+    public enum Tags
+    {
+        Untagged,
+        Enemy, 
+        Player,
+        Platform,
+        PlayerDied,
+        Flag,
+        Item,
+        Border,
+        FallingBlock,
+        Transparent
+    }
 }
