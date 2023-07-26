@@ -11,7 +11,7 @@ public class SaveLoad : MonoBehaviour
 
     public int LoadDeathCount(string key)
     {
-        int count=PlayerPrefs.GetInt(key);
+        int count=PlayerPrefs.GetInt(key, 0);
         return count;
 
     }

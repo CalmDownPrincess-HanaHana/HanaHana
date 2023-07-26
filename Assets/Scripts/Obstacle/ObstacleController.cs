@@ -111,11 +111,8 @@ public class ObstacleController : MonoBehaviour
 
     private Vector3 initialPosition; //움직인 거리를 재기 위해 사용
     private Vector3 movement = Vector3.zero;
-    
-    private Vector3 playerPosition; //player 따라갈때 사용.
 
     private float movedDistance = 0f;
-
     private float rotateSpeed = 10000f;
 
     private Rigidbody2D rigid;
@@ -139,9 +136,6 @@ public class ObstacleController : MonoBehaviour
         if (!isCol && collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(SetIsmoving(true));
-            if(obType == ObType.Follow){
-                playerPosition = collision.transform.position;
-            }
         }
     }
 
@@ -209,7 +203,7 @@ public class ObstacleController : MonoBehaviour
                 isMoving = false;
                 break;
             case ObType.Follow:
-                MoveToPlayer();
+                //MoveToPlayer();
                 isMoving = false;
                 break;
             case ObType.Rotate:
@@ -408,14 +402,6 @@ public class ObstacleController : MonoBehaviour
                 return initialPosition;
         }
     }   
-
-    private void MoveToPlayer()
-    {
-        Vector3 directionToPlayer = playerPosition - transform.position;
-        directionToPlayer.Normalize();
-        Vector3 force = directionToPlayer * speed * 10;
-        rigid.AddForce(force, ForceMode2D.Impulse);
-    }
 
     /// <summary>
     /// 회전
