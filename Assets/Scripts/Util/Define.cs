@@ -43,4 +43,10 @@ public class Define
         Right = -90,
         UpSideDown = 180
     }
+    
+    public enum Visibility
+    {
+        Visible_to_Invisible,
+        Invisible_to_Visible
+    }
 }
