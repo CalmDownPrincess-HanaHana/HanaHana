@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: c27c405ad0bc8d6469ea2f6961def7e4
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss123.unity
+    guid: 62c31fff7e2917e4293a215666483dd2
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss4.unity
+    guid: 9f72d728e4f8ad043a18116b39f00353
   m_configObjects: {}
