@@ -9,7 +9,6 @@ public class Visible : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _targetSprite;
     [SerializeField] private Sprite _newSprite = null;
-    [SerializeField] private Visibility _visibility;
     [SerializeField] private bool isCol;
 
     private void OnCollisionEnter2D(Collision2D other)

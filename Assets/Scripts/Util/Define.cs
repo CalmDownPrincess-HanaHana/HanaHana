@@ -36,17 +36,4 @@ public class Define
         FallingBlock,
         Transparent
     }
-    
-    public enum RotateDelta
-    {
-        Left = 90,
-        Right = -90,
-        UpSideDown = 180
-    }
-    
-    public enum Visibility
-    {
-        Visible_to_Invisible,
-        Invisible_to_Visible
-    }
 }
