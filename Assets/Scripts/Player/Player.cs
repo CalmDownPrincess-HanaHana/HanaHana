@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
  
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform")|| collision.gameObject.CompareTag("FallingBlock"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             rigid.gravityScale = 2;//땅에 착지하면 중력스케일 원상복구
             anim.SetBool("isJump", false);

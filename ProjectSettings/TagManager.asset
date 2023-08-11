@@ -10,9 +10,9 @@ TagManager:
   - Flag
   - Item
   - Border
-  - FallingBlock
   - Transparent
   - Door
+  - Jumping
   layers:
   - Default
   - TransparentFX
