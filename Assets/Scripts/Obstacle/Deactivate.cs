@@ -32,6 +32,11 @@ public class Deactivate : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// collision 충돌이 감지되면 acivate
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (!isCol) return;

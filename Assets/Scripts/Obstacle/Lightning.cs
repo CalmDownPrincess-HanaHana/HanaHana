@@ -24,7 +24,7 @@ public class Lightning : MonoBehaviour
             }
         }
     }
-    //트리거면
+    //트리거면 아래의 코드
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isCol) return;

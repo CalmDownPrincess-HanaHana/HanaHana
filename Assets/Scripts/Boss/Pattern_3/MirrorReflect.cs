@@ -36,6 +36,10 @@ public class MirrorReflect : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
+    /// <summary>
+    /// material에 따라서 해당하는 Laser를 활성화
+    /// </summary>
+    /// <returns></returns>
     private void LateUpdate()
     {
         switch (predictionLine.materials[0].name)
@@ -58,6 +62,10 @@ public class MirrorReflect : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     private void DrawPredictionLine()
     {
         if (_rotating)

@@ -14,6 +14,11 @@ public class Alternately_Visible : MonoBehaviour
         StartCoroutine(AlternatelyVisible(_time));
     }
 
+    /// <summary>
+    /// 정해진 주기대로 투명화/비투명화를 진행함
+    /// </summary>
+    /// <param name="time"></param>
+    /// <returns></returns>
     public IEnumerator AlternatelyVisible(float time)
     {
         for (int i = 0; i < _gameObjects.Count + 1; i++)

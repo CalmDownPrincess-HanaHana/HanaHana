@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 오브젝트가 회전하도록 하는 스크립트
+/// 360도 회전하는데 rotateDuration만큼의 시간이 걸린다.
+/// </summary>
 public class Rotate_Loop : MonoBehaviour
 {
     [SerializeField] float _rotateDuration = 10.0f;

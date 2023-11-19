@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 delta;
 
     public bool isReverse = false;
-    private bool preIsReverse; //이전 프레이므이 isReverse 저장
+    private bool preIsReverse; //이전 프레임의 isReverse 저장
 
     private float zValue = -1f;
 
@@ -48,6 +48,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        // 플레이어가 존재하지 않다면 return
         if (player.IsUnityNull()) return;
 
         if (preIsReverse != isReverse) //isReverse에 변동이 있을때만
@@ -57,6 +58,7 @@ public class CameraController : MonoBehaviour
 
         }
 
+        // 카메라가 고정되어야하는 경우에는 return;
         if (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss123.ToString() || SceneManager.GetActiveScene().name == "SnowBoss3"|| SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString())
         {
             return;

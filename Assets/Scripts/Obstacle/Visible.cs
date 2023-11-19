@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static Define;
 
+// 대상 스프라이트를 visible하게 바꿔주거나, newSprite로 바꿔주는 스크립트
 public class Visible : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _targetSprite;
@@ -14,11 +15,10 @@ public class Visible : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(!isCol) return;
-
+        
         if (_newSprite.IsUnityNull())
         {
             _targetSprite.color = new Color(1, 1, 1, 1);
-            //StartCoroutine(ChangeAlpha());
         }
         else
         {
@@ -33,35 +33,10 @@ public class Visible : MonoBehaviour
         if (_newSprite.IsUnityNull())
         {
             _targetSprite.color = new Color(1, 1, 1, 1);
-            //StartCoroutine(ChangeAlpha());
         }
         else
         {
             _targetSprite.sprite = _newSprite;
-        }
-    }
-
-    IEnumerator ChangeAlpha()
-    {
-        if (_targetSprite.color.a == 1)
-        {
-            float alpha = 1;
-            while (_targetSprite.color.a == 0)
-            {
-                yield return new WaitForSeconds(0.05f);
-                alpha -= 0.1f;
-                _targetSprite.color = new Color(1, 1, 1, alpha);
-            }
-        }
-        else
-        {
-            float alpha = 0;
-            while (_targetSprite.color.a == 1)
-            {
-                yield return new WaitForSeconds(0.05f);
-                alpha += 0.1f;
-                _targetSprite.color = new Color(1, 1, 1, alpha);
-            }
         }
     }
 }

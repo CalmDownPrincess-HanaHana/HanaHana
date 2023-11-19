@@ -12,6 +12,7 @@ public class PopupText_test : MonoBehaviour
 
     void Start()
     {
+        // 튜토리얼 텍스트 띄우기
         _popupText.PopupTextList(text_list1_1, true);
     }
 
