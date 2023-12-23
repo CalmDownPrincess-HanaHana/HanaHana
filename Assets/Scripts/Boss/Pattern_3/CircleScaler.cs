@@ -29,7 +29,6 @@ public class CircleScaler : MonoBehaviour
         _playerScript = playerTransform.gameObject.GetComponent<Player>();
         transform.position = playerTransform.position;
         transform.localScale = initScale;
-        StartCoroutine(ChangeCircleColor());
     }
 
     private void Update()
@@ -109,33 +108,5 @@ public class CircleScaler : MonoBehaviour
             }
         }
         return true;
-    }
-
-    IEnumerator ChangeCircleColor()
-    {
-        yield return new WaitForSeconds(8f);
-        StartCoroutine(Blink());
-        yield return new WaitForSeconds(2f);
-        _cameraController.delta = new Vector3(_cameraController.delta.x, _cameraController.delta.y, 10);
-    }
-
-    IEnumerator Blink()
-    {
-        int time = 0;
-        while (time < 10)
-        {
-            if (time % 2 == 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
-            }
-            else
-            {
-                gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.7f);
-            }
-
-            yield return new WaitForSeconds(0.2f);
-            time++;
-        }
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.7f);
     }
 }
