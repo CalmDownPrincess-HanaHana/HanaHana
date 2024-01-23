@@ -1,0 +1,950 @@
+fileFormatVersion: 2
+guid: 0cf9bf9e4e7abc741a1e044d00eb140c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 610
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a770bb2c4734f4dab7b9457315d89b
+      internalID: -1832209189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 610
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd63e4c1e8d8504b884f41f098dc188
+      internalID: 851491051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 609
+        width: 82
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a0e7758fe8eb84ab9e0c1cf10746c7
+      internalID: 1536037363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 609
+        width: 82
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8a7fe320309e249bdd808976a22ea3
+      internalID: 281960760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 608
+        width: 83
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd661a22bdeea034db72fcc04ddfb61f
+      internalID: -1787789078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 607
+        width: 83
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79514bff47fdd4489d604be4a441c82
+      internalID: -414599702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 511
+        width: 83
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38155c43a0507344a8ed4339c8c921c7
+      internalID: -1743639701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 511
+        width: 82
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24624d8b65d81c847905f2e14d46d306
+      internalID: -1241200421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 511
+        width: 82
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd731a2b9ea44d4098d91bdf0dfabda
+      internalID: -1675470449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 511
+        width: 81
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2782e1dec825722438d0b7d907ce7770
+      internalID: 371922777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 512
+        width: 80
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4db84bcedf84eb40ae7e932920ba904
+      internalID: -771082388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 512
+        width: 80
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abc10c6fb41dc14289e09e9b61a1249
+      internalID: 1830913301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 417
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7d8a20e5a69fb46a96877c35e4516e
+      internalID: 384935307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 410
+        width: 79
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60741115738781b4dae2665b3cb02225
+      internalID: 884165291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 413
+        width: 79
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492c7111df018f8418b8706fce8a4628
+      internalID: -69803976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 421
+        width: 80
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490c02bfed6a24a4498ce4c6ae64fbaa
+      internalID: 1039531428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 415
+        width: 82
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fca074a1bc6bd4b9aa757760b1c16b
+      internalID: -1261886120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 410
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6907c1db57b286743bf8db846bc8752f
+      internalID: 1154612634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 310
+        width: 79
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47657ff318bd7049b47944b99b151fd
+      internalID: 1037869601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 325
+        width: 80
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7470fc81763f4449d9fb8a61911c3b
+      internalID: 1338760282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 328
+        width: 82
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5e35723f4ddfd4798b71424c828ff0
+      internalID: 1609983994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 322
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1a3fbf37251584f83a279fc9cc1550
+      internalID: -2114508389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 322
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4c2307a0603694286642cda5d25461
+      internalID: 680031352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 322
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c48b657e0312af428931e304e364f1a
+      internalID: 815920512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 225
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c6e71201ac58d418c4600696396f99
+      internalID: 529125916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 224
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e3e2354950cb14b94e532576f263f2
+      internalID: 994900733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 223
+        width: 79
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c053ede62d49d4c88a2b91f4b90d58
+      internalID: 276843125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 222
+        width: 79
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a573d2e0542b76e4181a8bb3791e9edb
+      internalID: 1639566197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 221
+        width: 79
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0e9c56c82fa3f46be375fb64d436d6
+      internalID: -1507773244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 220
+        width: 79
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e67a1af08f2764f8bc02f2ae829009
+      internalID: -621739344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 123
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fc185b21d099b4ebb6111cb999d0e6
+      internalID: 600394931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 122
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6d5e142dc0ccd4c87c8e34ba32855e
+      internalID: -1636846511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 121
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f19939fec03582458b6219210679f05
+      internalID: 620452799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 120
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466431e5c6737934d8e06a9cdcc4c90d
+      internalID: -1048210980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 119
+        width: 79
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1151fe27281fe574e82bd858e0c8b13b
+      internalID: 577313079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DolphinSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 120
+        width: 79
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055fdb094a135c446bc8f5678820e5b0
+      internalID: -781883422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DolphinSpriteSheet_44: -403206011
+      DolphinSpriteSheet_26: 276843125
+      DolphinSpriteSheet_15: 1039531428
+      DolphinSpriteSheet_33: -1048210980
+      DolphinSpriteSheet_0: -1832209189
+      DolphinSpriteSheet_35: -1452372700
+      DolphinSpriteSheet_43: 1693958509
+      DolphinSpriteSheet_7: -1241200421
+      DolphinSpriteSheet_2: 1536037363
+      DolphinSpriteSheet_28: -1507773244
+      DolphinSpriteSheet_36: -1371335791
+      DolphinSpriteSheet_13: 884165291
+      DolphinSpriteSheet_37: 577313079
+      DolphinSpriteSheet_42: -139059195
+      DolphinSpriteSheet_34: -1472362440
+      DolphinSpriteSheet_46: -965786861
+      DolphinSpriteSheet_16: -1261886120
+      DolphinSpriteSheet_39: -579884402
+      DolphinSpriteSheet_4: -1787789078
+      DolphinSpriteSheet_6: -1743639701
+      DolphinSpriteSheet_41: -781883422
+      DolphinSpriteSheet_19: 1338760282
+      DolphinSpriteSheet_3: 281960760
+      DolphinSpriteSheet_40: -1975982224
+      DolphinSpriteSheet_9: 371922777
+      DolphinSpriteSheet_45: 1936567923
+      DolphinSpriteSheet_8: -1675470449
+      DolphinSpriteSheet_38: -2015871013
+      DolphinSpriteSheet_17: 1154612634
+      DolphinSpriteSheet_20: 1609983994
+      DolphinSpriteSheet_32: 620452799
+      DolphinSpriteSheet_27: 1639566197
+      DolphinSpriteSheet_5: -414599702
+      DolphinSpriteSheet_22: 680031352
+      DolphinSpriteSheet_14: -69803976
+      DolphinSpriteSheet_23: 815920512
+      DolphinSpriteSheet_30: 600394931
+      DolphinSpriteSheet_10: -771082388
+      DolphinSpriteSheet_12: 384935307
+      DolphinSpriteSheet_25: 994900733
+      DolphinSpriteSheet_21: -2114508389
+      DolphinSpriteSheet_1: 851491051
+      DolphinSpriteSheet_29: -621739344
+      DolphinSpriteSheet_31: -1636846511
+      DolphinSpriteSheet_24: 529125916
+      DolphinSpriteSheet_11: 1830913301
+      DolphinSpriteSheet_18: 1037869601
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

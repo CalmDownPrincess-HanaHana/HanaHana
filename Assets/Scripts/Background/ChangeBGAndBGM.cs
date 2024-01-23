@@ -9,7 +9,8 @@ public class ChangeBGAndBGM : MonoBehaviour
     {
         None,
         SnowWhite,
-        EndingScene
+        EndingScene,
+        MerMaid
     }
 
     [SerializeField] Transform _transform; 
@@ -22,6 +23,30 @@ public class ChangeBGAndBGM : MonoBehaviour
     {
         switch (sceneName) {
             case SceneType.None:
+                return;
+            case SceneType.MerMaid:
+                if(_transform.position.x< 162)
+                {
+                    Image sky_image = Sky.GetComponent<Image>();
+                    sky_image.sprite = backgrounds[0];
+                    if (audioSources != null)
+                    {
+                        audioSources[0].enabled = true;
+                        audioSources[1].enabled = false;
+                        audioSources[2].enabled = false;
+                    }
+                }
+                if (_transform.position.x > 162)
+                {
+                    Image sky_image = Sky.GetComponent<Image>();
+                    sky_image.sprite = backgrounds[1];
+                    if (audioSources != null)
+                    {
+                        audioSources[0].enabled = false;
+                        audioSources[1].enabled = true;
+                        audioSources[2].enabled = false;
+                    }
+                }
                 return;
             case SceneType.SnowWhite:
                 if (_transform.position.x < 382) { 

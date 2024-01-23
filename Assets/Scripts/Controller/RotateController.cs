@@ -100,11 +100,23 @@ public class RotateController : ParentObstacleController
     }
     IEnumerator Rotate()
     {
-        while (true)
+        if (obDirection == ObDirection.Left)
         {
-            this.gameObject.transform.Rotate(0, 0, -Time.deltaTime * rotateSpeed, Space.Self);
-            yield return null;
+            while (true)
+            {
+                this.gameObject.transform.Rotate(0, 0, -Time.deltaTime * rotateSpeed, Space.Self);
+                yield return null;
+            }
         }
+        if (obDirection == ObDirection.Right)
+        {
+            while (true)
+            {
+                this.gameObject.transform.Rotate(0, 0, +Time.deltaTime * rotateSpeed, Space.Self);
+                yield return null;
+            }
+        }
+
 
     }
     IEnumerator Rolling(ObDirection obDirection, float rollingSpeed, float gravityScale)

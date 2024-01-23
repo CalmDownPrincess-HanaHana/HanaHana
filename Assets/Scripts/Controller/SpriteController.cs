@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SpriteController : ParentObstacleController
 {
@@ -10,7 +11,10 @@ public class SpriteController : ParentObstacleController
         ChangeRendererOrder,//렌더러순서 변경
         ChangeSprite,//스프라이트변경
         FlipSprite,//플립
-        StartAnimation//애니메이션 한번 호출. 더 많이 하려면 스크립트 수정해야함. 현민에게 문의
+        StartAnimation,//애니메이션 한번 호출. 더 많이 하려면 스크립트 수정해야함. 현민에게 문의
+        FlipTile//타일용플립
+        //애초에 타일맵은 애니메이터 존재 X 타일맵은 애니메이션 바꾸려면 그냥 타일맵을 하나 삭제하고 새로운 걸 나오게 하든지 해야함
+    
     }
     public enum RendererOrder
     {
@@ -28,6 +32,8 @@ public class SpriteController : ParentObstacleController
 
     private Renderer renderer;
     private SpriteRenderer spriteRenderer;
+    private Tilemap tilemap;
+    private Vector3Int cellPosition;
     [SerializeField] private ObType obType;
 
     /// <summary>
@@ -60,7 +66,7 @@ public class SpriteController : ParentObstacleController
             case ObType.StartAnimation:
                 StartCoroutine(StartAnimation(anim, animName));
                 break;
-            case ObType.ChangeRendererOrder:
+            case ObType.ChangeRendererOrder: //타일맵, 스프라이트 모두 가능
                 StartCoroutine(ChangeRendererOrder());
                 break;
             case ObType.ChangeSprite:
@@ -68,6 +74,9 @@ public class SpriteController : ParentObstacleController
                 break;
             case ObType.FlipSprite:
                 StartCoroutine(FlipSprite());
+                break;
+            case ObType.FlipTile:
+                StartCoroutine(FlipTile());
                 break;
         }
         yield return base.Activate(); // 부모 클래스의 Activate 메서드 실행 
@@ -118,6 +127,31 @@ public class SpriteController : ParentObstacleController
         }
 
         renderer.sortingOrder = orderNumber;
+
+        yield return null;
+    }
+    IEnumerator FlipTile()
+    {
+        Tilemap tilemap=this.gameObject.GetComponent<Tilemap>();
+        tilemap.orientation = Tilemap.Orientation.Custom;
+        // 현재의 orientationMatrix를 가져옵니다.
+        Matrix4x4 matrix = tilemap.orientationMatrix;
+        
+        // 원하는 각도로 회전 행렬을 구성합니다.
+        Matrix4x4 rotationMatrix=new Matrix4x4();
+        if (flipType == FlipType.X)
+        {
+            rotationMatrix = Matrix4x4.Rotate(Quaternion.Euler(0f, 180f, 0f));
+        }
+        if (flipType == FlipType.Y)
+        {
+            rotationMatrix = Matrix4x4.Rotate(Quaternion.Euler(0f, 180f, 180f));
+        }
+
+        // 회전된 행렬을 현재의 orientationMatrix에 곱하여 새로운 orientationMatrix를 얻습니다.
+        matrix = rotationMatrix * matrix;
+        // 새로운 orientationMatrix를 Tilemap에 설정합니다.
+        tilemap.orientationMatrix = matrix;
 
         yield return null;
     }

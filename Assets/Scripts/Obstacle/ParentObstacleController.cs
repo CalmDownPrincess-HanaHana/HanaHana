@@ -10,10 +10,11 @@ public class ParentObstacleController : MonoBehaviour
     private bool isMoving = false; //이건 test용. 누르면 바로 움직이긴 함. 
     [SerializeField] private bool isMovingFromStart = false;
     [SerializeField] private bool isCol = false;
+    [SerializeField] private bool isLoop = false;
     [SerializeField] private float waitingTime = 0f;
     [SerializeField] private Define.Tags colTag = Define.Tags.Player;
 
-    private GameObject player;
+    protected GameObject player;
 
     IEnumerator WaitforGivenTime()
     {
@@ -32,7 +33,7 @@ public class ParentObstacleController : MonoBehaviour
         if (isCol && collision.transform.CompareTag(colTag.ToString()))
         {
             StartCoroutine(WaitforGivenTime());
-            isCol = false;
+            isCol = isLoop;
         }
     }
 
@@ -41,7 +42,7 @@ public class ParentObstacleController : MonoBehaviour
         if (!isCol && collision.gameObject.CompareTag(colTag.ToString()))
         {
             StartCoroutine(WaitforGivenTime());//★
-            if (this.gameObject.GetComponent<BoxCollider2D>())//★BoxCollider는 트리거로만 씀. 이거 기억 나시나요? 트리거로만 쓰자고했던거. 이거 까먹을 것 같으니 여기 제대로 써두고 그 이후는 ObstacleController 수정 절대 하지말고 냅둡시다
+            if (this.gameObject.GetComponent<BoxCollider2D>() && !isLoop)//★BoxCollider는 트리거로만 씀. 이거 기억 나시나요? 트리거로만 쓰자고했던거. 이거 까먹을 것 같으니 여기 제대로 써두고 그 이후는 ObstacleController 수정 절대 하지말고 냅둡시다
             {
                 Destroy(this.gameObject.GetComponent<BoxCollider2D>());//그래서 트리거 끝나면 destroy..
             }

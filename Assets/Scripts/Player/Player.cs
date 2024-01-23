@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
     public int isMoss = 0;
     //서현 변수: 입력무시용 변수
     public bool movable = true;
+    public bool isWater=false;
 
     //캡슐화
     public float Horizontal
@@ -112,7 +113,9 @@ public class Player : MonoBehaviour
         /*
          보스맵 4
          */
-        SnowBoss4();        
+        SnowBoss4();
+        //MerMaid
+        Swim();
     }
 
     private void FixedUpdate()//물리 update
@@ -517,6 +520,10 @@ public class Player : MonoBehaviour
     //트리거에 닿는동안
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            isWater = true;
+        }
         //현민코드
         if (!isIce && collision.gameObject.CompareTag("Ice"))
         {
@@ -526,6 +533,10 @@ public class Player : MonoBehaviour
     //트리거 나가면
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            isWater = false;
+        }
         //현민코드
         if (collision.gameObject.CompareTag("Ice"))
         {
@@ -562,7 +573,7 @@ public class Player : MonoBehaviour
         //레이어변경
         this.gameObject.layer = 7;
         //리액션
-        if(SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString())
+        if(SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString()||isWater)
         {
             //터져죽기
             anim.SetBool("isBrokenDie", true);
@@ -627,27 +638,45 @@ public class Player : MonoBehaviour
         //무한점프
         if (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString())
         {
-            //pc
-            if (Input.GetButton("Jump") && player_state != PlayerState.Damaged)
+            InfiniteJump();   
+        }
+
+    }
+    private void InfiniteJump()
+    {
+        //pc
+        if (Input.GetButton("Jump") && player_state != PlayerState.Damaged)
+        {
+            player_state = PlayerState.Fly;
+            rigid.velocity = new Vector2(rigid.velocity.x, jump_power);
+        }
+        Touch[] touches = Input.touches;
+        //모바일
+        foreach (Touch touch in touches)
+        {
+            //점프키범위
+            if (touch.position.x >= Screen.width * 0.5f && touch.position.x < jumpButtonEnd)
             {
                 player_state = PlayerState.Fly;
                 rigid.velocity = new Vector2(rigid.velocity.x, jump_power);
             }
-            Touch[] touches = Input.touches;
-            //모바일
-            foreach (Touch touch in touches)
+        }
+    }
+    private void Swim()
+    {
+        if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString()||SceneManager.GetActiveScene().name=="YujinTest"|| SceneManager.GetActiveScene().name == "MerMaid_YUJIN")
+        {
+            if (isWater)
             {
-                //점프키범위
-                if (touch.position.x >= Screen.width * 0.5f && touch.position.x < jumpButtonEnd)
-                {
-                    player_state = PlayerState.Fly;
-                    rigid.velocity = new Vector2(rigid.velocity.x, jump_power);
-                }
+                jump_power = 6;
+                InfiniteJump();
+            }
+            else
+            {
+                jump_power = 16;
             }
         }
-
     }
-
     //서현
     /// <summary>
     /// 진짜 아이템 먹으면 애니메이션 컨트롤러 바꿔주기

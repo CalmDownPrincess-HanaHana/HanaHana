@@ -7,9 +7,11 @@ public class MovingController : ParentObstacleController
     public enum ObType
     {
         Move, //단방향으로 움직임
-        MoveSide, //왔다갔다
+        Shake, //쉐이크
         DrawingLine,//꼭짓점 위치로 선을 그리며 이동
-        MoveToTarget //특정 위치를 받아와서 해당 위치로 이동 shake랑 같이 쓰면 잘 안된다. shake는 위아래값이 고정되어 잇기 때문. 후에 shake도 수정해야할듯.
+        MoveToTarget, //특정 위치를 받아와서 해당 위치로 이동 shake랑 같이 쓰면 잘 안된다. shake는 위아래값이 고정되어 잇기 때문. 후에 shake도 수정해야할듯.
+        BlowAway,//닿으면 플레이어 날려버림
+        MoveSide//무브사이드
     }
 
     public enum ObDirection
@@ -54,8 +56,9 @@ public class MovingController : ParentObstacleController
     /// </summary>
     [SerializeField] LineRenderer line;
     [SerializeField] bool repeatLine = false;//라인을 반복해서 움직이는지, 라인의 끝 꼭짓점 가면 끝나는지
-
-    // Start is called before the first frame update
+    
+    [SerializeField]
+    private bool isOpposite = false; //moveside에서 왼쪽이랑 아래쪽으로 먼저 가는지
     public override IEnumerator Activate()
     {
         switch (obType)
@@ -69,15 +72,68 @@ public class MovingController : ParentObstacleController
             case ObType.MoveToTarget:
                 StartCoroutine(MoveToTarget(_transform));
                 break;
+            case ObType.BlowAway:
+                BlowAway(obDirection);
+                break;
+            case ObType.Shake:
+                StartCoroutine(ShakeCoroutine());
+                break;
+            case ObType.MoveSide:
+                StartCoroutine(MoveSideCoroutine());
+                break;
         }
         yield return base.Activate(); // 부모 클래스의 Activate 메서드 실행 
         //사실 ismoving과 별개로 움직이기 때문에 이걸 굳이 부모 activate를 실행하지 않아도 되지만 후에 test할때를 위해 그냥 실행하겠음. 
     }
+    /// <summary>
+    /// 일정한속력으로 왔다갔다거림. 단, 한쪽 끝에서 시작하는 것만 가능함 ex. 중간에서 시작해 왼쪽 갔다가 오른쪽 가는게 안됨. 맨 왼쪽에서 시작할 수 밖에 없음.
+    /// </summary>
+    private IEnumerator MoveSideCoroutine()
+    {
+        float nowTime = Time.time;
+        while (true)
+        {
+            // 시간에 따라 이동할 거리 계산
+            float moveDistance = Mathf.PingPong((Time.time - nowTime) * speed, distance);
+            float direction = (isOpposite) ? -1 : 1;
+
+            // 좌우로 움직이는 경우
+            if (obDirection == ObDirection.LeftRight)
+            {
+                float newX = initialPosition.x + moveDistance * direction;
+                transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+            }
+            // 상하로 움직이는 경우
+            else if (obDirection == ObDirection.UpDown)
+            {
+                float newY = initialPosition.y + moveDistance * direction;
+                transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            }
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator ShakeCoroutine()
+    {
+
+        while (true)
+        {
+            //만약 좌우로 움직이게 하고 싶으면
+            float newX = (obDirection == ObDirection.LeftRight) ? initialPosition.x + Mathf.Sin(Time.time * speed) * distance : transform.position.x;
+            //만약 상하로 움직이게 하고 싶으면
+            float newY = (obDirection == ObDirection.UpDown) ? initialPosition.y + Mathf.Sin(Time.time * speed) * distance : transform.position.y;
+            transform.position = new Vector3(newX, newY, transform.position.z);
+            yield return null;
+        }
+    }
+
 
     private IEnumerator Move()
     {
+        movedDistance = 0f;
         initialPosition = transform.position;
-        Vector3 targetPosition = CalculateTargetPosition(obDirection, distance);
+        Vector3 targetPosition = CalculateTargetPosition(obDirection, distance);//움직이는 목표 지점을 계산한다
 
         while (movedDistance < distance)
         {
@@ -88,6 +144,7 @@ public class MovingController : ParentObstacleController
         }
     }
 
+    //움직이는 목표 지점을 계산한다
     private Vector3 CalculateTargetPosition(ObDirection obDirection, float movement)
     {
 
@@ -160,6 +217,28 @@ public class MovingController : ParentObstacleController
         }
     }
 
+    private void BlowAway(ObDirection obDirection) 
+    {
+        Rigidbody2D player_rigid = player.GetComponent<Rigidbody2D>();
+        switch (obDirection)
+        {
+            case ObDirection.Up:
+                player_rigid.AddForce(new Vector2(0, speed));
+                break;
+
+            case ObDirection.Down:
+                player_rigid.AddForce(new Vector2(0, -speed));
+                break;
+
+            case ObDirection.Left:
+                player_rigid.AddForce(new Vector2(-speed, speed));
+                break;
+
+            case ObDirection.Right:
+                player_rigid.AddForce(new Vector2(speed, speed));
+                break;
+        }
+    }
     private void Awake()
     {
         base.Awake();

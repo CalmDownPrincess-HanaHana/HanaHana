@@ -30,6 +30,8 @@ public class Define
         StageScene
         , SnowBossClear,
         EndingScene,
+        MerMaid
+        ,
         None
     }
 
