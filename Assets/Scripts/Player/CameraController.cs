@@ -36,7 +36,10 @@ public class CameraController : MonoBehaviour
         preIsReverse = isReverse;
         UpdateDelta();
     }
-
+    public void ChangeCameraState(CameraState newState)
+    {
+        cameraState = newState;
+    }
     private void UpdateDelta()
     {
         zValue = isReverse ? 1f : -1f;
@@ -63,10 +66,10 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        if(cameraState == Define.CameraState.Player){
-        // 카메라의 position은 플레이어의 position에 델타값을 더한 값
-        transform.position = player.transform.position + delta;
-        } //만약 카메라 스테이트가 player 일때만 따라감
+        if(cameraState == Define.CameraState.Player){ //만약 카메라 스테이트가 player 일때만 따라감
+            // 카메라의 position은 플레이어의 position에 델타값을 더한 값
+            transform.position = player.transform.position + delta;
+        }
 
         // 플레이어가 피격당했다면 플레이어를 버림
         if (player_script.player_state == PlayerState.Damaged)
