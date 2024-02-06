@@ -19,6 +19,9 @@ public class ObstacleSound : MonoBehaviour
     //오디오 작동시키기까지 기다리는 시간
     [SerializeField]
     private float waitingTime = 0f;
+    //초기세팅 사운드 값
+    float settingSoundValue;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //플레이어한테 닿으면 조건변수 킴
@@ -28,7 +31,7 @@ public class ObstacleSound : MonoBehaviour
         }
     }
 
-
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,6 +44,12 @@ public class ObstacleSound : MonoBehaviour
 
     private void Update()
     {
+        //플레이어가 사운드 값 바꿨을 시 반영되도록
+        if (settingSoundValue != PlayerPrefs.GetFloat("effectValue"))
+        {
+            settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+            audio.volume = settingSoundValue;
+        }
         //오디오 들어있고 조건변수 켜지면
         if (audio != null && isMoving)
         {
@@ -54,11 +63,16 @@ public class ObstacleSound : MonoBehaviour
             }
         }
     }
+
     // Start is called before the first frame update
     void Awake()
     {
         //오디오소스 컴포넌트 가져오기
         audio = GetComponent<AudioSource>();
+        //초기세팅 효과음값 가져오기
+        settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+        //초기세팅값적용
+        audio.volume = settingSoundValue;
     }
 
     //보이면 활성화 

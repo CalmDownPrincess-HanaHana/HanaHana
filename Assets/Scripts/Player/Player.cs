@@ -71,7 +71,9 @@ public class Player : MonoBehaviour
     private bool isBorder = false;
     //점프무시
     private bool ignoreJump = false;
-
+    //초기세팅 사운드 값
+    float settingSoundValue;
+    
     /// <summary>
     /// 유진 외 정의한 변수
     /// </summary>
@@ -104,11 +106,29 @@ public class Player : MonoBehaviour
         max_speed = 5;
         player_state = new PlayerState();
         movable = true;
+        //초기세팅 효과음값 가져오기
+        settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+        //초기세팅값적용
+        foreach (AudioSource audio in audioSources)
+        {
+            audio.volume = settingSoundValue;
+        }
     }
 
     // Update is called once per frame
     void Update()//단발적 입력: 업데이트함수
     {
+
+        //플레이어가 사운드 값 바꿨을 시 반영되도록
+        if (settingSoundValue != PlayerPrefs.GetFloat("effectValue"))
+        {
+            settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+            foreach (AudioSource audio in audioSources)
+            {
+                audio.volume = settingSoundValue;
+            }
+        }
+
         if (!movable) return;
         /*
          보스맵 4
