@@ -43,10 +43,7 @@ public class MovingController : ParentObstacleController
 
     [SerializeField]
     private float speed = 11f; //속도
-
-    [SerializeField]
-    private bool isMovingPlatform = false; //왔다갔다하는 platform인지
-
+    
     private float movedDistance = 0f;
 
     private Vector3 initialPosition; //움직인 거리를 재기 위해 사용
