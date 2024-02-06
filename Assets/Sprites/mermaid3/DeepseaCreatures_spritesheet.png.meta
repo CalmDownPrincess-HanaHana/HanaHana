@@ -1003,7 +1003,15 @@ TextureImporter:
         - {x: 14, y: 3}
         - {x: 10, y: 10}
         - {x: 2, y: 15}
-      physicsShape: []
+      physicsShape:
+      - - {x: -7, y: 17}
+        - {x: -11, y: 9}
+        - {x: -14, y: -6}
+        - {x: 1, y: -14}
+        - {x: 15, y: -9}
+        - {x: 15, y: 5}
+        - {x: 11, y: 11}
+        - {x: 3, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 63176753ba293f146b7351516c08218a
@@ -1039,7 +1047,16 @@ TextureImporter:
         - {x: 8, y: -3}
         - {x: 15, y: 5}
         - {x: 12, y: 9}
-      physicsShape: []
+      physicsShape:
+      - - {x: -7, y: 17}
+        - {x: -11, y: 9}
+        - {x: -15, y: -1}
+        - {x: -15, y: -7}
+        - {x: 1, y: -14}
+        - {x: 15, y: -9}
+        - {x: 15, y: 5}
+        - {x: 11, y: 11}
+        - {x: 3, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: c04551b19a9fb9242a39b20d21d2c515
@@ -1554,8 +1571,8 @@ TextureImporter:
       DeepseaCreatures_spritesheet_15: 152582065
       DeepseaCreatures_spritesheet_17: 1297372585
       DeepseaCreatures_spritesheet_16: 1319186173
-      DeepseaCreatures_spritesheet_32: -455208453
       DeepseaCreatures_spritesheet_19: -1912252819
+      DeepseaCreatures_spritesheet_32: -455208453
       DeepseaCreatures_spritesheet_46: -1224866213
       DeepseaCreatures_spritesheet_6: 1589020921
       DeepseaCreatures_spritesheet_4: -403012123
