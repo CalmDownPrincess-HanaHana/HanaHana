@@ -18,11 +18,11 @@ public class Missile : MonoBehaviour
 
     //이거는 유진님이 만든거라 잘 모르겠습니다....
     [SerializeField]
-    private bool has_rigid = false;
+    private bool has_rigid = false; //리지드바디 있으면 관성받게 하려는 체크박스
     [SerializeField]
-    private bool is_prefab = false;
+    private bool is_prefab = false; //프리팹이면 생성될때마다 플레이어 받아오는 연결 끊어지므로 받아옴
     [SerializeField]
-    private bool follow_once = false;
+    private bool follow_once = false; //처음 위치를 기억하고 그 방향으로 일직선으로 발사됨
     private void Awake()
     {
         StartCoroutine(Wait());

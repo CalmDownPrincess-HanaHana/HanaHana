@@ -152,5 +152,28 @@ public class BulletController : ParentObstacleController //타일맵에서는 �
             yield return new WaitForSeconds(spewInterval); // 일정 시간 간격으로 반복
         }
     }
-  
+
+    //짠탄제거
+    public void DeleteCloneObjects()
+    {
+        // 씬 내의 모든 게임 오브젝트 가져오기
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            //클론된 애면
+            if (IsClone(obj))
+            {
+                Destroy(obj); // 클론 오브젝트 삭제
+            }
+        }
+    }
+
+    //클론된애인지 판별
+    private bool IsClone(GameObject obj)
+    {
+        // 이름에 "(Clone)" 문자열이 포함되어 있는지 검사
+        return obj.name.Contains("(Clone)");
+    }
+
 }

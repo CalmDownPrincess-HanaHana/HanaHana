@@ -27,7 +27,9 @@ public class MossWall : MonoBehaviour
             // player 스크립트가 null이 아닌지와 변수가 있는지 확인
             if (playerScript != null)
                 --playerScript.isMoss;
-            audioSource.Play(); //재생
+            if(audioSource!=null){
+                audioSource.Play(); //재생
+            }
             StartCoroutine(SlidePlayerDown(collision.gameObject.transform));
         }
     }
@@ -74,8 +76,9 @@ public class MossWall : MonoBehaviour
 
     private void ExitMossWall()
     {
+        if(audioSource!=null){
         audioSource.Stop(); //정지
-
+        }
         // 이끼벽을 떠날 때 실행되는 부분
         isSliding = false;
 
