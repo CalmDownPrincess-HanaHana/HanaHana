@@ -17,7 +17,6 @@ public class BlowingWind : MonoBehaviour
         if(col.gameObject.GetComponent<Rigidbody2D>() != null){
             objRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
         }
-        objRigidbody.velocity = Vector2.zero;
         objRigidbody.AddForce(forceDirection * windPower * 100); // 범위 내 obj 위로 올려보내기.
     }
 }

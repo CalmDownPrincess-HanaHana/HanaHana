@@ -11,7 +11,8 @@ public class ActiveController : ParentObstacleController
         DestroyMyself, //스스로 destroy 한다. 
         SwitchActivateStatus, //트리거되면 활성화 <-> 비활성화
         AlternatelyActivate, //순차적으로 obj를 active 해준다. 
-        ChangeStatus //obj의 tag나 layer을 바꿔준다.
+        ChangeStatus, //obj의 tag나 layer을 바꿔준다.
+        SwitchColliderStatus //콜라이더 활성화 비활성화를 도움.
     }
 
     [SerializeField] private ObType obType;
@@ -24,10 +25,13 @@ public class ActiveController : ParentObstacleController
     //색 바꿔주게 변수 생성
     private Color objColor;
 
+    private Collider2D myCollider;
+
     private void Awake()
     {
         base.Awake();
         renderer = GetComponent<Renderer>();
+        myCollider = GetComponent<Collider2D>();
     }
 
     private void update(){
@@ -55,6 +59,9 @@ public class ActiveController : ParentObstacleController
                 break;
             case ObType.AlternatelyActivate:
                 StartCoroutine(AlternatelyActivate());
+                break;
+            case ObType.SwitchColliderStatus:
+                StartCoroutine(SwitchColliderStatus());
                 break;
         }
         yield return base.Activate(); // 부모 클래스의 Activate 메서드 실행 
@@ -86,8 +93,10 @@ public class ActiveController : ParentObstacleController
 
     IEnumerator AlertBlink()
     {
+        Color originColor = renderer.material.color;
         float time = 0f;
-        while (true)
+        float realTime = 0f;
+        while (realTime < durationTime)
         {
             if (time < 0.3f)
             {
@@ -103,8 +112,10 @@ public class ActiveController : ParentObstacleController
             }
 
             time += Time.deltaTime;
+            realTime += Time.deltaTime;
             yield return null;
         }
+        renderer.material.color = originColor;
     }
 
     //isCol이랑 waiting time으로 조절 해줘야함
@@ -138,4 +149,10 @@ public class ActiveController : ParentObstacleController
         }
     }
 
+    IEnumerator SwitchColliderStatus()
+    {
+        // 콜라이더 상태 변경
+        myCollider.enabled = !myCollider.enabled;
+        yield return null;
+    }
 }
