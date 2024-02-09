@@ -53,13 +53,20 @@ public class GameManager : MonoBehaviour
         //리스폰 위치로 플레이어 위치를 reset함.
         //보스씬들은 리스폰위치에서 태어나면x
 
-  /*      if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString() && SceneManager.GetActiveScene().name != "SnowBoss1" && SceneManager.GetActiveScene().name != "SnowBoss2" && SceneManager.GetActiveScene().name != "SnowBoss3")
-        {
-            if (SaveLoad.GetComponent<SaveLoad>().LoadRespawn("respawn") != Vector3.zero)
-            {
-                player.transform.position = SaveLoad.GetComponent<SaveLoad>().LoadRespawn("respawn");
-            }
-        }*/
+        /*      if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString())
+              {
+                  if (SaveLoad.GetComponent<SaveLoad>().LoadRespawn("respawn") != Vector3.zero)
+                  {
+                      player.transform.position = SaveLoad.GetComponent<SaveLoad>().LoadRespawn("respawn");
+                  }
+              }else if(SceneManager.GetActiveScene().name == Define.Scene.Mermaid.ToString())
+               {
+                  if (SaveLoad.GetComponent<SaveLoad>().LoadRespawn("mermaid_respawn") != Vector3.zero)
+                  {
+                      player.transform.position = SaveLoad.GetComponent<SaveLoad>().LoadRespawn("mermaid_respawn");
+                  }
+              }
+        */
 
 
         player.GetComponent<Player>().ChangeSprites();

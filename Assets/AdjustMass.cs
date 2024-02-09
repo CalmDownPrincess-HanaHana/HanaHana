@@ -10,7 +10,8 @@ public class AdjustMass : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerRigidbody = collision.gameObject.transform.GetComponent<Rigidbody2D>();
-            playerRigidbody.gravityScale = 100f;
+            playerRigidbody.gravityScale = 10000f;
+            Debug.Log("닿았");
         }
     }
 }
