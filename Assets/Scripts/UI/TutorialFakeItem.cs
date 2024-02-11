@@ -19,4 +19,10 @@ public class TutorialFakeItem : MonoBehaviour
         }
         PlayerPrefs.SetString("RealItem", "TutorialFakeItem");
     }
+    
+    // trigger 처리된 박스 부딪히면 missile 발동.
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        gameObject.GetComponent<Missile>().enabled = true;
+    }
 }
