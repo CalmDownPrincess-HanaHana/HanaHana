@@ -21,6 +21,7 @@ public class ActiveController : ParentObstacleController
     [SerializeField] private List<GameObject> altObj; //alternately visible 용. 
     [SerializeField] private GameObject actObj; //사라졌다 생기는 obj
     [SerializeField] private float durationTime = 1.0f; //변화하는 시간 
+    
     private Renderer renderer;
     //색 바꿔주게 변수 생성
     private Color objColor;
