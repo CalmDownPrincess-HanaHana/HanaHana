@@ -5952,6 +5952,7 @@ GameObject:
   - component: {fileID: 1815546546}
   - component: {fileID: 1815546547}
   - component: {fileID: 1815546548}
+  - component: {fileID: 1815546549}
   m_Layer: 5
   m_Name: StageOpenAnim
   m_TagString: Untagged
@@ -6142,6 +6143,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1815546549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815546544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &1820109796
 GameObject:
   m_ObjectHideFlags: 0
@@ -8630,6 +8645,7 @@ GameObject:
   - component: {fileID: 4001251920363136600}
   - component: {fileID: 4001251920363136599}
   - component: {fileID: 4001251920363136598}
+  - component: {fileID: 4001251920363136602}
   m_Layer: 14
   m_Name: SnowWhite
   m_TagString: Untagged
@@ -9452,6 +9468,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4001251920363136602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4001251920363136591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!4 &4001251920445757037
 Transform:
   m_ObjectHideFlags: 0
@@ -9639,6 +9669,7 @@ GameObject:
   - component: {fileID: 5919715946806755812}
   - component: {fileID: 5919715946806755611}
   - component: {fileID: 5919715946806755815}
+  - component: {fileID: 5919715946806755816}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9785,3 +9816,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5919715946806755816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919715946806755813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 0
+  bgm: 1

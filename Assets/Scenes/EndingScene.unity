@@ -711,6 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -720,6 +721,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!61 &153896098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2026,6 +2028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -2035,6 +2038,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!483693784 &273193464
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2220,6 +2224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 1
   colTag: 2
   obType: 0
@@ -2229,6 +2234,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &273193469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,6 +2249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 1
   colTag: 2
   obDirection: 0
@@ -3109,6 +3116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -3118,6 +3126,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!61 &446731091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13392,6 +13401,7 @@ GameObject:
   - component: {fileID: 759158981}
   - component: {fileID: 759158982}
   - component: {fileID: 759158983}
+  - component: {fileID: 759158984}
   m_Layer: 5
   m_Name: Apple
   m_TagString: Untagged
@@ -13446,6 +13456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obDirection: 0
@@ -13559,6 +13570,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &759158984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759158978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &762312528
 GameObject:
   m_ObjectHideFlags: 0
@@ -14539,6 +14564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -14548,6 +14574,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &980908112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14706,6 +14733,7 @@ GameObject:
   - component: {fileID: 1092387507}
   - component: {fileID: 1092387506}
   - component: {fileID: 1092387508}
+  - component: {fileID: 1092387509}
   m_Layer: 5
   m_Name: Princess
   m_TagString: Untagged
@@ -14867,6 +14895,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1092387509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092387504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &1120538596
 GameObject:
   m_ObjectHideFlags: 0
@@ -19434,6 +19476,7 @@ GameObject:
   - component: {fileID: 1410765655}
   - component: {fileID: 1410765656}
   - component: {fileID: 1410765657}
+  - component: {fileID: 1410765658}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19554,6 +19597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 2
@@ -19563,6 +19607,7 @@ MonoBehaviour:
   _transform: {fileID: 1410765654}
   line: {fileID: 263319038}
   repeatLine: 0
+  isOpposite: 0
 --- !u!82 &1410765657
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19659,6 +19704,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1410765658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410765651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 0
+  bgm: 1
 --- !u!1 &1411054742
 GameObject:
   m_ObjectHideFlags: 0
@@ -19802,6 +19861,7 @@ GameObject:
   - component: {fileID: 1424829791}
   - component: {fileID: 1424829790}
   - component: {fileID: 1424829792}
+  - component: {fileID: 1424829793}
   m_Layer: 5
   m_Name: Mirror
   m_TagString: Untagged
@@ -19963,6 +20023,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1424829793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424829788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &1436606799
 GameObject:
   m_ObjectHideFlags: 0
@@ -20104,6 +20178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 2
@@ -20113,6 +20188,7 @@ MonoBehaviour:
   _transform: {fileID: 1436606801}
   line: {fileID: 274640655}
   repeatLine: 0
+  isOpposite: 0
 --- !u!50 &1436606806
 Rigidbody2D:
   serializedVersion: 4
@@ -20148,6 +20224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 13
   colTag: 2
   obType: 2
@@ -20157,6 +20234,7 @@ MonoBehaviour:
   _transform: {fileID: 1436606801}
   line: {fileID: 1072953176}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &1436606808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20171,6 +20249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 17
   colTag: 2
   obType: 2
@@ -20180,6 +20259,7 @@ MonoBehaviour:
   _transform: {fileID: 1436606801}
   line: {fileID: 1169886029}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &1436606809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20194,6 +20274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 21.5
   colTag: 2
   obType: 2
@@ -20203,6 +20284,7 @@ MonoBehaviour:
   _transform: {fileID: 1436606801}
   line: {fileID: 1411054743}
   repeatLine: 0
+  isOpposite: 0
 --- !u!1 &1462428660
 GameObject:
   m_ObjectHideFlags: 0
@@ -20504,6 +20586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 1
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   value: 0.05
@@ -21075,6 +21158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -21084,6 +21168,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &1511760843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23170,6 +23255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -23179,6 +23265,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!61 &1861757098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24191,6 +24278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -24200,6 +24288,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!61 &2029778627
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24414,6 +24503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039998372}
   - component: {fileID: 2039998373}
+  - component: {fileID: 2039998374}
   m_Layer: 5
   m_Name: Dwarfs
   m_TagString: Untagged
@@ -24544,6 +24634,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2039998374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039998371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &2043860579
 GameObject:
   m_ObjectHideFlags: 0
@@ -25042,6 +25146,7 @@ GameObject:
   - component: {fileID: 2114164792}
   - component: {fileID: 2114164791}
   - component: {fileID: 2114164793}
+  - component: {fileID: 2114164794}
   m_Layer: 5
   m_Name: Ghost
   m_TagString: Untagged
@@ -25203,6 +25308,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2114164794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114164789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!114 &791918114746155800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26185,6 +26304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obDirection: 0
@@ -27727,6 +27847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 0
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -27736,6 +27857,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &5341079223479432441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28352,6 +28474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 17
   colTag: 2
   obDirection: 3
