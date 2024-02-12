@@ -108,6 +108,7 @@ public class Player : MonoBehaviour
         movable = true;
         //초기세팅 효과음값 가져오기
         settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+        Debug.Log("SettingValue: " + PlayerPrefs.GetFloat("effectValue"));
         //초기세팅값적용
         foreach (AudioSource audio in audioSources)
         {

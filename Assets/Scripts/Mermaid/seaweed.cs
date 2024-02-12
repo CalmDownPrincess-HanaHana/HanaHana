@@ -9,8 +9,6 @@ public class seaweed : MonoBehaviour
     private void Start()
     {
         playerRigidbody = null;
-        // Z 회전을 고정
-        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
     }
 

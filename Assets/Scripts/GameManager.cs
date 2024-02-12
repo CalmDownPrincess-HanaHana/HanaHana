@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     public bool isGameover = false; //게임오버 상태
     public TextMeshProUGUI death_text;//죽은 횟수를 출력할 UI 텍스트
     public GameObject gameoverUI; //게임오버 시 활성화할 UI 게임오브젝트
-    public GameObject finishUI; //게임이 끝났을 시 활성화할 UI 게임오브젝트
     public GameObject player;//플레이어
     public GameObject SaveLoad;
     public GameObject exitPanel;
@@ -121,7 +120,6 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameover)
         {
-            finishUI.SetActive(true);
             // 딜레이를 위한 Invoke 실행
             float delaySeconds = 2f; // 2초
             Invoke("HideFinishUI", delaySeconds); // 지정된 시간(delaySeconds) 후에 HideFinishUI 메서드를 실행합니다.
@@ -131,7 +129,6 @@ public class GameManager : MonoBehaviour
     //Finish처리 함수
     private void HideFinishUI()
     {
-        finishUI.SetActive(false);
     }
 
     public void ExitYes()

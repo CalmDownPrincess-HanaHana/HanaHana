@@ -32,6 +32,18 @@ public class CustomSound : MonoBehaviour
             //초기세팅값적용
             audio.volume = settingSoundValue;
         }
+        if (slider != null)
+        {
+
+            if (bgm)
+            {
+                slider.value= PlayerPrefs.GetFloat("bgmValue");
+            }
+            if (effect)
+            {
+                slider.value = PlayerPrefs.GetFloat("effectValue");
+            }
+        }
     }
 
     // Update is called once per frame
