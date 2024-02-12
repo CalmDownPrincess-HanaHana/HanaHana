@@ -41,8 +41,8 @@ public class MovingController : ParentObstacleController
     [SerializeField]
     private float distance = 0f; //움직일 거리
 
-    [SerializeField]
-    private float speed = 11f; //속도
+    
+    public float speed = 11f; //속도
     
     private float movedDistance = 0f;
 
@@ -67,7 +67,7 @@ public class MovingController : ParentObstacleController
                 StartCoroutine(Move());
                 break;
             case ObType.DrawingLine:
-                StartCoroutine(DrawingLine(line, speed, _transform));
+                StartCoroutine(DrawingLine(line, _transform));
                 break;
             case ObType.MoveToTarget:
                 StartCoroutine(MoveToTarget(_transform));
@@ -168,7 +168,7 @@ public class MovingController : ParentObstacleController
     /// targetPositions: 꼭짓점 리스트
     /// transform: 움직일 오브젝트의 Transform
     /// moveSpeed: 움직일 스피드
-    IEnumerator DrawingLine(LineRenderer line, float moveSpeed, Transform _transform)
+    IEnumerator DrawingLine(LineRenderer line, Transform _transform)
     {
         //배열생성
         Vector3[] path = new Vector3[line.positionCount];
@@ -202,7 +202,8 @@ public class MovingController : ParentObstacleController
                 targetPosition = path[currentTargetIndex];
             }
             //이 쪽으로 이동
-            _transform.position = Vector3.MoveTowards(_transform.position, targetPosition, Time.deltaTime * moveSpeed);
+            _transform.position = Vector3.MoveTowards(_transform.position, targetPosition, Time.deltaTime * speed);
+            
             //_transform.position = new Vector3(_transform.position.x,_transform.position.y,-1f);
             yield return null;//deltaTime 기다리고 돌아감
         }
