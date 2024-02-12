@@ -60,7 +60,7 @@ public class Lightning : MonoBehaviour
                     {
                         gameObject.SetActive(true);//번개 켜주기
                     }
-                    Invoke("PlayerDie", 3f);
+                    Invoke("PlayerDie", 1.5f);
                 }
             }
             else
