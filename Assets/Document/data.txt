@@ -1,7 +1,6 @@
 ~~하드웨어 데이터에 대한 설명쓰기~~
 이름	자료형	설명
 death	int 	죽은 횟수
-TransparentWall	string	튜토리얼 보석 안 먹고 지나가는 것 막기 위한 투명벽(true-투명벽켜짐,false-투명벽꺼짐)
 RealItem	string	어느 맵에서 진짜아이템 먹었는지 알려줌(튜토리얼-TutorialFakeItem, 스노우화이트 진짜아이템- SnowWhite)
 SnowWhiteCloth	string	백설공주스킨 꼈는지에대한 정보(true-백설공주스킨, false-기본스킨)
 SnowWhiteClear	string	백설공주맵 깼는지에 대한 정보(true-깸, false-못깸)

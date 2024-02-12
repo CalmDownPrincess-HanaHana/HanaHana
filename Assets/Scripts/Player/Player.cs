@@ -433,12 +433,7 @@ public class Player : MonoBehaviour
         //적이면
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //튜토리얼 보석 먹었으면
-            if (collision.gameObject.name == "t_FakeItem")
-            {
-                //투명벽 치워주기
-                PlayerPrefs.SetString("TransparentWall", "False");
-            }
+           
             //주금
             Die(collision.transform.position);
         }
