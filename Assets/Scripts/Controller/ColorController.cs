@@ -91,7 +91,7 @@ public class ColorController : ParentObstacleController
 
     private void Awake()
     {
-        base.Awake();
+        base.Start();
         renderer = GetComponent<Renderer>();
         switch (obType)
         {

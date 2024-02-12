@@ -179,7 +179,7 @@ public class SpriteController : ParentObstacleController
 
     private void Awake()
     {
-        base.Awake();
+        base.Start();
         renderer = GetComponent<Renderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

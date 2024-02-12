@@ -50,7 +50,7 @@ public class ParentObstacleController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    public void Awake()
+    public void Start()
     {
         if (isMovingFromStart)
         {

@@ -241,9 +241,9 @@ public class MovingController : ParentObstacleController
         }
     }
 
-    private void Awake()
+    private void Start()
     {
-        base.Awake();
+        base.Start();
         initialPosition = transform.position;
     }
 }
