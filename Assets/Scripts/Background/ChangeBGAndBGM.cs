@@ -18,9 +18,30 @@ public class ChangeBGAndBGM : MonoBehaviour
     [SerializeField] GameObject Sky;
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] AudioSource[] audioSources = null;
+    //초기세팅 사운드 값
+    float settingSoundValue;
+    private void Awake()
+    {
+        //초기세팅 브금값 가져오기
+        settingSoundValue = PlayerPrefs.GetFloat("bgmValue");
+        //초기세팅값적용
+        foreach (AudioSource audio in audioSources)
+        {
+            audio.volume = settingSoundValue;
+        }
+    }
     // Update is called once per frame
     void Update()
-    {
+    { 
+        //플레이어가 사운드 값 바꿨을 시 반영되도록
+        if (settingSoundValue != PlayerPrefs.GetFloat("bgmValue"))
+        {
+            settingSoundValue = PlayerPrefs.GetFloat("bgmValue");
+            foreach(AudioSource audio in audioSources)
+            {
+                audio.volume = settingSoundValue;
+            }
+        }
         switch (sceneName) {
             case SceneType.None:
                 return;
