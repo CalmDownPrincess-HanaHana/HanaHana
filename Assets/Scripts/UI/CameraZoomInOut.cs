@@ -64,7 +64,10 @@ public class CameraZoomInOut : MonoBehaviour
     void DeactiveComponents()
     {
         GetComponent<CameraZoomInOut>().enabled = false;
-        GetComponent<MovingController>().enabled = false;
+        if (movingController != null)
+        {
+            movingController.enabled = false;
+        }
         GetComponent<CameraController>().enabled = true;
     }
 
