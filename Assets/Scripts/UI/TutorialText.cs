@@ -15,6 +15,8 @@ public class TutorialText : MonoBehaviour
     public GameObject Camera;
     private GameObject player;
     private Player playerScript;
+    public bool isSummaryOver=false;
+    private bool isOnce=false;
 
     void Start()
     {
@@ -53,6 +55,15 @@ public class TutorialText : MonoBehaviour
     {
         yield return null;
         Destroy(gameObject);
+    }
+
+    void Update(){
+    if(!isOnce&&isSummaryOver){
+            playerScript.Invincibility = false;
+            popup_text_prefab.PopupTextList(text_list1_1, true);
+            SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("tutorial", 1);
+            isOnce=true;
+        }
     }
 
     IEnumerator ChangePrologueSprite(GameObject prologue)
@@ -102,14 +113,5 @@ public class TutorialText : MonoBehaviour
         Camera.GetComponent<CameraZoomInOut>().enabled = true;
         Camera.GetComponent<MovingController>().enabled = true;
         Camera.GetComponent<CameraController>().enabled = false;
-        Time.timeScale = 1f;
-        yield return new WaitForSeconds(17f);
-        Camera.GetComponent<CameraZoomInOut>().enabled = false;
-        Camera.GetComponent<MovingController>().enabled = false;
-        Camera.GetComponent<CameraController>().enabled = true;
-        Time.timeScale = 0f;
-        playerScript.Invincibility = false;
-        popup_text_prefab.PopupTextList(text_list1_1, true);
-        SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("tutorial", 1);
     }
 }
