@@ -17,6 +17,8 @@ public class CameraZoomInOut : MonoBehaviour
     MovingController movingController;
     public float zoomSpeed=0.07f;
     float movingSpeed;
+    private GameObject Tutorial;
+    private TutorialText TutorialTextScript;
     private void Awake()
     {
         camera = GetComponent<Camera>();
@@ -26,6 +28,8 @@ public class CameraZoomInOut : MonoBehaviour
             movingSpeed = movingController.speed;
             movingController.enabled = false;
         }
+        Tutorial=GameObject.Find("Tutorial");
+        TutorialTextScript=Tutorial.GetComponent<TutorialText>();
 
     }
     // Update is called once per frame
@@ -44,6 +48,7 @@ public class CameraZoomInOut : MonoBehaviour
                 {
                     Debug.Log("인덱스범위 초과. 관련 컴포넌트 비활성화");
                     Invoke("DeactiveComponents", 1.5f);
+                    TutorialTextScript.isSummaryOver=true;
                 }
                 //도달했으면
                 if (distanceToTarget <= 1.0f)
@@ -63,12 +68,12 @@ public class CameraZoomInOut : MonoBehaviour
 
     void DeactiveComponents()
     {
-        GetComponent<CameraZoomInOut>().enabled = false;
         if (movingController != null)
         {
             movingController.enabled = false;
         }
         GetComponent<CameraController>().enabled = true;
+        GetComponent<CameraZoomInOut>().enabled = false;
     }
 
     IEnumerator ZoomInAndOut()
