@@ -9,7 +9,7 @@ public class CustomSound : MonoBehaviour
     [SerializeField] bool bgm = false;
     AudioSource audio;
     //초기세팅 사운드 값
-    float settingSoundValue;
+    float settingSoundValue=1f;
 
     private void Awake()
     {
@@ -21,13 +21,11 @@ public class CustomSound : MonoBehaviour
             //초기세팅 값 가져오기
             if (bgm)
             {
-                settingSoundValue = PlayerPrefs.GetFloat("bgmValue");
-
+                settingSoundValue = PlayerPrefs.GetFloat("bgmValue",1f);
             }
             if (effect)
             {
-                settingSoundValue = PlayerPrefs.GetFloat("effectValue");
-
+                settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
             }
             //초기세팅값적용
             audio.volume = settingSoundValue;
@@ -37,11 +35,11 @@ public class CustomSound : MonoBehaviour
 
             if (bgm)
             {
-                slider.value= PlayerPrefs.GetFloat("bgmValue");
+                slider.value= PlayerPrefs.GetFloat("bgmValue",1f);
             }
             if (effect)
             {
-                slider.value = PlayerPrefs.GetFloat("effectValue");
+                slider.value = PlayerPrefs.GetFloat("effectValue", 1f);
             }
         }
     }
@@ -66,18 +64,18 @@ public class CustomSound : MonoBehaviour
             if (bgm)
             {
                 //플레이어가 사운드 값 바꿨을 시 반영되도록
-                if (settingSoundValue != PlayerPrefs.GetFloat("bgmValue"))
+                if (settingSoundValue != PlayerPrefs.GetFloat("bgmValue", 1f))
                 {
-                    settingSoundValue = PlayerPrefs.GetFloat("bgmValue");
+                    settingSoundValue = PlayerPrefs.GetFloat("bgmValue", 1f);
                     audio.volume = settingSoundValue;
                 }
             }
             if (effect)
             {
                 //플레이어가 사운드 값 바꿨을 시 반영되도록
-                if (settingSoundValue != PlayerPrefs.GetFloat("effectValue"))
+                if (settingSoundValue != PlayerPrefs.GetFloat("effectValue", 1f))
                 {
-                    settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+                    settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
                     audio.volume = settingSoundValue;
                 }
             }

@@ -45,9 +45,9 @@ public class ObstacleSound : MonoBehaviour
     private void Update()
     {
         //플레이어가 사운드 값 바꿨을 시 반영되도록
-        if (settingSoundValue != PlayerPrefs.GetFloat("effectValue"))
+        if (settingSoundValue != PlayerPrefs.GetFloat("effectValue", 1f))
         {
-            settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+            settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
             audio.volume = settingSoundValue;
         }
         //오디오 들어있고 조건변수 켜지면
@@ -70,7 +70,7 @@ public class ObstacleSound : MonoBehaviour
         //오디오소스 컴포넌트 가져오기
         audio = GetComponent<AudioSource>();
         //초기세팅 효과음값 가져오기
-        settingSoundValue = PlayerPrefs.GetFloat("effectValue");
+        settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
         //초기세팅값적용
         audio.volume = settingSoundValue;
     }

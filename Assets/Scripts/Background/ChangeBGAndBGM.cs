@@ -23,7 +23,7 @@ public class ChangeBGAndBGM : MonoBehaviour
     private void Awake()
     {
         //초기세팅 브금값 가져오기
-        settingSoundValue = PlayerPrefs.GetFloat("bgmValue");
+        settingSoundValue = PlayerPrefs.GetFloat("bgmValue",1f);
         //초기세팅값적용
         foreach (AudioSource audio in audioSources)
         {
@@ -34,9 +34,9 @@ public class ChangeBGAndBGM : MonoBehaviour
     void Update()
     { 
         //플레이어가 사운드 값 바꿨을 시 반영되도록
-        if (settingSoundValue != PlayerPrefs.GetFloat("bgmValue"))
+        if (settingSoundValue != PlayerPrefs.GetFloat("bgmValue",1f))
         {
-            settingSoundValue = PlayerPrefs.GetFloat("bgmValue");
+            settingSoundValue = PlayerPrefs.GetFloat("bgmValue", 1f);
             foreach(AudioSource audio in audioSources)
             {
                 audio.volume = settingSoundValue;
