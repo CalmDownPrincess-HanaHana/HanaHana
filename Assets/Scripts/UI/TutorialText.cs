@@ -28,7 +28,25 @@ public class TutorialText : MonoBehaviour
         }
         else if (tutorial_flag == 0)
         {
-            // prologue를 활성화하고 timescale을 0으로 만들기
+            player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerScript = player.GetComponent<Player>();
+                if (playerScript != null)
+                {
+                    playerScript.Invincibility = true;
+                    playerScript.enabled=false;
+                }
+                else
+                {
+                    Debug.LogError("Player script not found!");
+                }
+            }
+            else
+            {
+                Debug.LogError("Player object not found!");
+            }
+            // prologue를 활성화하고
             Button.SetActive(false);
 
             // 2초 뒤에 Destroy 호출
@@ -59,11 +77,22 @@ public class TutorialText : MonoBehaviour
 
     void Update(){
     if(!isOnce&&isSummaryOver){
-            playerScript.Invincibility = false;
-            popup_text_prefab.PopupTextList(text_list1_1, true);
-            SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("tutorial", 1);
-            isOnce=true;
+            StartCoroutine(StartTutoText());
         }
+    }
+
+    IEnumerator StartTutoText()
+    {
+        if (isOnce) yield break; // 이미 실행되었다면 더 이상 실행하지 않음
+        isOnce = true;
+        yield return new WaitForSeconds(1.5f);
+        Time.timeScale = 0;
+        Button.SetActive(true);
+        playerScript.enabled = true;
+        playerScript.Invincibility = false;
+        popup_text_prefab.PopupTextList(text_list1_1, true);
+        SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("tutorial", 1);
+
     }
 
     IEnumerator ChangePrologueSprite(GameObject prologue)
@@ -89,27 +118,7 @@ public class TutorialText : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         Destroy(prologue3.gameObject);
 
-        //위에 프롤로그 컷툰 보여줌.
-
-        Time.timeScale = 0f;
-        player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            playerScript = player.GetComponent<Player>();
-            if (playerScript != null)
-            {
-                playerScript.Invincibility = true;
-            }
-            else
-            {
-                Debug.LogError("Player script not found!");
-            }
-        }
-        else
-        {
-            Debug.LogError("Player object not found!");
-        }
-
+        yield return new WaitForSeconds(1.5f);
         Camera.GetComponent<CameraZoomInOut>().enabled = true;
         Camera.GetComponent<MovingController>().enabled = true;
         Camera.GetComponent<CameraController>().enabled = false;

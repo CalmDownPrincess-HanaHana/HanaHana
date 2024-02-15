@@ -12,7 +12,6 @@ public class TutorialFlag : MonoBehaviour
     public GameObject TutorialText;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter2D called");
         if (collision.gameObject.CompareTag("Player"))
         {
             if (SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("tutorial") != 4)

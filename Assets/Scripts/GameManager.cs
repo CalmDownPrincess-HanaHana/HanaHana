@@ -40,14 +40,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameover && (Input.anyKeyDown || Input.GetMouseButtonDown(0)))
         {
-            if (SceneManager.GetActiveScene().name == "SnowBoss4" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss1")
-            {
-                SceneManager.LoadScene("SnowWhite");
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            StartCoroutine(OnPlayerRestart());
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -65,15 +58,28 @@ public class GameManager : MonoBehaviour
             death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
             SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
             death_text.text = "Death : " + death_count++;
-            Invoke("OnPlayerFinish", 0.5f);
-            
+            StartCoroutine(OnPlayerFinish());
         }
     }
 
-    public void OnPlayerFinish()
-    {
+    IEnumerator OnPlayerFinish() {
+        yield return new WaitForSeconds(0.5f);
         gameoverUI.SetActive(true);
     }
+
+    IEnumerator OnPlayerRestart()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (SceneManager.GetActiveScene().name == "SnowBoss4" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss1")
+        {
+            SceneManager.LoadScene("SnowWhite");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
 
     public void ExitYes()
     {
