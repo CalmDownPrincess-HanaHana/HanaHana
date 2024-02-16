@@ -22,11 +22,11 @@ public class CameraZoomInOut : MonoBehaviour
     public GameObject SaveLoad;
     private void Awake()
     {
-     /*   int tutorial_flag = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("tutorial");
+        int tutorial_flag = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("tutorial");
         if (tutorial_flag != 0)
         {
             Destroy(GetComponent<MovingController>());
-        }*/
+        }
         camera = GetComponent<Camera>();
         movingController = GetComponent<MovingController>();
         if (movingController != null)
