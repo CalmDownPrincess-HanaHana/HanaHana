@@ -9,13 +9,14 @@ public class BlowFish : MonoBehaviour
     float timer=0f;
     bool biggerTrigger = false;
     InitiatePrefab initiatePrefab;
-
+    float[] xPosition= { -5,-4,-3,-2,-1,0,1,2,3,4,5};
+    float[] yPosition= { -3,-2,-1,0,1,2,3};
     // Start is called before the first frame update
     void Start()
     {
         renderer = GetComponent<Renderer>();
         audio = GameObject.Find("PopSound").GetComponent<AudioSource>();
-        this.transform.position = new Vector3(Random.Range(-5f, 5f), Random.Range(-3f,3f),0f);
+        this.transform.position = new Vector3(xPosition [Random.Range(0,xPosition.Length-1)], yPosition[Random.Range(0, yPosition.Length - 1)], 0f);
         renderer.material.color = new Color(1, 1, 1, 0.5f);
         initiatePrefab = GameObject.Find("Initiate").GetComponent<InitiatePrefab>();
         

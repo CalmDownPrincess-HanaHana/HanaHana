@@ -30,7 +30,7 @@ public class ActiveController : ParentObstacleController
 
     private void Awake()
     {
-        base.Start();
+        base.Awake();
         renderer = GetComponent<Renderer>();
         myCollider = GetComponent<Collider2D>();
     }
