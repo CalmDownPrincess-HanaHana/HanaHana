@@ -19,8 +19,14 @@ public class CameraZoomInOut : MonoBehaviour
     float movingSpeed;
     private GameObject Tutorial;
     private TutorialText TutorialTextScript;
+    public GameObject SaveLoad;
     private void Awake()
     {
+        int tutorial_flag = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("tutorial");
+        if (tutorial_flag != 0)
+        {
+            Destroy(GetComponent<MovingController>());
+        }
         camera = GetComponent<Camera>();
         movingController = GetComponent<MovingController>();
         if (movingController != null)
@@ -74,6 +80,7 @@ public class CameraZoomInOut : MonoBehaviour
         }
         GetComponent<CameraController>().enabled = true;
         GetComponent<CameraZoomInOut>().enabled = false;
+        
     }
 
     IEnumerator ZoomInAndOut()

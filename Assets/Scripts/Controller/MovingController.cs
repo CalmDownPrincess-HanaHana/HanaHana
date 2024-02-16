@@ -241,9 +241,17 @@ public class MovingController : ParentObstacleController
         }
     }
 
-    private void Start()
+ /*   private void Start()
     {
-        base.Start();
+        if (GetComponent<CameraZoomInOut>() != null)
+        {
+            base.Awake();
+            initialPosition = transform.position;
+        }
+    }*/
+    private void Awake()
+    {
+        base.Awake();
         initialPosition = transform.position;
     }
 }

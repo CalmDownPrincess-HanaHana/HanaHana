@@ -88,7 +88,7 @@ public class RotateController : ParentObstacleController
 
     private void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 
     IEnumerator RotateLoop()

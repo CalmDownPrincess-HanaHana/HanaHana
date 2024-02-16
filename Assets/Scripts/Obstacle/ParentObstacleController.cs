@@ -50,13 +50,17 @@ public class ParentObstacleController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    public void Start()
+    public void Awake()
     {
-        if (isMovingFromStart)
-        {
-            StartCoroutine(WaitforGivenTime());
-        }
-        player = GameObject.FindWithTag("Player");
+
+            if (isMovingFromStart)
+            {
+                StartCoroutine(WaitforGivenTime());
+            }
+            player = GameObject.FindWithTag("Player");
+        
     }
+
+
 
 }
