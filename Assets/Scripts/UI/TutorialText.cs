@@ -92,7 +92,6 @@ public class TutorialText : MonoBehaviour
         playerScript.Invincibility = false;
         popup_text_prefab.PopupTextList(text_list1_1, true);
         SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("tutorial", 1);
-
     }
 
     IEnumerator ChangePrologueSprite(GameObject prologue)
