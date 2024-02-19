@@ -27,12 +27,15 @@ public class ActiveController : ParentObstacleController
     private Color objColor;
 
     private Collider2D myCollider;
+    
+    private Color originColor;
 
     private void Awake()
     {
         base.Awake();
         renderer = GetComponent<Renderer>();
         myCollider = GetComponent<Collider2D>();
+        originColor = renderer.material.color;
     }
 
     private void update(){
@@ -94,7 +97,6 @@ public class ActiveController : ParentObstacleController
 
     IEnumerator AlertBlink()
     {
-        Color originColor = renderer.material.color;
         float time = 0f;
         float realTime = 0f;
         while (realTime < durationTime)

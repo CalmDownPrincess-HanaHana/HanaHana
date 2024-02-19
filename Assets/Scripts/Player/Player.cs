@@ -51,10 +51,10 @@ public class Player : MonoBehaviour
     private const float JUMP_CRITERIA = 0.4f;
     /// <summary>
     /// 점프력, 속력
+    /// 현민. 보스전에서 느리게 움직이게 하기 위해서 public으로 바꿈
     /// </summary>
-    [SerializeField]
-    private float jump_power;
-    private float max_speed;
+    [SerializeField] private float jump_power;
+    public float max_speed;
     //리지드바디
     Rigidbody2D rigid;
     //스프라이트렌더러
@@ -74,6 +74,8 @@ public class Player : MonoBehaviour
     //초기세팅 사운드 값
     float settingSoundValue;
     
+    public bool isSlowed = false;
+
     /// <summary>
     /// 유진 외 정의한 변수
     /// </summary>
@@ -684,6 +686,9 @@ public class Player : MonoBehaviour
             if (isWater)
             {
                 jump_power = 6;
+                if(isSlowed){
+                    jump_power = 1f;
+                }
                 InfiniteJump();
             }
             else

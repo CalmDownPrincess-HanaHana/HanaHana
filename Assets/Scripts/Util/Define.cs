@@ -54,7 +54,8 @@ public class Define
         Flag,
         Item,
         Border,
-        Transparent
+        Transparent,
+        SlowingObj
     }
 
     public enum RotateDelta
