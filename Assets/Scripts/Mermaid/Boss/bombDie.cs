@@ -11,14 +11,11 @@ public class bombDie : MonoBehaviour
     /// 체크 해제 후 비활성화
     /// 
     /// -스프라이트 발사
-    /// 4방면으로 스프라이트 발사
     /// </summary>
 
     [SerializeField] private float explosionTime = 2f; // 폭파되는 시간
-
     [SerializeField] private GameObject objPrefab; // 발사할 프리팹
-    [SerializeField] private float force = 10f; // 발사되는 힘
-    [SerializeField] private float spewDuration = 1f; // 발사 후 파괴될 때까지의 지연 시간
+    
     private bool isExploding = false; // 폭파 중인지 여부를 나타내는 변수
 
     void Start()
@@ -60,33 +57,8 @@ public class bombDie : MonoBehaviour
     private IEnumerator ShootSprites()
     {
         isExploding = true; // 폭파 중임을 표시
-
-        // 4방면으로 스프라이트 발사
-        for (int i = 0; i < 4; i++)
-        {
-            // 스프라이트 프리팹을 생성합니다.
-            yield return StartCoroutine(SpewOnce());
-
-            // 스프라이트 발사 후 0.1초 대기
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
-    IEnumerator SpewOnce()
-    {
-        Vector3[] directions = { Vector3.up, Vector3.right, Vector3.down, Vector3.left };
-
-        foreach (Vector3 direction in directions)
-        {
-            GameObject objInstance = Instantiate(objPrefab, transform.position, Quaternion.identity);
-
-            Rigidbody2D objRigidbody = objInstance.GetComponent<Rigidbody2D>();
-
-            if (objRigidbody != null)
-            {
-                objRigidbody.AddForce(direction * force, ForceMode2D.Impulse);
-            }
-            yield return null; // 다음 스프라이트를 생성하기 전에 한 프레임을 기다립니다.
-        }
+        // 스프라이트 프리팹을 생성합니다.
+        Instantiate(objPrefab, transform.position, Quaternion.identity);
+        yield return null;
     }
 }
