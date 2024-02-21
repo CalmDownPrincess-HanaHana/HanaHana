@@ -9,8 +9,8 @@ public class BlowFish : MonoBehaviour
     float timer=0f;
     bool biggerTrigger = false;
     InitiatePrefab initiatePrefab;
-    float[] xPosition= { -5,-4,-3,-2,-1,0,1,2,3,4,5};
-    float[] yPosition= { -3,-2,-1,0,1,2,3};
+    float[] xPosition= { -5,-3,-1,1,3,5};
+    float[] yPosition= { -3,-1,1,3};
     // Start is called before the first frame update
     void Start()
     {
@@ -42,17 +42,22 @@ public class BlowFish : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (biggerTrigger&&(collision.gameObject.name == "Missile"||collision.gameObject.CompareTag("Player")))
-        {   
+        if (biggerTrigger && (collision.gameObject.name == "Missile" || collision.gameObject.CompareTag("Player")))
+        {
             //소리재생
             audio.Play();
             //존재하는 복어숫자 --
             initiatePrefab.existNum--;
             //본인파괴
-            Destroy(this.gameObject);       
+            Destroy(this.gameObject);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.GetComponent<Player>().Die(new Vector2(0,0));
+            }
         }
+
     }
+
 }

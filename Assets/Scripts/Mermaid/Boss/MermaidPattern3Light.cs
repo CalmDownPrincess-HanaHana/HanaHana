@@ -42,7 +42,6 @@ public class MermaidPattern3Light : MonoBehaviour
         {
             StopCoroutine(Timer());
             timer = 0f;
-            Debug.Log("in");
             playerRenderer.sortingLayerName = playerInLayerName;
             playerRenderer.sortingOrder = playerInLayerNum;
         }
