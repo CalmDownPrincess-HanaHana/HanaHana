@@ -65476,6 +65476,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6708784594606413626}
+    - target: {fileID: 2527144660547902976, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
+      propertyPath: maxSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527144660547902984, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700117007654099922, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700117007654099922, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5700117008233199594, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
       propertyPath: m_RootOrder
       value: 12
