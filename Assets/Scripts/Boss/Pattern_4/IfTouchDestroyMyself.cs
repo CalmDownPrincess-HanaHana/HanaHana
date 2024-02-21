@@ -15,7 +15,6 @@ public class IfTouchDestroyMyself : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("왜 안 나옴?");
         if (collision.gameObject.CompareTag(tagName1) || collision.gameObject.CompareTag(tagName2))
         {
             Destroy(this.gameObject);
