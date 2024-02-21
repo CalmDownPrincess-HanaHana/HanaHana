@@ -148,8 +148,8 @@ GameObject:
   - component: {fileID: 2934927971016831481}
   - component: {fileID: 2934927971016831482}
   - component: {fileID: 2934927971016831483}
-  - component: {fileID: 2934927971016831428}
   - component: {fileID: 2934927971016831429}
+  - component: {fileID: 384141672}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -240,27 +240,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2934927971016831428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934927971016831480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd162128725c722468039542b5e434c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInLayerName: UI
-  playerInLayerNum: 2
-  playerOutLayerName: Default
-  playerOutLayerNum: 3
-  inLayerName: UI
-  inLayerNum: 2
-  outLayerName: Default
-  outLayerNum: 3
-  setPlayerPositionThis: 1
 --- !u!50 &2934927971016831429
 Rigidbody2D:
   serializedVersion: 4
@@ -282,6 +261,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &384141672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934927971016831480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8b1ad2ea477184d9433b4a825a7170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 3
+  playerInLayerName: UI
+  playerInLayerNum: 2
+  playerOutLayerName: Default
+  playerOutLayerNum: 3
+  inLayerName: UI
+  inLayerNum: 1
+  outLayerName: Default
+  outLayerNum: 1
+  setPlayerPositionThis: 1
 --- !u!1 &2934927971206521351
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +423,6 @@ MonoBehaviour:
   obDirection: 0
   distance: 0
   speed: 3
-  isMovingPlatform: 0
   _transform: {fileID: 2934927971206521344}
   line: {fileID: 2934927972221016040}
   repeatLine: 1
@@ -802,6 +802,7 @@ GameObject:
   - component: {fileID: 2934927971706222409}
   - component: {fileID: 2934927971706222410}
   - component: {fileID: 2934927971706222411}
+  - component: {fileID: 81289240}
   m_Layer: 8
   m_Name: BlowFish
   m_TagString: Enemy
@@ -816,14 +817,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2934927971706222415}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 7, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2934927972318401577}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!212 &2934927971706222409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -930,11 +931,22 @@ MonoBehaviour:
   obDirection: 0
   distance: 0
   speed: 3
-  isMovingPlatform: 0
   _transform: {fileID: 2934927971706222408}
   line: {fileID: 2934927971455611983}
   repeatLine: 1
   isOpposite: 0
+--- !u!114 &81289240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934927971706222415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64379f71291049b46a6bc5efb5da9304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2934927971752165846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1035,7 @@ GameObject:
   - component: {fileID: 2934927971774391889}
   - component: {fileID: 2934927971774391888}
   - component: {fileID: 2934927971774391890}
+  - component: {fileID: 797224916}
   m_Layer: 0
   m_Name: SeaDevil
   m_TagString: Untagged
@@ -1139,11 +1152,22 @@ MonoBehaviour:
   obDirection: 0
   distance: 0
   speed: 3
-  isMovingPlatform: 0
   _transform: {fileID: 2934927971774391895}
   line: {fileID: 2934927970933798123}
   repeatLine: 1
   isOpposite: 0
+--- !u!114 &797224916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934927971774391894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64379f71291049b46a6bc5efb5da9304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2934927971810278125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1179,7 @@ GameObject:
   - component: {fileID: 2934927971810278126}
   - component: {fileID: 2934927971810278120}
   - component: {fileID: 2934927971810278127}
+  - component: {fileID: 1903784568}
   m_Layer: 8
   m_Name: BlowFish (3)
   m_TagString: Enemy
@@ -1220,7 +1245,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1316043200, guid: e7e2421e76aa41e4ca8c67abb5309b1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -1262,6 +1287,31 @@ PolygonCollider2D:
       - {x: 0.1875, y: -0.375}
       - {x: 0.375, y: -0.1875}
       - {x: 0.4375, y: 0.1875}
+--- !u!114 &1903784568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934927971810278125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42e8f03e434b28458c922a4be7c0577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovingFromStart: 1
+  isCol: 0
+  isLoop: 0
+  waitingTime: 0
+  colTag: 2
+  obType: 1
+  obDirection: 5
+  distance: 0.3
+  speed: 3
+  _transform: {fileID: 0}
+  line: {fileID: 0}
+  repeatLine: 0
+  isOpposite: 0
 --- !u!1 &2934927972199463333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1324,8 @@ GameObject:
   - component: {fileID: 2934927972199463329}
   - component: {fileID: 2934927972199463328}
   - component: {fileID: 2934927972199463335}
+  - component: {fileID: 1704735713}
+  - component: {fileID: 1704735714}
   m_Layer: 8
   m_Name: BlowFish (1)
   m_TagString: Enemy
@@ -1288,14 +1340,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2934927972199463333}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 7, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2934927972318401577}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!212 &2934927972199463329
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1339,7 +1391,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1316043200, guid: e7e2421e76aa41e4ca8c67abb5309b1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -1402,10 +1454,46 @@ MonoBehaviour:
   obDirection: 0
   distance: 0
   speed: 3
-  isMovingPlatform: 0
   _transform: {fileID: 2934927972199463334}
   line: {fileID: 2934927971378549548}
   repeatLine: 1
+  isOpposite: 0
+--- !u!114 &1704735713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934927972199463333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64379f71291049b46a6bc5efb5da9304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1704735714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934927972199463333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42e8f03e434b28458c922a4be7c0577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovingFromStart: 1
+  isCol: 0
+  isLoop: 0
+  waitingTime: 0
+  colTag: 2
+  obType: 1
+  obDirection: 5
+  distance: 0.3
+  speed: 3
+  _transform: {fileID: 0}
+  line: {fileID: 0}
+  repeatLine: 0
   isOpposite: 0
 --- !u!1 &2934927972221016046
 GameObject:
