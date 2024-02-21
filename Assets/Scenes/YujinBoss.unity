@@ -4930,6 +4930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pattern3
       objectReference: {fileID: 0}
+    - target: {fileID: 2934927972318401576, guid: 7bc19d4eb04cdb14daa465d25e789af7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2934927972318401577, guid: 7bc19d4eb04cdb14daa465d25e789af7, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -65478,7 +65482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5700117008233199595, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}

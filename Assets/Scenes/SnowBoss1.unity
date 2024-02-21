@@ -23721,6 +23721,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4581455348965192934, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_Color.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581455349237681832, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4581455349361766418, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_Camera
       value: 
@@ -23812,6 +23820,10 @@ PrefabInstance:
     - target: {fileID: 4581455349361766431, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581455349492309051, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4696630511478559270, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -37515,7 +37527,6 @@ MonoBehaviour:
   isGameover: 0
   death_text: {fileID: 4893272557400943349}
   gameoverUI: {fileID: 8163599317644340564}
-  finishUI: {fileID: 4893272558485113732}
   player: {fileID: 6033742612574400956}
   SaveLoad: {fileID: 1699537233}
   exitPanel: {fileID: 1300242770}
