@@ -12,12 +12,13 @@ public class ChangeBGAndBGM : MonoBehaviour
         EndingScene,
         MerMaid
     }
-
+    GameObject _camera;
     [SerializeField] Transform _transform; 
     [SerializeField] SceneType sceneName;
     [SerializeField] GameObject Sky;
     [SerializeField] Sprite[] backgrounds;
     [SerializeField] AudioSource[] audioSources = null;
+    MovingController _cameraMovingController;
     //초기세팅 사운드 값
     float settingSoundValue;
     private void Awake()
@@ -29,6 +30,8 @@ public class ChangeBGAndBGM : MonoBehaviour
         {
             audio.volume = settingSoundValue;
         }
+        _camera = GameObject.FindWithTag("MainCamera");
+        _cameraMovingController=_camera.GetComponent<MovingController>();
     }
     // Update is called once per frame
     void Update()
@@ -81,11 +84,10 @@ public class ChangeBGAndBGM : MonoBehaviour
                 }
                 return;
             case SceneType.SnowWhite:
-                if (_transform.position.x < 382) { 
-                
+                if (_camera.transform.position.x < 382) { 
                     Image sky_image = Sky.GetComponent<Image>();
                     sky_image.sprite = backgrounds[0];
-                    if (audioSources != null)
+                    if (audioSources != null && _cameraMovingController==null)
                     {
                         audioSources[0].enabled = true;
                         audioSources[1].enabled = false;
@@ -94,11 +96,11 @@ public class ChangeBGAndBGM : MonoBehaviour
                     }
                 }
 
-                if (_transform.position.x >= 382 && _transform.position.x < 650)
+                if (_camera.transform.position.x >= 382 && _camera.transform.position.x < 650)
                 {
                     Image sky_image = Sky.GetComponent<Image>();
                     sky_image.sprite = backgrounds[1];
-                    if (audioSources != null)
+                    if (audioSources != null && _cameraMovingController == null)
                     {
                         audioSources[1].enabled = true;
                         audioSources[2].enabled = false;
@@ -107,11 +109,11 @@ public class ChangeBGAndBGM : MonoBehaviour
                     }
                 }
 
-                if (_transform.position.x >= 650)
+                if (_camera.transform.position.x >= 650)
                 {
                     Image sky_image = Sky.GetComponent<Image>();
                     sky_image.sprite = backgrounds[2];
-                    if (audioSources != null)
+                    if (audioSources != null && _cameraMovingController == null)
                     {
                         audioSources[2].enabled = true;
                         audioSources[0].enabled = false;
