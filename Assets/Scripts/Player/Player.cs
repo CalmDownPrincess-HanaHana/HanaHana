@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     float rightButtonEnd = Screen.width * 0.4167f;
     float leftButtonEnd = Screen.width * 0.2083f;
     float jumpButtonEnd = Screen.width;
-    bool touchRightButton = false;
-    bool touchLeftButton = false;
+    public bool touchRightButton = false;
+    public bool touchLeftButton = false;
 
     public float RightButtonEnd
     {
@@ -173,12 +173,11 @@ public class Player : MonoBehaviour
         {
             rigid.gravityScale = 4;
         }
-
-        //Idle이면 중력스케일 복구
-        if (player_state == PlayerState.Idle)
+        else//떨어지지않으면 중력스케일복구
         {
             rigid.gravityScale = 2;
         }
+
     }
 
     private void JumpStateProcess()
