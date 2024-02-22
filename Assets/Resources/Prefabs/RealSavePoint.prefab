@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4744000973290335149}
   - component: {fileID: -7328217581652252981}
   m_Layer: 0
-  m_Name: SavePoint
+  m_Name: RealSavePoint
   m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
