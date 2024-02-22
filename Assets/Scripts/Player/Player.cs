@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     float rightButtonEnd = Screen.width * 0.4167f;
     float leftButtonEnd = Screen.width * 0.2083f;
     float jumpButtonEnd = Screen.width;
+    bool touchRightButton = false;
+    bool touchLeftButton = false;
+
     public float RightButtonEnd
     {
         get { return RightButtonEnd; }
@@ -168,7 +171,7 @@ public class Player : MonoBehaviour
         //떨어질 때 빨리 떨어지게
         if (rigid.velocity.normalized.y <= -JUMP_CRITERIA)//낙하하면 훅 떨어지게
         {
-            rigid.gravityScale = 3;
+            rigid.gravityScale = 4;
         }
 
         //Idle이면 중력스케일 복구
@@ -330,6 +333,8 @@ public class Player : MonoBehaviour
         //1. 브레이크
         if (!isIce) //손가락이 1개거나 없어야함
         {
+            touchLeftButton = false;
+            touchRightButton = false;
             if (Input.touchCount == 1)//손가락이 있는 경우면
             {
                 //터치정보 갖고옴
@@ -359,6 +364,8 @@ public class Player : MonoBehaviour
                     //방향전환
                     sprite_renderer.flipX = true;
                 }
+                touchLeftButton = true;
+                touchRightButton = false;
             }
             //오른쪽키 범위
             if (touch.position.x >= leftButtonEnd && touch.position.x < rightButtonEnd)
@@ -369,6 +376,8 @@ public class Player : MonoBehaviour
                     //방향전환
                     sprite_renderer.flipX = false;
                 }
+                touchLeftButton = false;
+                touchRightButton = true;
             }
             //점프키범위
             if (touch.position.x >= Screen.width * 0.5f && touch.position.x < jumpButtonEnd)
@@ -416,7 +425,7 @@ public class Player : MonoBehaviour
             //경사체크 켜주고
             is_Slope = true;
             //여기서는 중력 세게 받게
-            rigid.gravityScale = 3;
+            rigid.gravityScale = 4;
             //플레이어 상태를 Walk로. Jump상태가 되지 않도록 Walk상태로 바꿔줌 
             player_state = PlayerState.Walk;
         }
@@ -452,7 +461,7 @@ public class Player : MonoBehaviour
                 if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString())
                 {
                     //x에 방향성이 있으면 걷기상태로 전환
-                    if (rigid.velocity.normalized.x != 0)
+                    if (horizontal != 0 || touchLeftButton||touchRightButton)
                     {
                         anim.SetBool("isJump", false);
                         anim.SetBool("isWalk", true);
@@ -470,6 +479,7 @@ public class Player : MonoBehaviour
                         {
                             player_state = PlayerState.Idle;
                         }
+
                     }
                 }
             }
