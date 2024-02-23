@@ -129,7 +129,7 @@ public class Pattern1Controller : MonoBehaviour
         pattern5.SetActive(false);
 
         //다음 씬()으로 로드
-        if (player.player_state != Define.PlayerState.Damaged)
+        if (player.player_state != Define.PlayerState.Damaged && SceneManager.GetActiveScene().name=="SnowBoss1")
         {
             StartCoroutine("PatternChange");
         }

@@ -99,7 +99,10 @@ public class Pattern2Controller : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _fadeOutUI.SetActive(true);
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("SnowBoss3");
+        if (SceneManager.GetActiveScene().name == "SnowBoss2") {
+            SceneManager.LoadScene("SnowBoss3");
+        }
+        
     }
     //무적
     IEnumerator PlayerInvincibility(float time)

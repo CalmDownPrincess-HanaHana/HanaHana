@@ -44,6 +44,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SnowBoss4.unity
     guid: b05f287be74f77148ae06f2c2a6f5d13
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss2Training.unity
+    guid: ca962f57e3cecba40be0191d9e1cd29b
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss1Training.unity
+    guid: 1e895a9ed3f2c704f8ccc7469ea878e4
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss4Training.unity
+    guid: 15cc3b18d77f5794eb6ba44fda74e791
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss3Training.unity
+    guid: 87b503c05aae3d04394e6b5180b63698
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -62,6 +80,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: 2b948d2c4e45e3543b41ffec387afd6c
+  - enabled: 1
+    path: Assets/Scenes/BossTrainingScene.unity
+    guid: 0e8d624a17245884394fcd91b20be6fc
   - enabled: 0
     path: Assets/Scenes/MerMaidBoss.unity
     guid: b8a664ee435e8674d83ff33c4c51fc5e

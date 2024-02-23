@@ -37,7 +37,6 @@ public class Ladder : MonoBehaviour
             }
             playerTransform = collision.gameObject.transform;
             playerRigidbody = playerTransform.GetComponent<Rigidbody2D>();
-            Debug.Log("slide 진입");
             isSliding=true;
             StartCoroutine(SlidePlayerDown());
         }
@@ -45,10 +44,8 @@ public class Ladder : MonoBehaviour
 
     private IEnumerator SlidePlayerDown()
     {
-        Debug.Log("slide 진입");
         if(isSliding){
            // X축으로 고정
-           Debug.Log("slide 고정");
         if (playerRigidbody != null&&isSliding)
         {
             playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -66,7 +63,6 @@ public class Ladder : MonoBehaviour
         if (playerOnWall && isSliding) {
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space)||(playerScript != null&& playerScript.isMoss == 1))
         {
-            Debug.Log("지금 Jumps");
             playerScript.isMoss = 0;
             StartCoroutine(GoUp());
             }
@@ -74,7 +70,6 @@ public class Ladder : MonoBehaviour
     }
 
     IEnumerator GoUp(){
-        Debug.Log("지금 Goup");
         StopCoroutine(SlidePlayerDown());
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 

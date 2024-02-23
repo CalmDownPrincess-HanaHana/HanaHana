@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     float rightButtonEnd = Screen.width * 0.4167f;
     float leftButtonEnd = Screen.width * 0.2083f;
     float jumpButtonEnd = Screen.width;
-    public bool touchRightButton = false;
-    public bool touchLeftButton = false;
+     bool touchRightButton = false;
+     bool touchLeftButton = false;
 
     public float RightButtonEnd
     {
@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
         if (rigid.velocity.normalized.y <= -JUMP_CRITERIA || rigid.velocity.normalized.y >= JUMP_CRITERIA)
         {
             //보스맵4아닐때
-            if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString())
+            if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString()&&SceneManager.GetActiveScene().name!= "SnowBoss4Training")
             {
                 //애니메이션 켜주고
                 anim.SetBool("isJump", true);
@@ -597,7 +597,7 @@ public class Player : MonoBehaviour
         //레이어변경
         this.gameObject.layer = 7;
         //리액션
-        if(SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString()||isWater)
+        if(SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString()||isWater || SceneManager.GetActiveScene().name == "SnowBoss4Training")
         {
             //터져죽기
             anim.SetBool("isBrokenDie", true);
@@ -653,14 +653,14 @@ public class Player : MonoBehaviour
     private void SnowBoss4()
     {
         //보스맵4에서는 날아가는 애니메이션으로 
-        if (!anim.GetBool("isFly") && SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString())
+        if (!anim.GetBool("isFly") && (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString()||SceneManager.GetActiveScene().name== "SnowBoss4Training"))
         {
             //애니메이션: 계속 날아가는거로.
             anim.SetBool("isFly", true);
         }
         
         //무한점프
-        if (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString())
+        if (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString() || SceneManager.GetActiveScene().name == "SnowBoss4Training")
         {
             InfiniteJump();   
         }

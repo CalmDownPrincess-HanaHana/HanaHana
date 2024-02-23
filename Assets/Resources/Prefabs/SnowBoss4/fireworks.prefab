@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 40
   launch_time: 1
-  launchForce: 4
+  launchForce: 2
   spreadFactor: 5
 --- !u!114 &7461167487568533697
 MonoBehaviour:

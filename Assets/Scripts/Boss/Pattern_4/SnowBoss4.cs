@@ -216,7 +216,7 @@ public class SnowBoss4 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * move_speed);
 
             //죽는거 한 번만 실행해야하니까 once변수 씀
-            if (!once)
+            if (!once )
             {
                 Dead();
                 once = true;
@@ -549,7 +549,10 @@ public class SnowBoss4 : MonoBehaviour
                     {
                         
                         //n초 되면 씬로드
-                        SceneManager.LoadScene(Define.Scene.SnowBossClear.ToString());
+                        if(SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString())
+                        {
+                            SceneManager.LoadScene(Define.Scene.SnowBossClear.ToString());
+                        }
                         break;
                     }
                     yield return null;
