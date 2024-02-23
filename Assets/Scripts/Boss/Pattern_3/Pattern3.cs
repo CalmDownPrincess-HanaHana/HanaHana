@@ -63,7 +63,10 @@ public class Pattern3 : MonoBehaviour
         yield return new WaitForSeconds(4f);
         _fadeOutUI.SetActive(true);
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("SnowBoss4");
+        if (SceneManager.GetActiveScene().name == "SnowBoss3")
+        {
+            SceneManager.LoadScene("SnowBoss4");
+        }
     }
 
     IEnumerator BossRaiseHandAnim()

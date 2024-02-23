@@ -80,7 +80,7 @@ public class Launch_FireAndBullet : MonoBehaviour
     {
         //스크립트 가져오기
         player_script = GameObject.FindWithTag("Player").GetComponent<Player>();
-        if (SceneManager.GetActiveScene().name == "SnowBoss4")
+        if (SceneManager.GetActiveScene().name == "SnowBoss4"|| SceneManager.GetActiveScene().name == "SnowBoss4Training")
         {
             boss_script = GameObject.FindWithTag("Boss").GetComponent<SnowBoss4>();
         }
