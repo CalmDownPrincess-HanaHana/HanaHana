@@ -51,11 +51,17 @@ EditorBuildSettings:
     path: Assets/Scenes/SnowBoss1Training.unity
     guid: 1e895a9ed3f2c704f8ccc7469ea878e4
   - enabled: 1
-    path: Assets/Scenes/SnowBoss3Training.unity
-    guid: 549a3dd30ba3eab4d86ae4d912971667
-  - enabled: 1
     path: Assets/Scenes/SnowBoss4Training.unity
-    guid: a84eabcb36fbc6645bcafba6aa0e4e85
+    guid: 15cc3b18d77f5794eb6ba44fda74e791
+  - enabled: 1
+    path: Assets/Scenes/SnowBoss3Training.unity
+    guid: 87b503c05aae3d04394e6b5180b63698
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
