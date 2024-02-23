@@ -173,8 +173,8 @@ public class Launch_FireAndBullet : MonoBehaviour
                         //발사쿨타임 1초
                         cool_time = 1f;
                         //랜덤위치에서 불꽃놀이
-                        float x = Random.Range(18f, 24f);
-                        float y = Random.Range(4f, -4f);
+                        float x = Random.Range(20f, 24f);
+                        float y = Random.Range(2f, -2f);
                         //그냥 아무값이나 넣어준거
                         Transform transf = this.transform;
                         //위치초기화: 랜덤값 넣은 위치로

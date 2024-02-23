@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     float rightButtonEnd = Screen.width * 0.4167f;
     float leftButtonEnd = Screen.width * 0.2083f;
     float jumpButtonEnd = Screen.width;
-    public bool touchRightButton = false;
-    public bool touchLeftButton = false;
+     bool touchRightButton = false;
+     bool touchLeftButton = false;
 
     public float RightButtonEnd
     {
