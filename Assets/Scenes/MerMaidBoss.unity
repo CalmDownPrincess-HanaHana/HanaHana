@@ -64820,7 +64820,7 @@ MonoBehaviour:
   minScale: {x: 3, y: 4, z: 0}
   maxDuration: 3.5
   minDuration: 2.7
-  _mainCamera: {fileID: 0}
+  _mainCamera: {fileID: 8582332362670112240}
 --- !u!212 &5517375570432925398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69959,7 +69959,7 @@ MonoBehaviour:
   alertColor: {r: 1, g: 0.87, b: 0.0039, a: 1}
   repeat: 1
   altObj: []
-  actObj: {fileID: 0}
+  actObj: {fileID: 3739431741932157337}
   durationTime: 1
 --- !u!114 &7820292618321923197
 MonoBehaviour:
@@ -69982,7 +69982,7 @@ MonoBehaviour:
   alertColor: {r: 1, g: 0.87, b: 0.0039, a: 1}
   repeat: 1
   altObj: []
-  actObj: {fileID: 0}
+  actObj: {fileID: 3739431741932157337}
   durationTime: 1
 --- !u!1 &7820292618321923198
 GameObject:
