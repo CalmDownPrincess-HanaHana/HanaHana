@@ -14,7 +14,7 @@ public class EventController : MonoBehaviour
     private GameObject Soul; //움직이는 커다란 정령
 
     [SerializeField]
-    private float fadeDuration = 5.0f; // 페이드 인/아웃에 걸리는 시간 (초)
+    private float fadeDuration = 1.0f; // 페이드 인/아웃에 걸리는 시간 (초)
 
 
     private CameraController camScript;
