@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 474343189578317327}
   - component: {fileID: 1224287554309953328}
   m_Layer: 8
-  m_Name: CircleLaser_Pattern3
+  m_Name: bullet_laser
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,8 +138,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0020828247
-        value: 0.3892727
+        time: 0.008998871
+        value: 0.5012722
         inSlope: 0
         outSlope: 0
         tangentMode: 0

@@ -25,6 +25,7 @@ public class bombDie : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)// 외부와 충돌하면 폭파
     {
+        Debug.Log("asdf");
         if (!isExploding)
         {
             StartCoroutine(ExplodeAfter());
@@ -42,10 +43,11 @@ public class bombDie : MonoBehaviour
         if (!isExploding)
         {
             isExploding = true; // 폭파 중임을 표시     
-            yield return new WaitForSeconds(0.1f); // 충돌 후 0.1초 대기 후에 폭파
+            //yield return new WaitForSeconds(0.1f); // 충돌 후 0.1초 대기 후에 폭파
             //alert 넣기
             GameObject objInstance = Instantiate(objPrefab, transform.position, Quaternion.identity);
             gameObject.SetActive(false); // 오브젝트 비활성화
         }
+        yield return null;
     }
 }
