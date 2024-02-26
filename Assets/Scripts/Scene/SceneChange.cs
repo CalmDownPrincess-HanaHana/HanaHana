@@ -41,6 +41,13 @@ public class SceneChange : MonoBehaviour
                 PlayerPrefs.SetString("SnowWhiteClear", "true");
                 PlayerPrefs.SetString("SnowWhiteCloth", cloth);
             }
+            else if (PlayerPrefs.GetString("MermaidClear") == "true")
+            {
+                string cloth = PlayerPrefs.GetString("SnowWhiteCloth");
+                PlayerPrefs.DeleteAll();
+                PlayerPrefs.SetString("SnowWhiteClear", "true");
+                PlayerPrefs.SetString("SnowWhiteCloth", cloth);
+            }
             else
             {
                 PlayerPrefs.DeleteAll();

@@ -4,6 +4,7 @@ death	int 	죽은 횟수
 RealItem	string	어느 맵에서 진짜아이템 먹었는지 알려줌(튜토리얼-TutorialFakeItem, 스노우화이트 진짜아이템- SnowWhite)
 SnowWhiteCloth	string	백설공주스킨 꼈는지에대한 정보(true-백설공주스킨, false-기본스킨)
 SnowWhiteClear	string	백설공주맵 깼는지에 대한 정보(true-깸, false-못깸)
+MermaidClear	string	인어공주맵 깼는지에 대한 정보. (true-깸, false- 못깸)
 respawnX	float	플래그위치x좌표
 respawnY	float	플래그위치y좌표
 respawnZ	float	플래그위치z좌표
