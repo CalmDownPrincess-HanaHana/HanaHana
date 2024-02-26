@@ -10,25 +10,33 @@ public class SnowWhiteCloth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //자물쇠풀기
         if (PlayerPrefs.GetString("SnowWhiteClear") == "true")
         {
             GameObject.Find("closetSnow").gameObject
              .transform.GetChild(0).gameObject.SetActive(false);
-        }
-        if (PlayerPrefs.GetString("SnowWhiteCloth") == "true")
-        {
-            GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[0];
         }
         if (PlayerPrefs.GetString("MermaidClear") == "true")
         {
             GameObject.Find("closetMermaid").gameObject
              .transform.GetChild(0).gameObject.SetActive(false);
         }
-        if (PlayerPrefs.GetString("MermaidCloth") == "true")
+
+        if (PlayerPrefs.GetString("Cloth") == "SnowWhite")
+        {
+            GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[0];
+        }
+        
+        if (PlayerPrefs.GetString("Cloth") == "Mermaid")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[2];
         }
-    }
+        if (PlayerPrefs.GetString("Cloth") == "Basic")
+        {
+            GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[1];
+        }
+    
+}
 
     public void SelectSnow()
     {
@@ -49,7 +57,8 @@ public class SnowWhiteCloth : MonoBehaviour
         if (PlayerPrefs.GetString("SnowWhiteClear") == "true"&&selected== "closetSnow")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[0];
-            PlayerPrefs.SetString("SnowWhiteCloth", "true");
+            PlayerPrefs.SetString("Cloth", "SnowWhite");
+
         }
     }
     public void PutOnMermaidCloth()
@@ -57,7 +66,8 @@ public class SnowWhiteCloth : MonoBehaviour
         if (PlayerPrefs.GetString("MermaidClear") == "true" && selected == "closetMermaid")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[2];
-            PlayerPrefs.SetString("MermaidCloth", "true");
+            PlayerPrefs.SetString("Cloth", "Mermaid");
+
         }
     }
     public void PutOnBasicCloth()
@@ -65,7 +75,8 @@ public class SnowWhiteCloth : MonoBehaviour
         if(selected == "closetBasic")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[1];
-            PlayerPrefs.SetString("SnowWhiteCloth", "false");
+            PlayerPrefs.SetString("Cloth", "Basic");
+
         }
     }
 }
