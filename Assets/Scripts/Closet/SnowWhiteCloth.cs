@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SnowWhiteCloth : MonoBehaviour
 {
-    private string snowSelected;
+    private string selected;
     [SerializeField] private Sprite[] clothes;
     // Start is called before the first frame update
     void Start()
@@ -32,20 +32,21 @@ public class SnowWhiteCloth : MonoBehaviour
 
     public void SelectSnow()
     {
-        snowSelected = "closetSnow";
+        selected = "closetSnow";
     }
     public void SelectMermaid()
     {
-        snowSelected = "closetMermaid";
+        selected = "closetMermaid";
+        Debug.Log(selected);
     }
     public void SelectBasic()
     {
-        snowSelected = "closetBasic";
+        selected = "closetBasic";
     }
 
     public void PutOnSnowWhiteCloth()
     {
-        if (PlayerPrefs.GetString("SnowWhiteClear") == "true"&&snowSelected== "closetSnow")
+        if (PlayerPrefs.GetString("SnowWhiteClear") == "true"&&selected== "closetSnow")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[0];
             PlayerPrefs.SetString("SnowWhiteCloth", "true");
@@ -53,7 +54,7 @@ public class SnowWhiteCloth : MonoBehaviour
     }
     public void PutOnMermaidCloth()
     {
-        if (PlayerPrefs.GetString("MermaidClear") == "true" && snowSelected == "closetMermaid")
+        if (PlayerPrefs.GetString("MermaidClear") == "true" && selected == "closetMermaid")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[2];
             PlayerPrefs.SetString("MermaidCloth", "true");
@@ -61,7 +62,7 @@ public class SnowWhiteCloth : MonoBehaviour
     }
     public void PutOnBasicCloth()
     {
-        if(snowSelected == "closetBasic")
+        if(selected == "closetBasic")
         {
             GameObject.Find("Player").gameObject.GetComponent<Image>().sprite = clothes[1];
             PlayerPrefs.SetString("SnowWhiteCloth", "false");
