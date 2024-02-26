@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class randomAppear : MonoBehaviour
 {
-    /// <summary>
-    /// top에 이거 달기
-    /// 
-    /// -폭탄 생성
-    /// 자식 오브젝트 중 랜덤 활성화.
-    /// 2초마다 폭탄 생성
-    /// : 폭탄이 활성화 되지 않았다면 폭탄 활성화
-    /// </summary>
-
     [SerializeField] private float sec = 2f;
 
     private List<Transform> children = new List<Transform>(); // 자식 오브젝트를 저장할 리스트
@@ -34,12 +25,19 @@ public class randomAppear : MonoBehaviour
         {
             yield return new WaitForSeconds(interval); // 일정 시간 대기 후에 폭탄 생성
 
-            Transform randomChild = GetRandomChild(); // 랜덤한 자식 오브젝트 가져오기
-            if (randomChild != null)
-            {
-                randomChild.gameObject.SetActive(true); // 자식 오브젝트 활성화
-                children.Remove(randomChild); // 리스트에서 활성화된 자식 오브젝트 제거
-            }
+            ActivateRandomChild(); // 자식 오브젝트 활성화
+            yield return new WaitForSeconds(0.1f); // 0.1초 대기 후에 다시 자식 오브젝트 활성화
+            ActivateRandomChild(); // 자식 오브젝트 활성화
+        }
+    }
+
+    private void ActivateRandomChild()
+    {
+        Transform randomChild = GetRandomChild(); // 랜덤한 자식 오브젝트 가져오기
+        if (randomChild != null)
+        {
+            randomChild.gameObject.SetActive(true); // 자식 오브젝트 활성화
+            children.Remove(randomChild); // 리스트에서 활성화된 자식 오브젝트 제거
         }
     }
 

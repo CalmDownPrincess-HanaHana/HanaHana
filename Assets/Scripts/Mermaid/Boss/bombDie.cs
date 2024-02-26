@@ -17,15 +17,18 @@ public class bombDie : MonoBehaviour
     [SerializeField] private GameObject objPrefab; // 발사할 프리팹
     
     private bool isExploding = false; // 폭파 중인지 여부를 나타내는 변수
+    private SpriteBlink spriteBlink; // SpriteBlink 스크립트 참조 변수
 
     void Start()
     {
+        spriteBlink = GetComponent<SpriteBlink>();
+        if (spriteBlink != null)
+            spriteBlink.enabled = false;
         StartCoroutine(CountDelay(explosionTime)); // 일정 시간 후에 폭파하는 코루틴 시작
     }
 
-    void OnCollisionEnter(Collision collision)// 외부와 충돌하면 폭파
+    public void LaserCollision()// 외부와 충돌하면 폭파
     {
-        Debug.Log("asdf");
         if (!isExploding)
         {
             StartCoroutine(ExplodeAfter());
@@ -43,8 +46,10 @@ public class bombDie : MonoBehaviour
         if (!isExploding)
         {
             isExploding = true; // 폭파 중임을 표시     
-            //yield return new WaitForSeconds(0.1f); // 충돌 후 0.1초 대기 후에 폭파
-            //alert 넣기
+            if (spriteBlink != null)
+                spriteBlink.enabled = true;
+            yield return new WaitForSeconds(0.9f); // 충돌 후 0.9초 깜빡인 후
+
             GameObject objInstance = Instantiate(objPrefab, transform.position, Quaternion.identity);
             gameObject.SetActive(false); // 오브젝트 비활성화
         }

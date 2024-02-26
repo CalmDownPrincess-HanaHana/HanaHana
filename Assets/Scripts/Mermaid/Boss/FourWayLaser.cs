@@ -1,39 +1,63 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+public enum LaserDirection { Left, Right, Up, Down }
 
 public class FourWayLaser : MonoBehaviour
 {
-    /// <summary>
-    /// 해당 프리팹을 4방면으로 쏘는 스크립트
-    /// </summary>
-    [SerializeField] private GameObject objPrefab; // 발사할 프리팹
-    [SerializeField] private float force = 40f; // 발사되는 힘
+    public LineRenderer lineRenderer;
+    public float maxDistance = 20f; // 레이저의 최대 길이
+    public LayerMask obstacleMask; // 레이저가 충돌을 검사할 레이어 마스크
+    public LaserDirection laserDirection = LaserDirection.Left; // 레이저의 방향
 
-    void Start()
+    void Update()
     {
-        SpewLaser();
-    }
+        // 현재 게임 오브젝트의 위치를 시작점으로 설정
+        Vector3 startPos = transform.position;
 
-    private void SpewLaser()
-    {
-        Vector3[] directions = { Vector3.up, Vector3.right, Vector3.down, Vector3.left };
-
-        foreach (Vector3 direction in directions)
+        // 선택한 방향으로 레이저 그리기
+        Vector3 direction = Vector3.zero;
+        switch (laserDirection)
         {
-            ShootLaserInDirection(direction);
+            case LaserDirection.Left:
+                direction = -transform.right;
+                break;
+            case LaserDirection.Right:
+                direction = transform.right;
+                break;
+            case LaserDirection.Up:
+                direction = transform.up;
+                break;
+            case LaserDirection.Down:
+                direction = -transform.up;
+                break;
         }
-        Destroy(this.gameObject);
+        DrawLaser(startPos, direction);
     }
 
-    private void ShootLaserInDirection(Vector3 direction)
+    void DrawLaser(Vector3 startPos, Vector3 direction)
     {
-        GameObject objInstance = Instantiate(objPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D objRigidbody = objInstance.GetComponent<Rigidbody2D>();
+        // 레이저 발사 방향으로 레이를 쏴서 충돌 검사
+        RaycastHit2D hit = Physics2D.Raycast(startPos, direction, maxDistance, obstacleMask);
 
-        if (objRigidbody != null)
+        // 레이저의 끝점 설정
+        Vector3 endPos = hit.collider != null ? hit.point : startPos + direction * maxDistance;
+
+        // Line Renderer로 레이저 그리기
+        lineRenderer.SetPosition(0, startPos);
+        lineRenderer.SetPosition(1, endPos);
+
+        // 충돌한 경우 플레이어가 죽는 함수 호출
+        if (hit.collider != null)
         {
-            objRigidbody.AddForce(direction * force, ForceMode2D.Impulse);
+            if (hit.collider.CompareTag("Player"))
+            {
+                hit.collider.GetComponent<Player>().Die(hit.collider.transform.position);
+            }
+            else if (hit.collider.CompareTag("Enemy"))
+            {
+                hit.collider.GetComponent<bombDie>().LaserCollision();
+            }
+            
         }
     }
 }
