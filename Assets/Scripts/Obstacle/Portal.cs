@@ -31,6 +31,17 @@ public class Portal : MonoBehaviour
         Transform parent_trans = fadeOutPanel.gameObject.transform.parent;
         //켜주기
         parent_trans.gameObject.SetActive(true);
+     
+        //씬에 따라 data 갱신
+        if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString())
+        {
+            PlayerPrefs.SetString(Define.Scene.SnowWhite.ToString() + "TrainingStage", "true");
+        }
+        //씬에 따라 data 갱신
+        if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString())
+        {
+            PlayerPrefs.SetString(Define.Scene.MerMaid.ToString() + "TrainingStage", "true");
+        }
     }
 
     private void Update()
@@ -50,5 +61,5 @@ public class Portal : MonoBehaviour
         }
     }
 
-
+    
 }

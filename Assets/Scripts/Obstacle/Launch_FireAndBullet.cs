@@ -80,7 +80,7 @@ public class Launch_FireAndBullet : MonoBehaviour
     {
         //스크립트 가져오기
         player_script = GameObject.FindWithTag("Player").GetComponent<Player>();
-        if (SceneManager.GetActiveScene().name == "SnowBoss4")
+        if (SceneManager.GetActiveScene().name == "SnowBoss4"|| SceneManager.GetActiveScene().name == "SnowBoss4Training")
         {
             boss_script = GameObject.FindWithTag("Boss").GetComponent<SnowBoss4>();
         }
@@ -127,7 +127,7 @@ public class Launch_FireAndBullet : MonoBehaviour
                     //그게 분열되는 애일 때(4_1패턴)
                     if (fires[fires_index].name == "Bullet13")//프리팹 네임 대조함
                     {
-                        cool_time = 1f;//얘의 쿨타임은 1초(1초마다 보스에서 나오는 톱니바퀴 새로생성)
+                        cool_time = 1.5f;//얘의 쿨타임은 1초(1초마다 보스에서 나오는 톱니바퀴 새로생성)
                         //그 프리팹을 클론해줌. 
                         GameObject clone_obj = Instantiate(fires[fires_index], pos.position, transform.rotation) as GameObject;
                         // 클론된 객체에 대해 코루틴 시작
@@ -173,8 +173,8 @@ public class Launch_FireAndBullet : MonoBehaviour
                         //발사쿨타임 1초
                         cool_time = 1f;
                         //랜덤위치에서 불꽃놀이
-                        float x = Random.Range(18f, 24f);
-                        float y = Random.Range(4f, -4f);
+                        float x = Random.Range(20f, 24f);
+                        float y = Random.Range(2f, -2f);
                         //그냥 아무값이나 넣어준거
                         Transform transf = this.transform;
                         //위치초기화: 랜덤값 넣은 위치로

@@ -20,38 +20,35 @@ public class bombDie : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ExplodeAfterDelay(explosionTime)); // 일정 시간 후에 폭파하는 코루틴 시작
+        StartCoroutine(CountDelay(explosionTime)); // 일정 시간 후에 폭파하는 코루틴 시작
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)// 외부와 충돌하면 폭파
     {
-        // 외부와 충돌하면 폭파
+        Debug.Log("asdf");
         if (!isExploding)
         {
-            StartCoroutine(ExplodeAfterCollision());
+            StartCoroutine(ExplodeAfter());
         }
     }
 
-    private IEnumerator ExplodeAfterDelay(float delay)
+    private IEnumerator CountDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); // 지정된 딜레이 후에 폭파
+         yield return new WaitForSeconds(delay); // 지정된 딜레이 후에 폭파
+         StartCoroutine(ExplodeAfter());
+    }
 
+    private IEnumerator ExplodeAfter()
+    {   
         if (!isExploding)
         {
-            StartCoroutine(ShootSprites()); // 스프라이트 발사 코루틴 시작
+            isExploding = true; // 폭파 중임을 표시     
+            //yield return new WaitForSeconds(0.1f); // 충돌 후 0.1초 대기 후에 폭파
+            //alert 넣기
+            GameObject objInstance = Instantiate(objPrefab, transform.position, Quaternion.identity);
             gameObject.SetActive(false); // 오브젝트 비활성화
         }
-    }
-
-    private IEnumerator ExplodeAfterCollision()
-    {
-        yield return new WaitForSeconds(0.1f); // 충돌 후 0.1초 대기 후에 폭파
-
-        if (!isExploding)
-        {
-            StartCoroutine(ShootSprites()); // 스프라이트 발사 코루틴 시작
-            gameObject.SetActive(false); // 오브젝트 비활성화
-        }
+        yield return null;
     }
 
     private IEnumerator ShootSprites()
