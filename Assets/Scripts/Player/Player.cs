@@ -102,7 +102,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        ChangeSprites();
         rigid = GetComponent<Rigidbody2D>();
         sprite_renderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
