@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -16,10 +17,34 @@ public class SceneChange : MonoBehaviour
     private bool isNew = false;
     //이어하기
     public void Change()
-    {        
-        SceneManager.LoadScene("SnowWhite");
+    {
+        
+        if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString())
+        {
+            if (GameObject.Find("popup2ForPC") !=null&& GameObject.Find("popup2ForPC").active == true)
+            {
+                //머메이드에서 이어하기
+                SceneManager.LoadScene(Define.Scene.MerMaid.ToString());
+
+            }
+            else if (GameObject.Find("popup") != null && GameObject.Find("popup").active == true)
+            {
+                //스노우화이트에서 이어하기
+
+                SceneManager.LoadScene(Define.Scene.SnowWhite.ToString());
+                
+
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("SnowWhite");
+        }
+        
         Time.timeScale = 1f; //시간 다시 흐르게
     }
+
+
 
     //새로하기
     public void new_Change()
@@ -34,30 +59,61 @@ public class SceneChange : MonoBehaviour
         //스테이지씬에서 눌렀을 때
         if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString()|| SceneManager.GetActiveScene().name == Define.Scene.SnowBossClear.ToString())
         {
+
+            //스노우화이트씬에서 새로하기 시: Mermaid세이브포인트 / death 살리기
+            float mermaidRespawnX; float mermaidRespawnY; float mermaidRespawnZ;
+            //Mermaid씬에서 새로하기 시: SnowWhite세이브포인트/ death 살리기
+            float snowRespawnX; float snowRespawnY; float snowRespawnZ;
             if (PlayerPrefs.GetString("SnowWhiteClear") == "true")
             {
-                string cloth = PlayerPrefs.GetString("SnowWhiteCloth");
+             
+                //Mermaid클리어정보살리기
+                string mermaidClear=PlayerPrefs.GetString("MermaidClear");
+                //입은 스킨 살리기
+                string cloth = PlayerPrefs.GetString("Cloth");
+                //초기화
                 PlayerPrefs.DeleteAll();
+                //입은 스킨 살리기
+                PlayerPrefs.SetString("Cloth", cloth);
+                //SnowWhite클리어정보 살리기
                 PlayerPrefs.SetString("SnowWhiteClear", "true");
-                PlayerPrefs.SetString("SnowWhiteCloth", cloth);
+                //Mermaid클리어정보 살리기
+                if (mermaidClear== "true")
+                {
+                    PlayerPrefs.SetString("MermaidClear" ,"true");
+                }
+                //패턴연습소 살리기
+                PlayerPrefs.SetString("SnowWhiteTrainingStage", "true");
+                //Mermaid의 세이브포인트 위치 살리기
+                //Mermaid의 death 살리기
             }
             else if (PlayerPrefs.GetString("MermaidClear") == "true")
             {
-                string cloth = PlayerPrefs.GetString("SnowWhiteCloth");
+                
+                //입은스킨정보살리기
+                string cloth = PlayerPrefs.GetString("Cloth");
                 PlayerPrefs.DeleteAll();
+                PlayerPrefs.SetString("Cloth", cloth);
+                //클리어데이터살리기
+                PlayerPrefs.SetString("MermaidClear", "true");
                 PlayerPrefs.SetString("SnowWhiteClear", "true");
-                PlayerPrefs.SetString("SnowWhiteCloth", cloth);
+                //패턴연습소살리기
+                PlayerPrefs.SetString("SnowWhiteTrainingStage", "true");
+                //SnowWhite의 세이브포인트 위치 살리기
+                //SnowWhite의 death 살리기
             }
             else
             {
                 PlayerPrefs.DeleteAll();
             }
+
+
         }
 
 
         isNew = true;
         //SaveLoad.GetComponent<SaveLoad>().SaveBool("New", isNew);
-        SceneManager.LoadScene("SnowWhite");
+        Change();
         Time.timeScale = 1f; //시간 다시 흐르게
     }
 
