@@ -4178,7 +4178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69336afe78a901e4681a667321a7a9a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7433e66e30ac2fa45bf5e1d54e2f33bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64546,7 +64546,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.12156863}
   m_Origin: {x: -17, y: -35, z: 0}
   m_Size: {x: 468, y: 42, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -65128,7 +65128,6 @@ MonoBehaviour:
   isGameover: 0
   death_text: {fileID: 863723362518485672}
   gameoverUI: {fileID: 975671851751258726}
-  finishUI: {fileID: 863723361455188953}
   player: {fileID: 6708784594606413619}
   SaveLoad: {fileID: 7524137907553975095}
   exitPanel: {fileID: 1038451256}
