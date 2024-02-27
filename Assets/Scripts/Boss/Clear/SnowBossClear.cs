@@ -41,11 +41,11 @@ public class SnowBossClear : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //아이템을 얻었는가?
-            string realItem = PlayerPrefs.GetString("RealItem");
+            string realItem = PlayerPrefs.GetString("RealItem"+Define.Scene.SnowWhite.ToString());
             switch (realItem)
             {
                 //얻었으면
-                case "SnowWhite":
+                case "true":
                     if (!giveItemOnce)
                     {
                         audio[0].Play();

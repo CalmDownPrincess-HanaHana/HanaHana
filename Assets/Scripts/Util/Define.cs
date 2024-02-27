@@ -31,7 +31,8 @@ public class Define
         , SnowBossClear,
         EndingScene,
         MerMaid
-        ,
+        , MerMaidBoss,
+        MerMaidBossClear,
         None
     }
 

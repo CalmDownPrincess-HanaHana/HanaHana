@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RealItem : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
-    [SerializeField] private string _realItemName;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class RealItem : MonoBehaviour
         {
             return;
         }
-        PlayerPrefs.SetString("RealItem", _realItemName);
+        PlayerPrefs.SetString("RealItem"+ SceneManager.GetActiveScene().name,"true" );
         _player.GetComponent<Player>().ChangeSprites();
         GameObject.Find("RealItemSound").GetComponent<AudioSource>().Play();
         this.gameObject.SetActive(false);

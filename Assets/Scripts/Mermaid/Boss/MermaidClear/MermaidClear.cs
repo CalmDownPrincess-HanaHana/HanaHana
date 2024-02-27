@@ -9,41 +9,58 @@ public class MermaidClear : MonoBehaviour
     public AudioSource[] audio;
     public GameObject[] texts;
     GameObject player;
+    Player playerScript;
     Animator anim;
     private SceneChange clearData=new SceneChange();
 
     private void Awake()
     {
+
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
+        Debug.Log("playerì´ë¦„: " + player.name);
+        playerScript = player.GetComponent<Player>();
+        Debug.Log("playerScriptì˜ ì£¼ì¸: " + playerScript.gameObject.name);
+        playerScript.ChangeSprites();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            //²£À»¶§
-           /* if (!giveItemOnce)
+            //ê¹¼ì„ë•Œ
+            //ì•„ì´í…œì„ ì–»ì—ˆëŠ”ê°€?
+            string realItem = PlayerPrefs.GetString("RealItem" + Define.Scene.MerMaid.ToString());
+            switch (realItem)
             {
-                
-                audio[0].Play();
-                Invoke("TearSound", 2.2f);
-                Invoke("Cheers", 9f);
-                StartCoroutine(ShowTexts());
-                PlayerPrefs.SetString("MermaidClear", "true");
-                giveItemOnce = true;
-            }*/
-            //¸ø²£À»¶§
-            if (!giveItemOnce)
-            {
-                //´ê¾ÒÀ» ¶§ ¶ì·Õ¼Ò¸®
-                audio[0].Play();
-                giveItemOnce = true;
-                //ÄÚ·çÆ¾È£Ãâ
-                StartCoroutine(NoItem());
+                case "true":
+                    //êº´ì„ë•Œ
+                    if (!giveItemOnce)
+                    {
+
+                        audio[0].Play();
+                        Invoke("TearSound", 2.2f);
+                        Invoke("Cheers", 9f);
+                        StartCoroutine(ShowTexts());
+                        PlayerPrefs.SetString("MermaidClear", "true");
+                        giveItemOnce = true;
+                    }
+
+                    break;
+                default:
+                    //ëª»ê¹¼ì„ë•Œ
+                    if (!giveItemOnce)
+                    {
+                        //ë‹¿ì•˜ì„ ë•Œ ë ë¡±ì†Œë¦¬
+                        audio[0].Play();
+                        giveItemOnce = true;
+                        //ì½”ë£¨í‹´í˜¸ì¶œ
+                        StartCoroutine(NoItem());
+                    }
+
+                    break;
             }
         }
-
-
     }
     private void TearSound()
     {
@@ -79,22 +96,7 @@ public class MermaidClear : MonoBehaviour
         Destroy(GetComponent<MovingController>());
         GetComponent<MovingController>().enabled = false;
         HitPlayer();
-  /*      yield return new WaitForSeconds(2.1f);
-        ThrowPlayer();
-        ThrowedPlayer();
-        yield return new WaitForSeconds(0.2f);
-        anim.SetBool("idle", true);
-        yield return new WaitForSeconds(3f);
-        texts[2].SetActive(true);
-        yield return new WaitForSeconds(3f);
-        texts[2].SetActive(false);
-        texts[3].SetActive(true);
-        yield return new WaitForSeconds(2f);
-        texts[3].SetActive(false);
-        GameObject.Find("FadePrefab").GetComponent<FadeInOut>().StartFade = true;
-        yield return new WaitForSeconds(3f);
-        clearData.new_Change();
-        SceneManager.LoadScene(Define.Scene.SnowWhite.ToString());*/
+        
         yield return null;
     }
 

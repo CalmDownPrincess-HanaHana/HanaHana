@@ -101,10 +101,10 @@ public class Player : MonoBehaviour
 
 
     private void Awake()
-    {
+    {        
+        anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         sprite_renderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
         //스피드 고정하려고 여기서 정의
         max_speed = 5;
         player_state = new PlayerState();
@@ -737,59 +737,72 @@ public class Player : MonoBehaviour
                 break;
         }
         //아이템얻었을경우
-        string realItem = PlayerPrefs.GetString("RealItem");
-        switch (realItem)
+        string SnowrealItem = PlayerPrefs.GetString("RealItem"+Define.Scene.SnowWhite.ToString());
+        string MermaidrealItem = PlayerPrefs.GetString("RealItem"+Define.Scene.MerMaid.ToString());
+        //백설아이템일 경우 백설관련 씬에서만 배낭 맨 모습 보이도록
+        if (SnowrealItem == "true")
         {
-            //백설씬 아이템은 백설씬에서만 배낭으로 바뀌도록
-            case "SnowWhite":
-                if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString()|| SceneManager.GetActiveScene().name == "SnowBoss1" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBossClear")
+            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString() || SceneManager.GetActiveScene().name == "SnowBoss1" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBossClear")
+            {
+                if (changeClothes == "Basic")
                 {
-                    if (changeClothes == "Basic")
-                    {
-                        anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_RealItem_SnowWhite",
-                            typeof(RuntimeAnimatorController)));
-                    }
-                    //백설스킨일경우 배낭스킨
-                    if (changeClothes == "SnowWhite")
-                    {
-                        anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/SnowSkinPlayer_RealItem",
-                            typeof(RuntimeAnimatorController)));
-                    }
-                    //인어스킨일경우 배낭스킨
-                    if (changeClothes == "Mermaid")
-                    {
-                        anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/MermaidSkinPlayer_RealItem",
-                            typeof(RuntimeAnimatorController)));
-                    }
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_RealItem_SnowWhite",
+                        typeof(RuntimeAnimatorController)));
                 }
-
-               
-                break;
-            case "Mermaid":
-                if (SceneManager.GetActiveScene().name == "MerMaid" || SceneManager.GetActiveScene().name == "MerMaidBoss" || SceneManager.GetActiveScene().name == "MerMaidBossClear")
+                //백설스킨일경우 배낭스킨
+                else if (changeClothes == "SnowWhite")
                 {
-                    if (changeClothes == "Basic")
-                    {
-                        anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_RealItem_SnowWhite",
-                            typeof(RuntimeAnimatorController)));
-                    }
-                    //백설스킨일경우 배낭스킨
-                    if (changeClothes == "SnowWhite")
-                    {
-                        anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/SnowSkinPlayer_RealItem",
-                            typeof(RuntimeAnimatorController)));
-                    }
-                    //인어스킨일경우 배낭스킨
-                    if (changeClothes == "Mermaid")
-                    {
-                        anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/MermaidSkinPlayer_RealItem",
-                            typeof(RuntimeAnimatorController)));
-                    }
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/SnowSkinPlayer_RealItem",
+                        typeof(RuntimeAnimatorController)));
                 }
+                //인어스킨일경우 배낭스킨
+                else if (changeClothes == "Mermaid")
+                {
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/MermaidSkinPlayer_RealItem",
+                        typeof(RuntimeAnimatorController)));
+                }
+                //선택 안 했을경우: 기본스킨
+                else
+                {
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_RealItem_SnowWhite",
+                        typeof(RuntimeAnimatorController)));
 
-
-                break;
+                }
+            }
         }
+        //Mermaid아이템일 경우 : 인어 관련 씬에서만 배낭 맨 모습 보이도록
+        if (MermaidrealItem == "true")
+        {
+            if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString() || SceneManager.GetActiveScene().name == Define.Scene.MerMaidBoss.ToString() || SceneManager.GetActiveScene().name == Define.Scene.MerMaidBossClear.ToString())
+            {
+                if (changeClothes == "Basic")
+                {
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_RealItem_SnowWhite",
+                        typeof(RuntimeAnimatorController)));
+                }
+                //백설스킨일경우 배낭스킨
+                else if (changeClothes == "SnowWhite")
+                {
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/SnowSkinPlayer_RealItem",
+                        typeof(RuntimeAnimatorController)));
+                }
+                //인어스킨일경우 배낭스킨
+                else if(changeClothes == "Mermaid")
+                {
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/MermaidSkinPlayer_RealItem",
+                        typeof(RuntimeAnimatorController)));
+                }
+                //선택 안 했을경우: 기본스킨
+                else
+                {
+                    anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_RealItem_SnowWhite",
+                        typeof(RuntimeAnimatorController)));
+
+                }
+            }
+
+        }
+
     }
 }
 
