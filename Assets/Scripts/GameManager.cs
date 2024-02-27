@@ -84,11 +84,22 @@ public class GameManager : MonoBehaviour
             isGameover = true;
             //죽은 횟수를 증가
 
-            death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
+            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString())
+            {
+                death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
 
-            SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
-            death_text.text = "Death : " + death_count++;
-            StartCoroutine(OnPlayerFinish());
+                SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
+                death_text.text = "Death : " + death_count++;
+            }
+            else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString()) {
+                death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death") + 1;
+
+                SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("mermaid_death", death_count);
+                death_text.text = "Death : " + death_count++;
+            }
+
+
+                StartCoroutine(OnPlayerFinish());
         }
     }
 

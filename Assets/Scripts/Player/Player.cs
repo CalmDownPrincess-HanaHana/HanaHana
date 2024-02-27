@@ -508,9 +508,15 @@ public class Player : MonoBehaviour
         //소연코드
         if (collision.gameObject.CompareTag("Flag"))
         {
+            Debug.Log("안됨"); // flagPosition을 문자열로 변환하여 출력
             //리스폰 위치를 해당 Flag 위치로 재설정
             Vector3 flagPosition = collision.gameObject.transform.position;
             SaveLoad.GetComponent<SaveLoad>().SaveRespawn("respawn", flagPosition);
+        }
+        else if (collision.gameObject.CompareTag("FlagMermaid"))
+        {
+            Vector3 flagPosition = collision.gameObject.transform.position;
+            SaveLoad.GetComponent<SaveLoad>().SaveRespawn("mermaid_respawn", flagPosition);
         }
         else if (collision.gameObject.CompareTag("Item"))//없어도되는코드..?
         {
