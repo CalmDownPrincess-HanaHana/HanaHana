@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SnowWhite.unity
     guid: 52305d5369bd537479c5d8076e030b5a
   - enabled: 1
+    path: Assets/Scenes/MerMaid.unity
+    guid: 2819f416b7e40254290d1d67e828a958
+  - enabled: 1
     path: Assets/Scenes/ClosetScene.unity
     guid: a950fb917387ffa46809b94fe7f8a683
   - enabled: 1
