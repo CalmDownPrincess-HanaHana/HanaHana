@@ -16,7 +16,7 @@ public class ParentObstacleController : MonoBehaviour
 
     protected GameObject player;
 
-    IEnumerator WaitforGivenTime()
+     IEnumerator WaitforGivenTime()
     {
         yield return new WaitForSeconds(waitingTime);//★waiting time설정한 만큼 기다리고
         StartCoroutine(Activate());
