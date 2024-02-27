@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3780771636089586218}
   - component: {fileID: -4744000973290335149}
   - component: {fileID: -7328217581652252981}
+  - component: {fileID: 5784499198642480704}
   m_Layer: 0
   m_Name: RealSavePoint
   m_TagString: Flag
@@ -350,3 +351,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSprite: {fileID: 452294154, guid: d14932290aa7dea48b2306b9aacef540, type: 3}
+--- !u!114 &5784499198642480704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780771636089586262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02e09f13f3ddb2468e616ef5d597795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomPos: 0.5
