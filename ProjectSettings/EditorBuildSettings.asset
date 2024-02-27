@@ -86,7 +86,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossTrainingScene.unity
     guid: 0e8d624a17245884394fcd91b20be6fc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MerMaidBoss.unity
     guid: b8a664ee435e8674d83ff33c4c51fc5e
+  - enabled: 1
+    path: Assets/Scenes/MerMaidBossClear.unity
+    guid: 9d89e861d4a4f534383d172f61e19b3e
   m_configObjects: {}
