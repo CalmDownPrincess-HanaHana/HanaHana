@@ -18,7 +18,6 @@ public class SceneChange : MonoBehaviour
     //이어하기
     public void Change()
     {
-        
         if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString())
         {
             if (GameObject.Find("popup2ForPC") !=null&& GameObject.Find("popup2ForPC").active == true)
@@ -32,13 +31,7 @@ public class SceneChange : MonoBehaviour
                 //스노우화이트에서 이어하기
 
                 SceneManager.LoadScene(Define.Scene.SnowWhite.ToString());
-                
-
             }
-        }
-        else
-        {
-            SceneManager.LoadScene("SnowWhite");
         }
         
         Time.timeScale = 1f; //시간 다시 흐르게
@@ -56,64 +49,29 @@ public class SceneChange : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
-        //스테이지씬에서 눌렀을 때
-        if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString()|| SceneManager.GetActiveScene().name == Define.Scene.SnowBossClear.ToString())
+
+        //스테이지씬에서 인어공주 새로시작 || MerMaidBossClear씬에서 태초로 돌아감
+        if ((GameObject.Find("popup2ForPC") != null && GameObject.Find("popup2ForPC").active == true)||SceneManager.GetActiveScene().name==Define.Scene.MerMaidBossClear.ToString())
         {
-
-            //스노우화이트씬에서 새로하기 시: Mermaid세이브포인트 / death 살리기
-            float mermaidRespawnX; float mermaidRespawnY; float mermaidRespawnZ;
-            //Mermaid씬에서 새로하기 시: SnowWhite세이브포인트/ death 살리기
-            float snowRespawnX; float snowRespawnY; float snowRespawnZ;
-            if (PlayerPrefs.GetString("SnowWhiteClear") == "true")
-            {
-             
-                //Mermaid클리어정보살리기
-                string mermaidClear=PlayerPrefs.GetString("MermaidClear");
-                //입은 스킨 살리기
-                string cloth = PlayerPrefs.GetString("Cloth");
-                //초기화
-                PlayerPrefs.DeleteAll();
-                //입은 스킨 살리기
-                PlayerPrefs.SetString("Cloth", cloth);
-                //SnowWhite클리어정보 살리기
-                PlayerPrefs.SetString("SnowWhiteClear", "true");
-                //Mermaid클리어정보 살리기
-                if (mermaidClear== "true")
-                {
-                    PlayerPrefs.SetString("MermaidClear" ,"true");
-                }
-                //패턴연습소 살리기
-                PlayerPrefs.SetString("SnowWhiteTrainingStage", "true");
-                //Mermaid의 세이브포인트 위치 살리기
-                //Mermaid의 death 살리기
-            }
-            else if (PlayerPrefs.GetString("MermaidClear") == "true")
-            {
-                
-                //입은스킨정보살리기
-                string cloth = PlayerPrefs.GetString("Cloth");
-                PlayerPrefs.DeleteAll();
-                PlayerPrefs.SetString("Cloth", cloth);
-                //클리어데이터살리기
-                PlayerPrefs.SetString("MermaidClear", "true");
-                PlayerPrefs.SetString("SnowWhiteClear", "true");
-                //패턴연습소살리기
-                PlayerPrefs.SetString("SnowWhiteTrainingStage", "true");
-                //SnowWhite의 세이브포인트 위치 살리기
-                //SnowWhite의 death 살리기
-            }
-            else
-            {
-                PlayerPrefs.DeleteAll();
-            }
-
-
+            //인어공주의 세이브포인트, death, RealItem정보 지우기
+            PlayerPrefs.DeleteKey("RealItem" + Define.Scene.MerMaid.ToString());
+            //인어공주의 세이브포인트 지우기
+            //인어공주의 death지우기
+        }
+        //스테이지씬에서 백설공주 새로시작 || SnowBossClear씬에서 태초로 돌아감
+        if ((GameObject.Find("popup") != null && GameObject.Find("popup").active == true) || SceneManager.GetActiveScene().name == Define.Scene.SnowBossClear.ToString())
+        {
+            //백설공주의 세이브포인트, death, RealItem정보 지우기
+            PlayerPrefs.DeleteKey("RealItem"+Define.Scene.SnowWhite.ToString());
+            //백설공주의 세이브포인트 지우기
+            //백설공주의 death지우기
+        }
+        //스테이지씬이면 씬 이동
+        if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString())
+        {
+            Change();
         }
 
-
-        isNew = true;
-        //SaveLoad.GetComponent<SaveLoad>().SaveBool("New", isNew);
-        Change();
         Time.timeScale = 1f; //시간 다시 흐르게
     }
 

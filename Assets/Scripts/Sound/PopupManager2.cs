@@ -6,9 +6,11 @@ public class PopupManager2 : MonoBehaviour
     public GameObject popup2; // 팝업창 게임 오브젝트
 
     private void Start()
-    {
+    {   
+        
         // 팝업창 초기화
         popup2.SetActive(false);
+        
     }
 
     // 팝업창 활성화

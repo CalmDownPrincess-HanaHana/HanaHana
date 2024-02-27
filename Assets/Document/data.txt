@@ -1,7 +1,8 @@
 ~~하드웨어 데이터에 대한 설명쓰기~~
 이름	자료형	설명
 death	int 	죽은 횟수
-RealItem	string	어느 맵에서 진짜아이템 먹었는지 알려줌(튜토리얼-TutorialFakeItem, 스노우화이트 진짜아이템- SnowWhite)
+RealItemSnowWhite	string	진짜아이템 먹었는지 알려줌(true=진짜아이템먹음)
+RealItemMermaid		string	진짜아이템 먹었는지 알려줌(true=진짜아이템먹음)
 Cloth	string	어떤 스킨 꼈는지에대한 정보(SnowWhite, Mermaid, Basic)
 SnowWhiteClear	string	백설공주맵 깼는지에 대한 정보(true-깸, false-못깸)
 MermaidClear	string	인어공주맵 깼는지에 대한 정보. (true-깸, false- 못깸)
