@@ -104,6 +104,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("SnowWhite");
         }
+        else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaidBoss.ToString())
+        {
+            SceneManager.LoadScene(Define.Scene.MerMaid.ToString());
+        }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
