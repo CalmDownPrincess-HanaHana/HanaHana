@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4744000973290335149}
   - component: {fileID: -7328217581652252981}
   - component: {fileID: 5784499198642480704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MermaidFlag
   m_TagString: FlagMermaid
   m_Icon: {fileID: 0}

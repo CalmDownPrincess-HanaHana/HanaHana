@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7339584512526279130}
   - component: {fileID: 7714856238823079311}
   - component: {fileID: 8515628618849853618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: a_SavePoint
   m_TagString: Flag
   m_Icon: {fileID: 0}
