@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1191219926147156043}
   - component: {fileID: 1623893005557747228}
   - component: {fileID: 7339584512526279130}
-  - component: {fileID: 8515628618849853618}
   - component: {fileID: 7714856238823079311}
+  - component: {fileID: 8515628618849853618}
   m_Layer: 0
-  m_Name: SnowSavePoint
+  m_Name: a_SavePoint
   m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,6 +285,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundSource: {fileID: 1623893005557747228}
   collisionSound: {fileID: 8300000, guid: 4811c22f558c5f1478f7a6fad6fafb06, type: 3}
+--- !u!114 &7714856238823079311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354768504630104422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e672cfac6a980544a722551d6ecc39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newSprite: {fileID: 452294154, guid: d14932290aa7dea48b2306b9aacef540, type: 3}
 --- !u!212 &8515628618849853618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -337,16 +350,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7714856238823079311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8354768504630104422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e672cfac6a980544a722551d6ecc39f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newSprite: {fileID: 452294154, guid: d14932290aa7dea48b2306b9aacef540, type: 3}

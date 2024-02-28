@@ -80092,7 +80092,7 @@ MonoBehaviour:
   audioSources:
   - {fileID: 6708784594606413621}
   - {fileID: 6708784594606413618}
-  invincibility: 0
+  invincibility: 1
   is_jump: 0
   jump_power: 16
   player_state: 0
