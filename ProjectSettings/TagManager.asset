@@ -22,6 +22,7 @@ TagManager:
   - Slope
   - Alert
   - Water
+  - FlagMermaid
   layers:
   - Default
   - TransparentFX
