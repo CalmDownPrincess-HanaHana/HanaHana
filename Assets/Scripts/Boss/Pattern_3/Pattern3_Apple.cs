@@ -16,7 +16,7 @@ public class Pattern3_Apple : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = newDir * _speed;
-        Destroy(gameObject, 6f);
+        Destroy(gameObject, 15f);
         _audioSource = gameObject.GetComponent<AudioSource>();
     }
 
