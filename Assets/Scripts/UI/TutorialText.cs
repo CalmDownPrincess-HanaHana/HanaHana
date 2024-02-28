@@ -14,6 +14,7 @@ public class TutorialText : MonoBehaviour
     public GameObject Button;
     public GameObject Camera;
     private GameObject player;
+    public GameObject exitPanel;
     private Player playerScript;
     public bool isSummaryOver=false;
     private bool isOnce=false;
@@ -76,7 +77,7 @@ public class TutorialText : MonoBehaviour
     }
 
     void Update(){
-    if(!isOnce&&isSummaryOver){
+        if(!isOnce&&isSummaryOver){
             StartCoroutine(StartTutoText());
         }
     }
