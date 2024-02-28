@@ -15,7 +15,10 @@ public class CircleScaler : MonoBehaviour
     public Vector3 minScale = new Vector3(3f, 3f, 0);
     public float maxDuration = 4f;
     public float minDuration = 3f;
-    private Vector3 maxPosition = new Vector3(7,1f,0);
+
+    public float maxPositionY = 1f;
+
+    protected Vector3 maxPosition;
     private Vector3 minPosition = new Vector3(-7, -3, 0);
     private bool isPatternEnd = true;
     private bool isGameOver = false;
@@ -28,6 +31,7 @@ public class CircleScaler : MonoBehaviour
 
     private void Start()
     {
+        maxPosition = new Vector3(7,maxPositionY,0);
         // 화면 크기에 맞게 min, max 값 조정
         float xScreenHalfSize = _mainCamera.orthographicSize * _mainCamera.aspect;
         float yScreenHalfSize = _mainCamera.orthographicSize;

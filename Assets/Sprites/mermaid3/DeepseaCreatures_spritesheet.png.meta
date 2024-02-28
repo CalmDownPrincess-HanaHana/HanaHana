@@ -152,7 +152,17 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 7, y: 18}
+        - {x: -6, y: 18}
+        - {x: -17, y: 9}
+        - {x: -17, y: -10}
+        - {x: -10, y: -14}
+        - {x: 11, y: -14}
+        - {x: 17, y: -11}
+        - {x: 18, y: -7}
+        - {x: 18, y: 9}
+        - {x: 16, y: 13}
       tessellationDetail: 0
       bones: []
       spriteID: c262779e75dd5f24cbf630279889dda4
@@ -1142,7 +1152,15 @@ TextureImporter:
         - {x: 13, y: -2}
         - {x: 14, y: 2}
         - {x: 7, y: 6}
-      physicsShape: []
+      physicsShape:
+      - - {x: -11, y: 2}
+        - {x: -14, y: 6}
+        - {x: -14, y: -2}
+        - {x: -5, y: -5}
+        - {x: 5, y: -5}
+        - {x: 15, y: -1}
+        - {x: 13, y: 5}
+        - {x: 3, y: 9}
       tessellationDetail: 0
       bones: []
       spriteID: 7d5d13eeb6d51f04a950d0f57698357d
@@ -1176,7 +1194,15 @@ TextureImporter:
         - {x: 13, y: -1}
         - {x: 12, y: 3}
         - {x: 3, y: 9}
-      physicsShape: []
+      physicsShape:
+      - - {x: -11, y: 2}
+        - {x: -14, y: 6}
+        - {x: -14, y: -2}
+        - {x: -5, y: -5}
+        - {x: 5, y: -5}
+        - {x: 15, y: -1}
+        - {x: 13, y: 5}
+        - {x: 3, y: 9}
       tessellationDetail: 0
       bones: []
       spriteID: 4021e971fed9f734791d7881c29f6cfc
@@ -1571,8 +1597,8 @@ TextureImporter:
       DeepseaCreatures_spritesheet_15: 152582065
       DeepseaCreatures_spritesheet_17: 1297372585
       DeepseaCreatures_spritesheet_16: 1319186173
-      DeepseaCreatures_spritesheet_19: -1912252819
       DeepseaCreatures_spritesheet_32: -455208453
+      DeepseaCreatures_spritesheet_19: -1912252819
       DeepseaCreatures_spritesheet_46: -1224866213
       DeepseaCreatures_spritesheet_6: 1589020921
       DeepseaCreatures_spritesheet_4: -403012123
