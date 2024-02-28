@@ -18,10 +18,12 @@ public class TutorialText : MonoBehaviour
     private Player playerScript;
     public bool isSummaryOver=false;
     private bool isOnce=false;
+    private Transform skipButton;
 
     void Start()
     {
         int tutorial_flag = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("tutorial");
+        skipButton = transform.Find("ButtonSkipCanvas");//튜토리얼 스킵버튼
 
         if (tutorial_flag == 1 || tutorial_flag == 3 || tutorial_flag == 4)
         {
@@ -29,6 +31,7 @@ public class TutorialText : MonoBehaviour
         }
         else if (tutorial_flag == 0)
         {
+
             player = GameObject.FindWithTag("Player");
             if (player != null)
             {
@@ -70,6 +73,14 @@ public class TutorialText : MonoBehaviour
         Button.SetActive(true);
     }
 
+    public void TutoSkip() //스킵 버튼 누룰 시, 맵 훑는 거 멈춤
+    {
+        Camera.GetComponent<CameraZoomInOut>().enabled = false;
+        Camera.GetComponent<MovingController>().enabled = false;
+        Camera.GetComponent<CameraController>().enabled = true;
+        isSummaryOver = true;
+
+    }
     IEnumerator DestroyAfterDelay()
     {
         yield return null;
@@ -88,6 +99,7 @@ public class TutorialText : MonoBehaviour
         isOnce = true;
         yield return new WaitForSeconds(1.5f);
         Time.timeScale = 0;
+        skipButton.gameObject.SetActive(false);
         Button.SetActive(true);
         playerScript.enabled = true;
         playerScript.Invincibility = false;
@@ -119,6 +131,8 @@ public class TutorialText : MonoBehaviour
         Destroy(prologue3.gameObject);
 
         yield return new WaitForSeconds(1.5f);
+        skipButton.gameObject.SetActive(true);
+
         Camera.GetComponent<CameraZoomInOut>().enabled = true;
         Camera.GetComponent<MovingController>().enabled = true;
         Camera.GetComponent<CameraController>().enabled = false;

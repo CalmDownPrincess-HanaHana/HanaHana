@@ -55,16 +55,20 @@ public class SceneChange : MonoBehaviour
         {
             //인어공주의 세이브포인트, death, RealItem정보 지우기
             PlayerPrefs.DeleteKey("RealItem" + Define.Scene.MerMaid.ToString());
-            //인어공주의 세이브포인트 지우기
-            //인어공주의 death지우기
+            PlayerPrefs.DeleteKey("mermaid_respawnX");
+            PlayerPrefs.DeleteKey("mermaid_respawnY");
+            PlayerPrefs.DeleteKey("mermaid_respawnZ");
+            PlayerPrefs.DeleteKey("mermaid_death");
         }
         //스테이지씬에서 백설공주 새로시작 || SnowBossClear씬에서 태초로 돌아감
         if ((GameObject.Find("popup") != null && GameObject.Find("popup").active == true) || SceneManager.GetActiveScene().name == Define.Scene.SnowBossClear.ToString())
         {
             //백설공주의 세이브포인트, death, RealItem정보 지우기
             PlayerPrefs.DeleteKey("RealItem"+Define.Scene.SnowWhite.ToString());
-            //백설공주의 세이브포인트 지우기
-            //백설공주의 death지우기
+            PlayerPrefs.DeleteKey("respawnX");
+            PlayerPrefs.DeleteKey("respawnY");
+            PlayerPrefs.DeleteKey("respawnZ");
+            PlayerPrefs.DeleteKey("death");
         }
         //스테이지씬이면 씬 이동
         if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString())

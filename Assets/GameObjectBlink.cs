@@ -26,7 +26,6 @@ public class GameObjectBlink : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("asdf");
             // 생김
             foreach (Transform child in children)
             {
