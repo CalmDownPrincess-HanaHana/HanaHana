@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     float rightButtonEnd = Screen.width * 0.4167f;
     float leftButtonEnd = Screen.width * 0.2083f;
     float jumpButtonEnd = Screen.width;
-     bool touchRightButton = false;
-     bool touchLeftButton = false;
+    bool touchRightButton = false;
+    bool touchLeftButton = false;
 
     public float RightButtonEnd
     {
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     private bool ignoreJump = false;
     //초기세팅 사운드 값
     float settingSoundValue;
-    
+
     /// <summary>
     /// 유진 외 정의한 변수
     /// </summary>
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
     public int isMoss = 0;
     //서현 변수: 입력무시용 변수
     public bool movable = true;
-    public bool isWater=false;
+    public bool isWater = false;
 
     //캡슐화
     public float Horizontal
@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
 
 
     private void Awake()
-    {        
+    {
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         sprite_renderer = GetComponent<SpriteRenderer>();
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
         //중력스케일 처리
         GravityProcess();
 
-        
+
     }
 
     private void GravityProcess()
@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
         if (rigid.velocity.normalized.y <= -JUMP_CRITERIA || rigid.velocity.normalized.y >= JUMP_CRITERIA)
         {
             //보스맵4아닐때
-            if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString()&&SceneManager.GetActiveScene().name!= "SnowBoss4Training")
+            if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString() && SceneManager.GetActiveScene().name != "SnowBoss4Training")
             {
                 //애니메이션 켜주고
                 anim.SetBool("isJump", true);
@@ -441,7 +441,7 @@ public class Player : MonoBehaviour
         //적이면
         if (collision.gameObject.CompareTag("Enemy"))
         {
-           
+
             //주금
             Die(collision.transform.position);
         }
@@ -460,7 +460,7 @@ public class Player : MonoBehaviour
                 if (SceneManager.GetActiveScene().name != Define.Scene.SnowBoss4.ToString())
                 {
                     //x에 방향성이 있으면 걷기상태로 전환
-                    if (horizontal != 0 || touchLeftButton||touchRightButton)
+                    if (horizontal != 0 || touchLeftButton || touchRightButton)
                     {
                         anim.SetBool("isJump", false);
                         anim.SetBool("isWalk", true);
@@ -511,6 +511,11 @@ public class Player : MonoBehaviour
             //리스폰 위치를 해당 Flag 위치로 재설정
             Vector3 flagPosition = collision.gameObject.transform.position;
             SaveLoad.GetComponent<SaveLoad>().SaveRespawn("respawn", flagPosition);
+        }
+        else if (collision.gameObject.CompareTag("FlagMermaid"))
+        {
+            Vector3 flagPosition = collision.gameObject.transform.position;
+            SaveLoad.GetComponent<SaveLoad>().SaveRespawn("mermaid_respawn", flagPosition);
         }
         else if (collision.gameObject.CompareTag("Item"))//없어도되는코드..?
         {
@@ -597,7 +602,7 @@ public class Player : MonoBehaviour
         //레이어변경
         this.gameObject.layer = 7;
         //리액션
-        if(SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString()||isWater || SceneManager.GetActiveScene().name == "SnowBoss4Training")
+        if (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString() || isWater || SceneManager.GetActiveScene().name == "SnowBoss4Training")
         {
             //터져죽기
             anim.SetBool("isBrokenDie", true);
@@ -614,7 +619,7 @@ public class Player : MonoBehaviour
                 rigid.AddForce(new Vector2(dirc, 1) * 7, ForceMode2D.Impulse);
             }
         }
-        
+
     }
 
     //화면밖으로 나감: 죽음
@@ -637,7 +642,7 @@ public class Player : MonoBehaviour
             //이 게임 오브젝트 꺼줌
             this.gameObject.SetActive(false);
         }
-        
+
     }
 
     //서현 코드
@@ -653,16 +658,16 @@ public class Player : MonoBehaviour
     private void SnowBoss4()
     {
         //보스맵4에서는 날아가는 애니메이션으로 
-        if (!anim.GetBool("isFly") && (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString()||SceneManager.GetActiveScene().name== "SnowBoss4Training"))
+        if (!anim.GetBool("isFly") && (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString() || SceneManager.GetActiveScene().name == "SnowBoss4Training"))
         {
             //애니메이션: 계속 날아가는거로.
             anim.SetBool("isFly", true);
         }
-        
+
         //무한점프
         if (SceneManager.GetActiveScene().name == Define.Scene.SnowBoss4.ToString() || SceneManager.GetActiveScene().name == "SnowBoss4Training")
         {
-            InfiniteJump();   
+            InfiniteJump();
         }
 
     }
@@ -688,7 +693,7 @@ public class Player : MonoBehaviour
     }
     private void Swim()
     {
-        if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString()||SceneManager.GetActiveScene().name=="HyunminMermaid3"|| SceneManager.GetActiveScene().name == "MerMaid_YUJIN"||SceneManager.GetActiveScene().name == "MerMaid_Soyeono" || SceneManager.GetActiveScene().name == "MerMaidBoss" || SceneManager.GetActiveScene().name == "YujinBoss" || SceneManager.GetActiveScene().name == "MerMaidBoss_Soyeon"||SceneManager.GetActiveScene().name== "MerMaidBossClear")
+        if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString() || SceneManager.GetActiveScene().name == "HyunminMermaid3" || SceneManager.GetActiveScene().name == "MerMaid_YUJIN" || SceneManager.GetActiveScene().name == "MerMaid_Soyeono" || SceneManager.GetActiveScene().name == "MerMaidBoss" || SceneManager.GetActiveScene().name == "YujinBoss" || SceneManager.GetActiveScene().name == "MerMaidBoss_Soyeon" || SceneManager.GetActiveScene().name == "MerMaidBossClear")
         {
             if (isWater)
             {
@@ -706,7 +711,7 @@ public class Player : MonoBehaviour
     /// 진짜 아이템 먹으면 애니메이션 컨트롤러 바꿔주기
     /// </summary>
     public void ChangeSprites()
-    {       
+    {
         //스킨선택따라 갈아입기
         string changeClothes = PlayerPrefs.GetString("Cloth");
         switch (changeClothes)
@@ -722,7 +727,7 @@ public class Player : MonoBehaviour
                 anim.runtimeAnimatorController =
                     (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/Player_Default",
                         typeof(RuntimeAnimatorController)));
-                break;   
+                break;
             case "Mermaid":
                 //인어 스킨
                 anim.runtimeAnimatorController =
@@ -737,8 +742,8 @@ public class Player : MonoBehaviour
                 break;
         }
         //아이템얻었을경우
-        string SnowrealItem = PlayerPrefs.GetString("RealItem"+Define.Scene.SnowWhite.ToString());
-        string MermaidrealItem = PlayerPrefs.GetString("RealItem"+Define.Scene.MerMaid.ToString());
+        string SnowrealItem = PlayerPrefs.GetString("RealItem" + Define.Scene.SnowWhite.ToString());
+        string MermaidrealItem = PlayerPrefs.GetString("RealItem" + Define.Scene.MerMaid.ToString());
         //백설아이템일 경우 백설관련 씬에서만 배낭 맨 모습 보이도록
         if (SnowrealItem == "true")
         {
@@ -787,7 +792,7 @@ public class Player : MonoBehaviour
                         typeof(RuntimeAnimatorController)));
                 }
                 //인어스킨일경우 배낭스킨
-                else if(changeClothes == "Mermaid")
+                else if (changeClothes == "Mermaid")
                 {
                     anim.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Anim/MermaidSkinPlayer_RealItem",
                         typeof(RuntimeAnimatorController)));

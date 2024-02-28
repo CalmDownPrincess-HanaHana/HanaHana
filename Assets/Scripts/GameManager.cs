@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         //리스폰 위치로 플레이어 위치를 reset함.
         //보스씬들은 리스폰위치에서 태어나면x
-        
+
         if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString())
         {
             if (SaveLoad.GetComponent<SaveLoad>().LoadRespawn("respawn") != Vector3.zero)
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
                 player.transform.position = SaveLoad.GetComponent<SaveLoad>().LoadRespawn("mermaid_respawn");
             }
         }
-        
+
         player.GetComponent<Player>().ChangeSprites();
     }
 
@@ -84,15 +84,28 @@ public class GameManager : MonoBehaviour
             isGameover = true;
             //죽은 횟수를 증가
 
-            death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
+            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString())
+            {
+                death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
 
-            SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
-            death_text.text = "Death : " + death_count++;
+                SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
+                death_text.text = "Death : " + death_count++;
+            }
+            else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString())
+            {
+                death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death") + 1;
+
+                SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("mermaid_death", death_count);
+                death_text.text = "Death : " + death_count++;
+            }
+
+
             StartCoroutine(OnPlayerFinish());
         }
     }
 
-    IEnumerator OnPlayerFinish() {
+    IEnumerator OnPlayerFinish()
+    {
         yield return new WaitForSeconds(0.5f);
         gameoverUI.SetActive(true);
     }
