@@ -16,6 +16,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private Image fadeOutPanel;
     //포탈 타면 넘어가는 씬 이름
     [SerializeField] private string _nextScene;
+    public GameObject trainingStageUI;
     //페이드아웃 bool 변수
     private bool fade_out = false;
     //타이머
@@ -23,6 +24,7 @@ public class Portal : MonoBehaviour
     //트리거 처리되면
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         //플레이어에만 반응하게
         if (!other.CompareTag("Player")) return;
         //페이드아웃 켜지고
@@ -41,6 +43,13 @@ public class Portal : MonoBehaviour
         if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString())
         {
             PlayerPrefs.SetString(Define.Scene.MerMaid.ToString() + "TrainingStage", "true");
+        }
+        //포탈 탄 횟수 갱신
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "Portal", PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Portal",0)+1);
+        //만약 처음 포탈 타는거면, 트레이닝 스테이지 열린 것 알려주기. (일단은 스노우화이트에서만.)
+        if (PlayerPrefs.GetInt("SnowWhitePortal")==1&&SceneManager.GetActiveScene().name==Define.Scene.SnowWhite.ToString())//우선 스노우화이트 연습씬만 있기때문에 여기서만 알려줌
+        {
+            trainingStageUI.SetActive(true);
         }
     }
 

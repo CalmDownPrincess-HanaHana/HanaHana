@@ -10,3 +10,4 @@ respawnX	float	플래그위치x좌표
 respawnY	float	플래그위치y좌표
 respawnZ	float	플래그위치z좌표
 씬네임+"TrainingStage"	string	포탈에 닿으면 트레이닝 스테이지가 열림. true :열림, "": 안열림.
+씬네임+Portal	int	포탈 탄 횟수 알려줌. 1일때만 트레이닝 스테이지 열렸다고 알려주기
