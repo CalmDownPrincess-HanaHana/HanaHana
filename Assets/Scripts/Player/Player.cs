@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
     /// 점프력, 속력
     /// 현민. 보스전에서 느리게 움직이게 하기 위해서 public으로 바꿈
     /// </summary>
-    [SerializeField] private float jump_power;
+    public float jump_power;
     public float max_speed;
     //리지드바디
     Rigidbody2D rigid;
