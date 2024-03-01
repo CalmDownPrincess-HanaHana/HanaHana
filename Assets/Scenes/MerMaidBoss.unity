@@ -273,6 +273,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc19d4eb04cdb14daa465d25e789af7, type: 3}
+--- !u!1 &681549809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5700117007022790141, guid: c63b317babc4a0e41b6483b058b683fb, type: 3}
+  m_PrefabInstance: {fileID: 1290982490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &681549812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681549809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &727202507
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +645,14 @@ PrefabInstance:
     - target: {fileID: 4696630511478559270, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696630511478559705, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 826.27985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696630511478559705, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 407.91602
       objectReference: {fileID: 0}
     - target: {fileID: 4833734117289957877, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

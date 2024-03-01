@@ -9,8 +9,8 @@ public class BlowFish : MonoBehaviour
     float timer=0f;
     bool biggerTrigger = false;
     InitiatePrefab initiatePrefab;
-    float[] xPosition= { -5,-3,-1,1,3,5};
-    float[] yPosition= { -3,-1,1,3};
+    float[] xPosition= { -5,0,5};
+    float[] yPosition= { -3,0,3};
     // Start is called before the first frame update
     void Start()
     {
