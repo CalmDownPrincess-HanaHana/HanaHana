@@ -84,14 +84,14 @@ public class GameManager : MonoBehaviour
             isGameover = true;
             //죽은 횟수를 증가
 
-            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString())
+            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString()|| SceneManager.GetActiveScene().name == "SnowBoss4" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss1")
             {
                 death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
 
                 SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
                 death_text.text = "Death : " + death_count++;
             }
-            else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString())
+            else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString()|| SceneManager.GetActiveScene().name == Define.Scene.MerMaidBoss.ToString())
             {
                 death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death") + 1;
 
