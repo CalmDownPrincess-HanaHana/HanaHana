@@ -71,34 +71,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4521687040632870926, guid: f49b5d70dd41c1e43a9d4e1c38cfc49b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f49b5d70dd41c1e43a9d4e1c38cfc49b, type: 3}
 --- !u!1 &6690180829935037667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7280687821572749675, guid: f49b5d70dd41c1e43a9d4e1c38cfc49b, type: 3}
   m_PrefabInstance: {fileID: 4166532223756719496}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1703535327749847726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6690180829935037667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0de60220ce7ff44cbee3138d1257ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMovingFromStart: 1
-  isCol: 0
-  waitingTime: 0
-  colTag: 2
-  value: 0.05
-  obType: 2
-  r: 1
-  g: 1
-  b: 1
 --- !u!82 &6917978422467387603
 AudioSource:
   m_ObjectHideFlags: 0
@@ -195,3 +175,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1703535327749847726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690180829935037667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0de60220ce7ff44cbee3138d1257ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovingFromStart: 1
+  isCol: 0
+  isLoop: 0
+  waitingTime: 0
+  colTag: 2
+  value: 0.05
+  obType: 2
+  r: 1
+  g: 1
+  b: 1

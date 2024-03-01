@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -8440819830742934849}
   - component: {fileID: 2314572039036808921}
   - component: {fileID: -5935539776895143892}
+  - component: {fileID: 2290917850116973796}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Enemy
@@ -183,7 +184,7 @@ MonoBehaviour:
   obType: 7
   obDirection: 7
   gravity_scale: 2
-  isPlatform: 0
+  isMovingPlatform: 0
   isLeftDown: 0
   color: 0
   size: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
   obType: 7
   obDirection: 7
   gravity_scale: 2
-  isPlatform: 0
+  isMovingPlatform: 0
   isLeftDown: 0
   color: 0
   size: 0
@@ -247,7 +248,7 @@ MonoBehaviour:
   obType: 0
   obDirection: 7
   gravity_scale: 4
-  isPlatform: 0
+  isMovingPlatform: 0
   isLeftDown: 0
   color: 0
   size: 0
@@ -279,7 +280,7 @@ MonoBehaviour:
   obType: 13
   obDirection: 0
   gravity_scale: 4
-  isPlatform: 0
+  isMovingPlatform: 0
   isLeftDown: 0
   color: 0
   size: 0
@@ -431,3 +432,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2290917850116973796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271405445499783842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0

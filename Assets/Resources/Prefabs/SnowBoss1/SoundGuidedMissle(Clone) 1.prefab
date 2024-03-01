@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5614922424791265729}
   - component: {fileID: 8556224696938993166}
   - component: {fileID: 1455074282723164152}
+  - component: {fileID: 2291567578738401663}
   m_Layer: 8
   m_Name: SoundGuidedMissle(Clone) 1
   m_TagString: Enemy
@@ -298,3 +299,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2291567578738401663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428168312776633260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4526641416422960142}
   - component: {fileID: 3283648590070296593}
   - component: {fileID: 2872602839097917173}
+  - component: {fileID: 8108906720196867224}
   m_Layer: 0
   m_Name: red
   m_TagString: Untagged
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   value: 0.05
@@ -203,6 +205,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8108906720196867224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526641416422960128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &4526641417215651826
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 3
   colTag: 0
   obType: 0
@@ -345,6 +362,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!60 &4526641417215651824
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -553,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 3
   colTag: 0
   obType: 0
@@ -562,6 +581,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!60 &4526641417929169702
 PolygonCollider2D:
   m_ObjectHideFlags: 0

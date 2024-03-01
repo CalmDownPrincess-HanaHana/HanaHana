@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 3
   colTag: 0
   obType: 0
@@ -142,6 +143,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!60 &4354259666763899313
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -229,6 +231,7 @@ GameObject:
   - component: {fileID: 4354259667017624377}
   - component: {fileID: 2802203007352228288}
   - component: {fileID: 2640237904031822886}
+  - component: {fileID: 5765297821818354124}
   m_Layer: 0
   m_Name: red
   m_TagString: Untagged
@@ -317,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   value: 0.05
@@ -420,6 +424,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5765297821818354124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354259667017624379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
 --- !u!1 &5628899478175712824
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 3
   colTag: 0
   obType: 0
@@ -562,6 +581,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!60 &1286176583120871459
 PolygonCollider2D:
   m_ObjectHideFlags: 0
