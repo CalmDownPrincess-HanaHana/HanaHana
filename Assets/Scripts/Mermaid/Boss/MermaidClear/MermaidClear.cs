@@ -92,7 +92,7 @@ public class MermaidClear : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Swiming();
         yield return new WaitForSeconds(5f);
-        GetComponent<ObstacleController>().enabled = false;
+        Destroy(GetComponent<ObstacleController>());
         Destroy(GetComponent<MovingController>());
         GetComponent<MovingController>().enabled = false;
         HitPlayer();

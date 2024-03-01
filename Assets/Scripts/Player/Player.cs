@@ -752,7 +752,7 @@ public class Player : MonoBehaviour
         //백설아이템일 경우 백설관련 씬에서만 배낭 맨 모습 보이도록
         if (SnowrealItem == "true")
         {
-            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString() || SceneManager.GetActiveScene().name == "SnowBoss1" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBossClear")
+            if (SceneManager.GetActiveScene().name == Define.Scene.SnowWhite.ToString() || SceneManager.GetActiveScene().name == "SnowBoss1" || SceneManager.GetActiveScene().name == "SnowBoss2" || SceneManager.GetActiveScene().name == "SnowBoss3" || SceneManager.GetActiveScene().name == "SnowBossClear"|| SceneManager.GetActiveScene().name == "SnowBoss1Training" || SceneManager.GetActiveScene().name == "SnowBoss2Training" || SceneManager.GetActiveScene().name == "SnowBoss3Training")
             {
                 if (changeClothes == "Basic")
                 {
