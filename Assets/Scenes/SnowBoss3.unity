@@ -4373,6 +4373,7 @@ MonoBehaviour:
   minScale: {x: 3, y: 4, z: 0}
   maxDuration: 3.5
   minDuration: 2.7
+  maxPositionY: 1
   _mainCamera: {fileID: 296460686}
 --- !u!60 &1983511319
 PolygonCollider2D:
@@ -6349,10 +6350,12 @@ MonoBehaviour:
   audioSources:
   - {fileID: 5396037211998412359}
   - {fileID: 5396037211998412356}
-  invincibility: 1
+  invincibility: 0
   is_jump: 0
   jump_power: 16
+  max_speed: 0
   player_state: 0
+  isSlowed: 0
   SaveLoad: {fileID: 1718961238433643936}
   isMoss: 0
   movable: 1
