@@ -3314,14 +3314,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4581455348965192934, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
-      propertyPath: m_Color.a
-      value: 0.49803922
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581455349237681832, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
-      propertyPath: m_Color.a
-      value: 0.49803922
-      objectReference: {fileID: 0}
     - target: {fileID: 4581455349361766418, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3414,10 +3406,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
-    - target: {fileID: 4581455349492309051, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
-      propertyPath: m_Color.a
-      value: 0.49803922
-      objectReference: {fileID: 0}
     - target: {fileID: 4696630511478559270, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3426,22 +3414,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1988134183101104615}
-    - target: {fileID: 4696630511478559270, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: back_Home
+    - target: {fileID: 4696630511478559705, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 826.27997
       objectReference: {fileID: 0}
-    - target: {fileID: 4696630511478559270, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
+    - target: {fileID: 4696630511478559705, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 407.91602
       objectReference: {fileID: 0}
     - target: {fileID: 4833734117289957877, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2260031092497898062}
-    - target: {fileID: 4833734117289957877, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: back_Home
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
 --- !u!1 &1732813137 stripped
@@ -7980,7 +7964,9 @@ MonoBehaviour:
   invincibility: 0
   is_jump: 0
   jump_power: 8
+  max_speed: 0
   player_state: 0
+  isSlowed: 0
   SaveLoad: {fileID: 1699537233}
   isMoss: 0
   movable: 1
