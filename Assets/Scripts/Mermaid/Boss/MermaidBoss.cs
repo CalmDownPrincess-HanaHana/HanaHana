@@ -99,6 +99,7 @@ public class MermaidBoss : MonoBehaviour
         StartCoroutine(playerInvicibility.Initialization(3f));
         //패턴4
         patterns[3].SetActive(true);
+        player.transform.position = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(15f);
         //패턴4끄기
         patterns[3].SetActive(false);
@@ -107,6 +108,7 @@ public class MermaidBoss : MonoBehaviour
         StartCoroutine(playerInvicibility.Initialization(3f));
         //패턴5
         patterns[4].SetActive(true);
+        player.transform.position = new Vector3(1.5f, 1.5f, 0) ;
         yield return new WaitForSeconds(15f);
         //패턴5끄기
         patterns[4].SetActive(false);
