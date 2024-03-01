@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8843671173174697867}
   - component: {fileID: -2993369459295527014}
   - component: {fileID: -1875514279740655676}
+  - component: {fileID: 761573550936182533}
   m_Layer: 8
   m_Name: GuidedMissle
   m_TagString: Enemy
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec7558afae54f944aa971d018ff85ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitingTime: 0
   speed: 10
   inertiaStrength: 100
   player: {fileID: 0}
@@ -159,17 +161,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4f2a41e9e6b4043a1e11902bafd9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpposite: 0
   obType: 13
   obDirection: 0
   gravity_scale: 4
-  isPlatform: 0
-  isOpposite: 0
+  isMovingPlatform: 0
+  isLeftDown: 0
   color: 0
   size: 0
   rend_order: 0
   isCol: 0
   isMoving: 1
-  isEnable: 0
   waitingTime: 0
   distance: 0
   speed: 11
@@ -330,3 +332,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &761573550936182533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441000781421965093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0

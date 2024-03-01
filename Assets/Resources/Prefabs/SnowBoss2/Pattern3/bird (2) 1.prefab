@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3124531777537753718}
   - component: {fileID: 2716094312363210895}
   - component: {fileID: 5229286637809866531}
+  - component: {fileID: 263771742446867404}
   m_Layer: 9
   m_Name: bird (2) 1
   m_TagString: Enemy
@@ -156,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMovingFromStart: 1
   isCol: 0
+  isLoop: 0
   waitingTime: 0
   colTag: 2
   obType: 0
@@ -165,6 +167,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   line: {fileID: 0}
   repeatLine: 0
+  isOpposite: 0
 --- !u!114 &-3124531777537753718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +293,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &263771742446867404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175426812659204660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1
+  bgm: 0
