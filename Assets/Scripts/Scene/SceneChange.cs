@@ -33,7 +33,11 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene(Define.Scene.SnowWhite.ToString());
             }
         }
-        
+        //메인씬: 스노우화이트부터시작
+        if (SceneManager.GetActiveScene().name == Define.Scene.MainScene.ToString())
+        {
+            SceneManager.LoadScene(Define.Scene.SnowWhite.ToString());
+        }
         Time.timeScale = 1f; //시간 다시 흐르게
     }
 
@@ -70,8 +74,8 @@ public class SceneChange : MonoBehaviour
             PlayerPrefs.DeleteKey("respawnZ");
             PlayerPrefs.DeleteKey("death");
         }
-        //스테이지씬이면 씬 이동
-        if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString())
+        //스테이지씬, 메인씬이면 씬 이동
+        if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString()|| SceneManager.GetActiveScene().name == Define.Scene.MainScene.ToString())
         {
             Change();
         }
