@@ -25,7 +25,7 @@ public class GoogleAds : MonoBehaviour
     void Start()
     {
         MobileAds.Initialize((InitializationStatus initStatus) => {});
-
+        hasTriggered = PlayerPrefs.GetInt("flagAd", 0) == 1;
     }
 
     /// <summary>
@@ -89,7 +89,14 @@ public class GoogleAds : MonoBehaviour
         {
             LoadInterstitialAd();
             Invoke("ShowInterstitialAd", 0.2f); // 0.2초 후에 ShowInterstitialAd 메서드를 호출합니다.
+            hasTriggered = true;
+             PlayerPrefs.SetInt("flagAd", hasTriggered ? 1 : 0);
         }
-        hasTriggered = true;
+        
+    }
+    private void OnDestroy()
+    {
+        // 스크립트가 파괴될 때 PlayerPrefs 값을 저장합니다.
+        PlayerPrefs.Save();
     }
 }
