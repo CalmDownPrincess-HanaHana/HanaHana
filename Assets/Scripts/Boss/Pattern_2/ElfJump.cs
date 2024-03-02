@@ -22,7 +22,9 @@ public class ElfJump : MonoBehaviour
     
     private void Jump()
     {
-        audioSource.Play();
+        if (audioSource != null) {
+            audioSource.Play();
+        }
         Vector3 force = Vector3.up * jumpingSpeed;
         rigid.AddForce(force, ForceMode2D.Impulse);
     }
