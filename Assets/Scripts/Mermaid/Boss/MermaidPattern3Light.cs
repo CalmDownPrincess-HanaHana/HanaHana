@@ -25,7 +25,8 @@ public class MermaidPattern3Light : MonoBehaviour
         if (setPlayerPositionThis)
         {
             player.transform.position = this.gameObject.transform.position;
-        }    
+        }
+        StartCoroutine(RendererOrder());
     }
 
     // Update is called once per frame
@@ -75,5 +76,14 @@ public class MermaidPattern3Light : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+    }
+
+    IEnumerator RendererOrder()
+    {
+        playerRenderer.sortingLayerName = "UI";
+        playerRenderer.sortingOrder = 1;
+        yield return new WaitForSeconds(3f);
+        playerRenderer.sortingLayerName = "default";
+        playerRenderer.sortingOrder = 3;
     }
 }
