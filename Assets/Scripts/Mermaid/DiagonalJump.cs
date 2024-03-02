@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DiagonalJump : MonoBehaviour
 {
-    public AudioSource audioSource;
     [SerializeField] float jumpingSpeed = 5f;
     private Rigidbody2D rigid;
+    [SerializeField] private bool minus = false; // x좌표 마이너스쪽으로 가고 싶으면 켜셈
 
     private void Start()
     {
@@ -25,12 +25,16 @@ public class DiagonalJump : MonoBehaviour
 
     private void Jump()
     {
-        if (audioSource != null)
+        if (minus)
         {
-            audioSource.Play();
+            // 대각선으로 점프하기 위해 x와 y 방향으로 힘을 가함
+            Vector2 force = new Vector2(-jumpingSpeed, jumpingSpeed);
+            rigid.velocity = force;
         }
-        // 대각선으로 점프하기 위해 x와 y 방향으로 힘을 가함
-        Vector2 force = new Vector2(jumpingSpeed, jumpingSpeed);
-        rigid.AddForce(force, ForceMode2D.Impulse);
+        else
+        {
+            Vector2 force = new Vector2(jumpingSpeed, jumpingSpeed);
+            rigid.velocity = force;
+        }
     }
 }
