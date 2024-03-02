@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
     /// 점프력, 속력
     /// 현민. 보스전에서 느리게 움직이게 하기 위해서 public으로 바꿈
     /// </summary>
-    public float jump_power;
+    [SerializeField] private float jump_power;
     public float max_speed;
     //리지드바디
     Rigidbody2D rigid;
@@ -88,6 +88,9 @@ public class Player : MonoBehaviour
     public GameObject SaveLoad;
     [HideInInspector]
     public int isMoss = 0;
+    //점프 파워 수정 가능 여부 변수
+    public bool edit_jump=false;
+    public float editted_jump_power=1f;
     //서현 변수: 입력무시용 변수
     public bool movable = true;
     public bool isWater = false;
@@ -700,6 +703,9 @@ public class Player : MonoBehaviour
             if (isWater)
             {
                 jump_power = 6;
+                if(edit_jump){
+                    jump_power=editted_jump_power;
+                }
                 if(isSlowed){
                     jump_power = 1f;
                 }
