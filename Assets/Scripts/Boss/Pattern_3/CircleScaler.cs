@@ -138,7 +138,7 @@ public class CircleScaler : MonoBehaviour
 
     IEnumerator CheckGameOverAfterInvincOver()
     {
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(3f);
         isGameOver = CheckGameOver();
     }
 }

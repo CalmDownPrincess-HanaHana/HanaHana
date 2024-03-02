@@ -72,7 +72,7 @@ public class MermaidBoss : MonoBehaviour
     IEnumerator Pattern()
     {
         //무적
-        StartCoroutine(playerInvicibility.Initialization(1f));
+        StartCoroutine(playerInvicibility.Initialization(3f));
         //패턴1
         patterns[0].SetActive(true);
         yield return new WaitForSeconds(15f);
