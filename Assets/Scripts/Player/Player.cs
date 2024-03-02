@@ -337,8 +337,7 @@ public class Player : MonoBehaviour
         //1. 브레이크
         if (!isIce) //손가락이 1개거나 없어야함
         {
-            touchLeftButton = false;
-            touchRightButton = false;
+            
             if (Input.touchCount == 1)//손가락이 있는 경우면
             {
                 //터치정보 갖고옴
@@ -348,12 +347,16 @@ public class Player : MonoBehaviour
                 {
                     //이 때 브레이크 걸어주기
                     rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.0000001f, rigid.velocity.y);
+                    touchLeftButton = false;
+                    touchRightButton = false;
                 }
             }
             else if (Input.touchCount == 0)
             {
                 //이 때 브레이크 걸어주기
                 rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.0000001f, rigid.velocity.y);
+                touchLeftButton = false;
+                touchRightButton = false;
             }
         }
         //2. 좌우 및 점프키
