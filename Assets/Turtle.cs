@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Turtle : MonoBehaviour
 {
+    public float yyy=-1.5f;
+    public float xxx =-1.5f;
     private AdjustJumppower adjustjumppower;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,7 +23,8 @@ public class Turtle : MonoBehaviour
 
             // 충돌한 오브젝트의 위치를 현재 오브젝트(Turtle)와 동일하게 설정합니다.
             Vector3 newPosition = other.transform.position;
-            newPosition.y -= 0.5f;
+            newPosition.y += yyy;
+            newPosition.x += xxx;
             this.transform.position = newPosition;
 
             // 충돌한 오브젝트를 부모로 설정합니다.
