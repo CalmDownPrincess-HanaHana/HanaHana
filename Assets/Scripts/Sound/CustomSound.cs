@@ -7,7 +7,7 @@ public class CustomSound : MonoBehaviour
     Slider slider;
     [SerializeField] bool effect = false;
     [SerializeField] bool bgm = false;
-    AudioSource audio;
+    AudioSource[] audio;
     //초기세팅 사운드 값
     float settingSoundValue=1f;
 
@@ -15,7 +15,8 @@ public class CustomSound : MonoBehaviour
     {
 
         slider = GetComponent<Slider>();
-        audio = GetComponent<AudioSource>();
+        // 현재 오브젝트에 달려있는 모든 AudioSource 컴포넌트를 가져옴
+        audio = GetComponents<AudioSource>();
         if (audio != null)
         {
             //초기세팅 값 가져오기
@@ -28,7 +29,11 @@ public class CustomSound : MonoBehaviour
                 settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
             }
             //초기세팅값적용
-            audio.volume = settingSoundValue;
+            // 가져온 모든 AudioSource에 대해 작업 수행
+            foreach (AudioSource audioSource in audio)
+            {
+                audioSource.volume = settingSoundValue;
+            }
         }
         if (slider != null)
         {
@@ -67,7 +72,11 @@ public class CustomSound : MonoBehaviour
                 if (settingSoundValue != PlayerPrefs.GetFloat("bgmValue", 1f))
                 {
                     settingSoundValue = PlayerPrefs.GetFloat("bgmValue", 1f);
-                    audio.volume = settingSoundValue;
+                    // 가져온 모든 AudioSource에 대해 작업 수행
+                    foreach (AudioSource audioSource in audio)
+                    {
+                        audioSource.volume = settingSoundValue;
+                    }
                 }
             }
             if (effect)
@@ -76,7 +85,11 @@ public class CustomSound : MonoBehaviour
                 if (settingSoundValue != PlayerPrefs.GetFloat("effectValue", 1f))
                 {
                     settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
-                    audio.volume = settingSoundValue;
+                    // 가져온 모든 AudioSource에 대해 작업 수행
+                    foreach (AudioSource audioSource in audio)
+                    {
+                        audioSource.volume = settingSoundValue;
+                    }
                 }
             }
         }
