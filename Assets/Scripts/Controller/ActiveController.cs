@@ -35,7 +35,10 @@ public class ActiveController : ParentObstacleController
         base.Awake();
         renderer = GetComponent<Renderer>();
         myCollider = GetComponent<Collider2D>();
-        originColor = renderer.material.color;
+        if (renderer != null)
+        {
+            originColor = renderer.material.color;
+        }
     }
 
     private void update(){

@@ -76,7 +76,7 @@ public class TutorialText : MonoBehaviour
     public void TutoSkip() //스킵 버튼 누룰 시, 맵 훑는 거 멈춤
     {
         Camera.GetComponent<CameraZoomInOut>().enabled = false;
-        Camera.GetComponent<MovingController>().enabled = false;
+        Destroy( Camera.GetComponent<MovingController>());
         Camera.GetComponent<CameraController>().enabled = true;
         isSummaryOver = true;
 
