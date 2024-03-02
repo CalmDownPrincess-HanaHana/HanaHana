@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5102137056511745824}
   - component: {fileID: 6896919324959652441}
   - component: {fileID: 6040568119842507161}
-  - component: {fileID: -7592382948107250739}
+  - component: {fileID: -7950664057057092237}
   m_Layer: 9
   m_Name: treeBullet
   m_TagString: Enemy
@@ -156,11 +156,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3471312378251011002}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 763af7374314d4d4f88ca2debddcfb53, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.089
   m_Pitch: 1.5
   Loop: 0
@@ -245,7 +245,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-7592382948107250739
+--- !u!114 &-7950664057057092237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,8 +254,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3471312378251011002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c9269828c4ebf4c90889b816156f21, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fe4a197f108c01468e60bcc0fd3f99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: 1
-  bgm: 0
+  isCol: 0
+  isMoving: 1
+  waitingTime: 0
