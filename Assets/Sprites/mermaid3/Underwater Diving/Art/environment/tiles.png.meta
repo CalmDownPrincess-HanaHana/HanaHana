@@ -9720,7 +9720,7 @@ TextureImporter:
       - - {x: -8, y: -2}
         - {x: -8, y: -8}
         - {x: 8, y: -8}
-        - {x: 8, y: 2}
+        - {x: 8, y: 3}
       tessellationDetail: 0
       bones: []
       spriteID: 413047d23b0011049af680fa81e22a42
@@ -11926,13 +11926,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       tiles_464: 907482158
-      tiles_10: 21300020
-      tiles_310: 1738929922
+      tiles_103: 1964815491
+      tiles_482: 1125816589
       tiles_74: 1936551598
       tiles_442: 1959919313
-      tiles_37: -492186619
       tiles_112: 945495549
-      tiles_25: 957194408
+      tiles_495: -2075265004
       tiles_212: -1497919422
       tiles_360: 1959599323
       tiles_67: -810772745
@@ -11942,6 +11941,7 @@ TextureImporter:
       tiles_144: 1080569741
       tiles_339: -1423447376
       tiles_353: -488005957
+      tiles_140: -914149092
       tiles_76: 1534669880
       tiles_216: -1276678352
       tiles_6: 21300012
@@ -11994,10 +11994,10 @@ TextureImporter:
       tiles_96: 1864970907
       tiles_346: -1174081446
       tiles_86: -636154702
-      tiles_326: -583719326
-      tiles_383: -1456618419
-      tiles_141: 1535396989
       tiles_23: -2135446490
+      tiles_383: -1456618419
+      tiles_326: -583719326
+      tiles_141: 1535396989
       tiles_387: -943222444
       tiles_295: 1832268457
       tiles_28: 792355102
@@ -12060,12 +12060,12 @@ TextureImporter:
       tiles_344: -2066037087
       tiles_506: -504338708
       tiles_165: 674249709
-      tiles_97: -181358026
       tiles_431: 474033692
       tiles_170: 1297121816
       tiles_426: -1937068001
-      tiles_331: -238596188
+      tiles_97: -181358026
       tiles_390: 1402400603
+      tiles_331: -238596188
       tiles_99: -225573338
       tiles_236: -2088093903
       tiles_321: 994161168
@@ -12197,9 +12197,9 @@ TextureImporter:
       tiles_175: -1107610069
       tiles_223: 314314872
       tiles_274: -2123174950
-      tiles_145: 280209691
-      tiles_530: 579907279
       tiles_30: 1003563420
+      tiles_530: 579907279
+      tiles_145: 280209691
       tiles_66: -666895490
       tiles_33: -45741093
       tiles_94: 219563267
@@ -12468,18 +12468,18 @@ TextureImporter:
       tiles_385: -767044050
       tiles_15: 21300030
       tiles_126: -967260079
-      tiles_553: 426091412
-      tiles_518: 1393972233
-      tiles_478: 1998054706
       tiles_111: 1743599431
-      tiles_103: 1964815491
-      tiles_140: -914149092
-      tiles_108: 188001025
-      tiles_58: 305026532
-      tiles_529: -1866071067
-      tiles_482: 1125816589
-      tiles_495: -2075265004
       tiles_490: -2139501718
+      tiles_478: 1998054706
+      tiles_529: -1866071067
+      tiles_58: 305026532
+      tiles_553: 426091412
+      tiles_10: 21300020
+      tiles_518: 1393972233
+      tiles_37: -492186619
+      tiles_108: 188001025
+      tiles_25: 957194408
+      tiles_310: 1738929922
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
