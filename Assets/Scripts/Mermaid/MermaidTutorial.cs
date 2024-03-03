@@ -6,6 +6,8 @@ public class MermaidTutorial : MonoBehaviour
 {
     public GameObject SaveLoad;
     public GameObject Button;
+    private GameObject player;
+    private Player playerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -13,7 +15,21 @@ public class MermaidTutorial : MonoBehaviour
         int tutorial_flag = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_tutorial");
         if (tutorial_flag == 0)
         {
-            StartCoroutine(StartStory());
+            player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerScript = player.GetComponent<Player>();
+                if (playerScript != null)
+                {
+                    playerScript.Invincibility = true;
+                    playerScript.enabled = false;
+                }
+                else
+                {
+                    Debug.LogError("Player script not found!");
+                }
+            }
+                StartCoroutine(StartStory());
         }
         else {
             Destroy(this.gameObject);
@@ -27,7 +43,7 @@ public class MermaidTutorial : MonoBehaviour
 
         if (prologue==null||prologue2 == null || prologue3 == null)
         {
-            Debug.LogError("Prologue2 or Prologue3 not found!");
+            Debug.LogError("Prologue or Prologue2 or Prologue3 not found!");
             yield break;
         }
 
@@ -44,6 +60,8 @@ public class MermaidTutorial : MonoBehaviour
 
         SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("mermaid_tutorial", 1);
         Button.SetActive(true);
+        playerScript.enabled = true;
+        playerScript.Invincibility = false;
         Destroy(this.gameObject);
 
     }

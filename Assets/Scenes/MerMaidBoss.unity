@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4696630511478559705, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 826.27985
+      value: 826.2794
       objectReference: {fileID: 0}
     - target: {fileID: 4696630511478559705, guid: a852b7dade3b1d543aa921d67ce4dd15, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1440,6 +1440,10 @@ PrefabInstance:
     - target: {fileID: 231338404015874789, guid: 6462e0616ae361c41a5995d3c222ae75, type: 3}
       propertyPath: m_Name
       value: Pattern5
+      objectReference: {fileID: 0}
+    - target: {fileID: 231338404015874789, guid: 6462e0616ae361c41a5995d3c222ae75, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 231338404015874790, guid: 6462e0616ae361c41a5995d3c222ae75, type: 3}
       propertyPath: m_RootOrder
@@ -66351,6 +66355,8 @@ MonoBehaviour:
   isSlowed: 0
   SaveLoad: {fileID: 7524137907553975095}
   isMoss: 0
+  edit_jump: 0
+  editted_jump_power: 1
   movable: 1
   isWater: 0
 --- !u!61 &6708784594606413623
@@ -66428,7 +66434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6708784594606413619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
