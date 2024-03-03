@@ -1,13 +1,19 @@
 ~~하드웨어 데이터에 대한 설명쓰기~~
 이름	자료형	설명
 death	int 	죽은 횟수
+mermaid_death int 머메이드 죽은 횟수
 RealItemSnowWhite	string	진짜아이템 먹었는지 알려줌(true=진짜아이템먹음)
 RealItemMermaid		string	진짜아이템 먹었는지 알려줌(true=진짜아이템먹음)
 Cloth	string	어떤 스킨 꼈는지에대한 정보(SnowWhite, Mermaid, Basic)
 SnowWhiteClear	string	백설공주맵 깼는지에 대한 정보(true-깸, false-못깸)
 MermaidClear	string	인어공주맵 깼는지에 대한 정보. (true-깸, false- 못깸)
-respawnX	float	플래그위치x좌표
-respawnY	float	플래그위치y좌표
-respawnZ	float	플래그위치z좌표
+respawnX	float	리스폰위치x좌표
+respawnY	float	리스폰위치y좌표
+respawnZ	float	리스폰위치z좌표
+
+mermaid_respawnX float 머메이드리스폰위치x좌표
+mermaid_respawnY float 머메이드리스폰위치y좌표
+mermaid_respawnZ float 머메이드리스폰위치z좌표
+
 씬네임+"TrainingStage"	string	포탈에 닿으면 트레이닝 스테이지가 열림. true :열림, "": 안열림.
 씬네임+Portal	int	포탈 탄 횟수 알려줌. 1일때만 트레이닝 스테이지 열렸다고 알려주기
