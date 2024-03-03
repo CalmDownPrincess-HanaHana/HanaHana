@@ -86,7 +86,6 @@ public class SceneChange : MonoBehaviour
 
     public void back_Home()
     {
-        Debug.Log("어어어");
         Destroy(GameManager);
         SceneManager.LoadScene("MainScene");
     }
