@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString()|| SceneManager.GetActiveScene().name == Define.Scene.MerMaidBoss.ToString())
             {
+                Debug.Log(
+                    "asdfasdf!");
                 death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death") + 1;
 
                 SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("mermaid_death", death_count);

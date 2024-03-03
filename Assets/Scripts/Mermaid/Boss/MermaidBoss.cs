@@ -71,7 +71,7 @@ public class MermaidBoss : MonoBehaviour
     }
     IEnumerator Pattern()
     {
-        /*
+        
          //무적
          StartCoroutine(playerInvicibility.Initialization(3f));
          //패턴1
@@ -120,35 +120,7 @@ public class MermaidBoss : MonoBehaviour
          patterns[5].SetActive(true);
          yield return new WaitForSeconds(15f);
 
-         */
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴5
-        patterns[4].SetActive(true);
-        player.transform.position = new Vector3(1.5f, 1.5f, 0);
-        yield return new WaitForSeconds(15f);
-        //패턴5끄기
-        patterns[4].SetActive(false);
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴5
-        patterns[4].SetActive(true);
-        player.transform.position = new Vector3(1.5f, 1.5f, 0);
-        yield return new WaitForSeconds(15f);
-        //패턴5끄기
-        patterns[4].SetActive(false);
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴5
-        patterns[4].SetActive(true);
-        player.transform.position = new Vector3(1.5f, 1.5f, 0);
-        yield return new WaitForSeconds(15f);
-        //패턴5끄기
-        patterns[4].SetActive(false);
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴5
-        patterns[4].SetActive(true);
-        player.transform.position = new Vector3(1.5f, 1.5f, 0);
-        yield return new WaitForSeconds(15f);
-        //패턴5끄기
-        patterns[4].SetActive(false);
+         
         yield return null;
     }
 }
