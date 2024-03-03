@@ -12,7 +12,7 @@ public class MermaidClear : MonoBehaviour
     Player playerScript;
     Animator anim;
     private SceneChange clearData=new SceneChange();
-
+    public GameObject FadePrefab;
     private void Awake()
     {
 
@@ -81,6 +81,9 @@ public class MermaidClear : MonoBehaviour
         texts[1].SetActive(true);
         yield return new WaitForSeconds(5f);
         texts[1].SetActive(false);
+        FadePrefab.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainScene");
     }
     IEnumerator NoItem()
     {
@@ -121,12 +124,10 @@ public class MermaidClear : MonoBehaviour
         texts[3].SetActive(true);
         yield return new WaitForSeconds(2f);
         texts[3].SetActive(false);
-        Debug.Log("fdaasdf");
-        GameObject.Find("FadePrefab").GetComponent<FadeInOut>().StartFade = true;
+        FadePrefab.SetActive(true);
         yield return new WaitForSeconds(3f);
         clearData.new_Change();
-        Debug.Log("asdf");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MerMaid");
         yield return null;
     }
 }
