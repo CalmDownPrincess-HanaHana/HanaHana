@@ -8,6 +8,7 @@ public class GameObjectBlink : MonoBehaviour
     [SerializeField] private float interval = 10f; //깜빡이는 간격
     [SerializeField] private float startAfter = 0f; //깜빡이는 시작
     private List<Transform> children = new List<Transform>(); // 자식 오브젝트를 저장할 리스트
+    private bool isOnce = false;
 
     void Start()
     {
@@ -20,7 +21,11 @@ public class GameObjectBlink : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        StartCoroutine(enableBlink(interval, startAfter)); // sec초마다 폭탄 생성하는 코루틴 시작
+        if (!isOnce) {
+            isOnce = true;
+            StartCoroutine(enableBlink(interval, startAfter)); // sec초마다 폭탄 생성하는 코루틴 시작
+        }
+        
     }
 
     private IEnumerator enableBlink(float interval,float startAfter) 
