@@ -1322,6 +1322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveLoad: {fileID: 565027155}
+  GameManager: {fileID: 0}
 --- !u!4 &721014399
 Transform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1385633782}
-  afterPopup: {fileID: 1445175955}
+  afterPopup: {fileID: 943290118}
 --- !u!114 &779448890
 MonoBehaviour:
   m_ObjectHideFlags: 0

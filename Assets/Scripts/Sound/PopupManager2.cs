@@ -8,8 +8,8 @@ public class PopupManager2 : MonoBehaviour
     private void Start()
     {   
         
-        // 팝업창 초기화
-        popup2.SetActive(false);
+     /*   // 팝업창 초기화
+        popup2.SetActive(false);*/
         
     }
 
