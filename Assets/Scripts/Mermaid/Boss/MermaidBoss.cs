@@ -71,55 +71,56 @@ public class MermaidBoss : MonoBehaviour
     }
     IEnumerator Pattern()
     {
-        //무적
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴1
-        patterns[0].SetActive(true);
-        yield return new WaitForSeconds(15f);
-        //패턴1끄기
-        patterns[0].SetActive(false);
-
-        //무적
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴2
-        patterns[1].SetActive(true);
-        yield return new WaitForSeconds(15f);
-        //패턴2끄기
-        patterns[1].SetActive(false);
-
-        //무적
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴3
-        patterns[2].SetActive(true);
-        yield return new WaitForSeconds(15f);
-        //패턴3끄기
-        patterns[2].SetActive(false);
-
-        //무적
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴4
-        patterns[3].SetActive(true);
-        player.transform.position = new Vector3(0, 0, 0);
-        yield return new WaitForSeconds(15f);
-        //패턴4끄기
-        patterns[3].SetActive(false);
-
-        //무적
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴5
-        patterns[4].SetActive(true);
-        player.transform.position = new Vector3(1.5f, 1.5f, 0) ;
-        yield return new WaitForSeconds(15f);
-        //패턴5끄기
-        patterns[4].SetActive(false);
-
-        //무적
-        StartCoroutine(playerInvicibility.Initialization(3f));
-        //패턴6
-        patterns[5].SetActive(true);
-        yield return new WaitForSeconds(15f);
         
-        
+         //무적
+         StartCoroutine(playerInvicibility.Initialization(3f));
+         //패턴1
+         patterns[0].SetActive(true);
+         yield return new WaitForSeconds(15f);
+         //패턴1끄기
+         patterns[0].SetActive(false);
+
+         //무적
+         StartCoroutine(playerInvicibility.Initialization(3f));
+         //패턴2
+         patterns[1].SetActive(true);
+         yield return new WaitForSeconds(15f);
+         //패턴2끄기
+         patterns[1].SetActive(false);
+
+         //무적
+         StartCoroutine(playerInvicibility.Initialization(3f));
+         //패턴3
+         patterns[2].SetActive(true);
+         yield return new WaitForSeconds(15f);
+         //패턴3끄기
+         patterns[2].SetActive(false);
+
+         //무적
+         StartCoroutine(playerInvicibility.Initialization(3f));
+         //패턴4
+         patterns[3].SetActive(true);
+         player.transform.position = new Vector3(0, 0, 0);
+         yield return new WaitForSeconds(15f);
+         //패턴4끄기
+         patterns[3].SetActive(false);
+
+         //무적
+         StartCoroutine(playerInvicibility.Initialization(3f));
+         //패턴5
+         patterns[4].SetActive(true);
+         player.transform.position = new Vector3(1.5f, 1.5f, 0) ;
+         yield return new WaitForSeconds(15f);
+         //패턴5끄기
+         patterns[4].SetActive(false);
+
+         //무적
+         StartCoroutine(playerInvicibility.Initialization(3f));
+         //패턴6
+         patterns[5].SetActive(true);
+         yield return new WaitForSeconds(15f);
+
+         
         yield return null;
     }
 }
