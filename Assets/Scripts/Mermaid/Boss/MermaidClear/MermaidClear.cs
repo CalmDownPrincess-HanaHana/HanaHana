@@ -18,9 +18,7 @@ public class MermaidClear : MonoBehaviour
 
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
-        Debug.Log("player이름: " + player.name);
         playerScript = player.GetComponent<Player>();
-        Debug.Log("playerScript의 주인: " + playerScript.gameObject.name);
         playerScript.ChangeSprites();
 
     }
@@ -123,10 +121,12 @@ public class MermaidClear : MonoBehaviour
         texts[3].SetActive(true);
         yield return new WaitForSeconds(2f);
         texts[3].SetActive(false);
+        Debug.Log("fdaasdf");
         GameObject.Find("FadePrefab").GetComponent<FadeInOut>().StartFade = true;
         yield return new WaitForSeconds(3f);
         clearData.new_Change();
-        SceneManager.LoadScene(Define.Scene.MerMaid.ToString()); 
+        Debug.Log("asdf");
+        SceneManager.LoadScene("MainScene");
         yield return null;
     }
 }

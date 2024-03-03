@@ -33,9 +33,5 @@ public class NaturalFlip : MonoBehaviour
                 renderer.flipX = false;
             }
         }
-        else
-        {
-            Debug.Log("Object is not moving.");
-        }
     }
 }
