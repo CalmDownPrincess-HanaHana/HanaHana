@@ -8,27 +8,24 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: c27c405ad0bc8d6469ea2f6961def7e4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SnowWhite.unity
     guid: 52305d5369bd537479c5d8076e030b5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MerMaid.unity
     guid: 2819f416b7e40254290d1d67e828a958
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ClosetScene.unity
     guid: a950fb917387ffa46809b94fe7f8a683
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StageScene.unity
     guid: f27d138583b7d9d4fbd4804f1d1e68d1
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/SnowBoss1.unity
-    guid: 7c004ea22ed9c2244be6181fcd39080d
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -38,27 +35,27 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/SnowBoss2.unity
     guid: 5b06262420e379542a620973a93752ac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SnowBoss3.unity
     guid: 808a17aba328e8249890f6c13a6a9bf4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SnowBoss4.unity
     guid: b05f287be74f77148ae06f2c2a6f5d13
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SnowBoss2Training.unity
     guid: ca962f57e3cecba40be0191d9e1cd29b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SnowBoss1Training.unity
     guid: 1e895a9ed3f2c704f8ccc7469ea878e4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SnowBoss4Training.unity
     guid: 15cc3b18d77f5794eb6ba44fda74e791
-  - enabled: 1
-    path: Assets/Scenes/SnowBoss3Training.unity
-    guid: 87b503c05aae3d04394e6b5180b63698
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -71,7 +68,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/SnowBossClear.unity
     guid: 895b9aab173e74b4d84159f0d3a84092
   - enabled: 0
@@ -80,16 +80,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndingScene.unity
     guid: 2b948d2c4e45e3543b41ffec387afd6c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BossTrainingScene.unity
     guid: 0e8d624a17245884394fcd91b20be6fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MerMaidBoss.unity
     guid: b8a664ee435e8674d83ff33c4c51fc5e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MerMaidBossClear.unity
     guid: 9d89e861d4a4f534383d172f61e19b3e
   m_configObjects: {}
