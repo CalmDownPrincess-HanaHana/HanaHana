@@ -89,6 +89,8 @@ public class GameManager : MonoBehaviour
                 death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death") + 1;
 
                 SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("death", death_count);
+                Debug.Log("snowwhite!" + SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death").ToString());
+                Debug.Log("smermaid!" + SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death").ToString());
                 death_text.text = "Death : " + death_count++;
             }
             else if (SceneManager.GetActiveScene().name == Define.Scene.MerMaid.ToString()|| SceneManager.GetActiveScene().name == Define.Scene.MerMaidBoss.ToString())
@@ -96,7 +98,8 @@ public class GameManager : MonoBehaviour
                 death_count = SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death") + 1;
 
                 SaveLoad.GetComponent<SaveLoad>().SaveDeathCount("mermaid_death", death_count);
-                //Debug.Log("asdfasdf!" + SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death").ToString());
+                Debug.Log("mermaid!" + SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("mermaid_death").ToString());
+                Debug.Log("msnowwhite!" + SaveLoad.GetComponent<SaveLoad>().LoadDeathCount("death").ToString());
                 death_text.text = "Death : " + death_count++;
             }
 
