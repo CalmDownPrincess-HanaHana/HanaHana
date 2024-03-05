@@ -21,13 +21,13 @@ public class SceneChange : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == Define.Scene.StageScene.ToString())
         {
-            if (GameObject.Find("popup2ForPC") !=null&& GameObject.Find("popup2ForPC").active == true)
+            if (GameObject.Find("popup2ForPC") !=null&& GameObject.Find("popup2ForPC").activeSelf)
             {
                 //머메이드에서 이어하기
                 SceneManager.LoadScene(Define.Scene.MerMaid.ToString());
 
             }
-            else if (GameObject.Find("popup") != null && GameObject.Find("popup").active == true)
+            else if (GameObject.Find("popup") != null && GameObject.Find("popup").activeSelf)
             {
                 //스노우화이트에서 이어하기
 
@@ -56,7 +56,7 @@ public class SceneChange : MonoBehaviour
         }
 
         //스테이지씬에서 인어공주 새로시작 || MerMaidBossClear씬에서 태초로 돌아감
-        if ((GameObject.Find("popup2ForPC") != null && GameObject.Find("popup2ForPC").active == true)||SceneManager.GetActiveScene().name==Define.Scene.MerMaidBossClear.ToString())
+        if ((GameObject.Find("popup2ForPC") != null && GameObject.Find("popup2ForPC").activeSelf)||SceneManager.GetActiveScene().name==Define.Scene.MerMaidBossClear.ToString())
         {
             //인어공주의 세이브포인트, death, RealItem정보 지우기
             PlayerPrefs.DeleteKey("RealItem" + Define.Scene.MerMaid.ToString());
@@ -66,7 +66,7 @@ public class SceneChange : MonoBehaviour
             PlayerPrefs.DeleteKey("mermaid_death");
         }
         //스테이지씬에서 백설공주 새로시작 || SnowBossClear씬에서 태초로 돌아감
-        if ((GameObject.Find("popup") != null && GameObject.Find("popup").active == true) || SceneManager.GetActiveScene().name == Define.Scene.SnowBossClear.ToString())
+        if ((GameObject.Find("popup") != null && GameObject.Find("popup").activeSelf) || SceneManager.GetActiveScene().name == Define.Scene.SnowBossClear.ToString())
         {
             //백설공주의 세이브포인트, death, RealItem정보 지우기
             PlayerPrefs.DeleteKey("RealItem"+Define.Scene.SnowWhite.ToString());

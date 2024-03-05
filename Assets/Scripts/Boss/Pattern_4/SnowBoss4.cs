@@ -426,7 +426,7 @@ public class SnowBoss4 : MonoBehaviour
             launchers[0].SetActive(false);
             launchers[1].SetActive(false);
             //미사일박스도 활성화되어있으면 꺼줌
-            if (launchers[2].active || launchers[3].active)
+            if (launchers[2].activeSelf || launchers[3].activeSelf)
             {
                 launchers[2].SetActive(false);
                 launchers[3].SetActive(false);

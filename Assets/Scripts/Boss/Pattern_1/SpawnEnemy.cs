@@ -27,7 +27,7 @@ public class SpawnEnemy : MonoBehaviour
 
     void Update()
     {
-        if (player.active == false)
+        if (!player.activeSelf)
         {
             CancelInvoke("EnemySpawn");
         }

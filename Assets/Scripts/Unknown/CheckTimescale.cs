@@ -11,7 +11,7 @@ public class CheckTimescale : MonoBehaviour
     void Update()
     {
         
-        if (gameObj[0].active||gameObj[1].active)
+        if (gameObj[0].activeSelf||gameObj[1].activeSelf)
         {
             Time.timeScale = 0f;
         }
