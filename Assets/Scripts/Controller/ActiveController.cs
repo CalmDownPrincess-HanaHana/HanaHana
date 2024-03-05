@@ -22,7 +22,7 @@ public class ActiveController : ParentObstacleController
     [SerializeField] private GameObject actObj; //사라졌다 생기는 obj
     [SerializeField] private float durationTime = 1.0f; //변화하는 시간 
     
-    private Renderer renderer;
+    private Renderer _renderer;
     //색 바꿔주게 변수 생성
     private Color objColor;
 
@@ -30,14 +30,14 @@ public class ActiveController : ParentObstacleController
     
     private Color originColor;
 
-    private void Awake()
+    new private void Awake()
     {
         base.Awake();
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
         myCollider = GetComponent<Collider2D>();
-        if (renderer != null)
+        if (_renderer != null)
         {
-            originColor = renderer.material.color;
+            originColor = _renderer.material.color;
         }
     }
 
@@ -51,7 +51,7 @@ public class ActiveController : ParentObstacleController
         {
             case ObType.Twinkle:
                 objColor = new Color(1f, 1f, 1f, 1f);
-                renderer.material.color = objColor;
+                _renderer.material.color = objColor;
 
                 StartCoroutine(Twinkle());
                 break;
@@ -82,7 +82,7 @@ public class ActiveController : ParentObstacleController
             while (objColor.a > 0f)
             {
                 objColor.a -= 0.05f;
-                renderer.material.color = objColor;
+                _renderer.material.color = objColor;
                 yield return new WaitForSeconds(0.01f);
             }
             // 투명하면 layer 바꿔준 다음에 대기
@@ -106,11 +106,11 @@ public class ActiveController : ParentObstacleController
         {
             if (time < 0.3f)
             {
-                renderer.material.color = new Color(alertColor.r, alertColor.g, alertColor.b, 1 - time);
+                _renderer.material.color = new Color(alertColor.r, alertColor.g, alertColor.b, 1 - time);
             }
             else
             {
-                renderer.material.color = new Color(alertColor.r, alertColor.g, alertColor.b, time);
+                _renderer.material.color = new Color(alertColor.r, alertColor.g, alertColor.b, time);
                 if (time > 0.5f)
                 {
                     time = 0f;
@@ -121,7 +121,7 @@ public class ActiveController : ParentObstacleController
             realTime += Time.deltaTime;
             yield return null;
         }
-        renderer.material.color = originColor;
+        _renderer.material.color = originColor;
     }
 
     //isCol이랑 waiting time으로 조절 해줘야함

@@ -11,7 +11,6 @@ public class SpotlightDie : MonoBehaviour
     public GameObject Spotlight;
     public GameObject Blackout;
 
-    [SerializeField] private int n = 3;
     [SerializeField] private Player player;
     [SerializeField] private float blinkSec = 3.0f;
 

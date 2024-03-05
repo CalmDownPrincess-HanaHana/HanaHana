@@ -18,7 +18,6 @@ public class Pattern3 : MonoBehaviour
     [SerializeField] private Animator _bossAnim;
     [SerializeField] private GameObject _fadeOutUI;
     Player _player;
-    bool isEnd = false;
     bool once = false;
     [SerializeField] GameObject startText;
     [SerializeField] GameObject naruto;

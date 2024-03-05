@@ -12,7 +12,7 @@ public class ColorController : ParentObstacleController
     }
     [SerializeField] private float value=0.05f;//증감값
     [SerializeField] private ObType obType;
-    private Renderer renderer;
+    private Renderer _renderer;
     private Color myColor;
     private float time;
     [SerializeField] private int r = 1;
@@ -45,10 +45,10 @@ public class ColorController : ParentObstacleController
             if (myColor.a <= 0f)
             {
                 myColor.a = 0f;
-                renderer.material.color = myColor;
+                _renderer.material.color = myColor;
                 break;
             }
-            renderer.material.color = myColor;
+            _renderer.material.color = myColor;
             yield return null;//프레임만큼 기다림
         }
     }
@@ -61,10 +61,10 @@ public class ColorController : ParentObstacleController
             if (myColor.a >= 1f)
             {
                 myColor.a = 1f;
-                renderer.material.color = myColor;
+                _renderer.material.color = myColor;
                 break;
             }
-            renderer.material.color = myColor;
+            _renderer.material.color = myColor;
             yield return null;//프레임만큼 기다림
         }
     }
@@ -74,11 +74,11 @@ public class ColorController : ParentObstacleController
         {
             if (time < 0.3f)
             {
-                renderer.material.color = new Color(r, g, b, 1 - time);
+                _renderer.material.color = new Color(r, g, b, 1 - time);
             }
             else
             {
-                renderer.material.color = new Color(r, g, b, time);
+                _renderer.material.color = new Color(r, g, b, time);
                 if (time > 0.5f)
                 {
                     time = 0;
@@ -89,18 +89,18 @@ public class ColorController : ParentObstacleController
         }
     }
 
-    private void Awake()
+    new private void Awake()
     {
         base.Awake();
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
         switch (obType)
         {
             case ObType.Transparent:
-                renderer.material.color = new Color(1f, 1f, 1f, 1f);
+                _renderer.material.color = new Color(1f, 1f, 1f, 1f);
                 myColor = new Color(1f, 1f, 1f, 1f);
                 break;
             case ObType.Opaque:
-                renderer.material.color = new Color(1f, 1f, 1f, 0f);
+                _renderer.material.color = new Color(1f, 1f, 1f, 0f);
                 myColor = new Color(1f, 1f, 1f, 0f);
                 break;
         }

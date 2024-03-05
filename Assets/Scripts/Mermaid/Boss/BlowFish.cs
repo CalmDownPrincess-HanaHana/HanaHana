@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BlowFish : MonoBehaviour
 {
-    Renderer renderer;
-    AudioSource audio;
+    Renderer _renderer;
+    AudioSource _audio;
     float timer=0f;
     bool biggerTrigger = false;
     InitiatePrefab initiatePrefab;
@@ -14,10 +14,10 @@ public class BlowFish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<Renderer>();
-        audio = GameObject.Find("PopSound").GetComponent<AudioSource>();
+        _renderer = GetComponent<Renderer>();
+        _audio = GameObject.Find("PopSound").GetComponent<AudioSource>();
         this.transform.position = new Vector3(xPosition [Random.Range(0,xPosition.Length-1)], yPosition[Random.Range(0, yPosition.Length - 1)], 0f);
-        renderer.material.color = new Color(1, 1, 1, 0.5f);
+        _renderer.material.color = new Color(1, 1, 1, 0.5f);
         initiatePrefab = GameObject.Find("Initiate").GetComponent<InitiatePrefab>();
         
     }
@@ -30,7 +30,7 @@ public class BlowFish : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1.5f)
             {
-                renderer.material.color = new Color(1f, 1f, 1f, 1f);
+                _renderer.material.color = new Color(1f, 1f, 1f, 1f);
                 biggerTrigger = true;
                 this.tag = "Enemy";
                 this.gameObject.layer = 8;
@@ -47,7 +47,7 @@ public class BlowFish : MonoBehaviour
         if (biggerTrigger && (collision.gameObject.name == "Missile" || collision.gameObject.CompareTag("Player")))
         {
             //소리재생
-            audio.Play();
+            _audio.Play();
             //존재하는 복어숫자 --
             initiatePrefab.existNum--;
             //본인파괴

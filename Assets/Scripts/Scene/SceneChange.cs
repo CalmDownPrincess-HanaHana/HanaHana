@@ -15,7 +15,6 @@ public class SceneChange : MonoBehaviour
 
     public GameObject SaveLoad;
     public GameObject GameManager;
-    private bool isNew = false;
     //이어하기
     public void Change()
     {

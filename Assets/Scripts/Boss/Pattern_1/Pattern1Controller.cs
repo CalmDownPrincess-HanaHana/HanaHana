@@ -30,7 +30,7 @@ public class Pattern1Controller : MonoBehaviour
     /// </summary>
     private Player player;
     //카메라
-    private GameObject camera;
+    private GameObject _camera;
     //패턴체인지효과
     [SerializeField] GameObject patternChangeGO;
     //페이드아웃
@@ -40,7 +40,7 @@ public class Pattern1Controller : MonoBehaviour
         //플레이어 불러오기
         player = GameObject.FindWithTag("Player").gameObject.GetComponent<Player>();
         //카메라 불러오기
-        camera = GameObject.FindWithTag("MainCamera").gameObject;
+        _camera = GameObject.FindWithTag("MainCamera").gameObject;
         Transform snowhiteTransform = transform.Find("SnowWhite");
 
         if (snowhiteTransform != null)
@@ -164,7 +164,7 @@ public class Pattern1Controller : MonoBehaviour
         patternChangeGO.SetActive(true);
 
         // camera shaking
-        camera.transform.DOShakePosition(3f, new Vector3(0.1f, 0.1f, 0));
+        _camera.transform.DOShakePosition(3f, new Vector3(0.1f, 0.1f, 0));
 
         // 눈비비기
         animator.SetInteger("level", 5);

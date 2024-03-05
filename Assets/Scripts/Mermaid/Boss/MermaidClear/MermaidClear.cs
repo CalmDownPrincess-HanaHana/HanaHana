@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MermaidClear : MonoBehaviour
 {
     bool giveItemOnce = false;
-    public AudioSource[] audio;
+    public AudioSource[] _audio;
     public GameObject[] texts;
     GameObject player;
     Player playerScript;
@@ -36,7 +36,7 @@ public class MermaidClear : MonoBehaviour
                     if (!giveItemOnce)
                     {
 
-                        audio[0].Play();
+                        _audio[0].Play();
                         Invoke("TearSound", 2.2f);
                         Invoke("Cheers", 9f);
                         StartCoroutine(ShowTexts());
@@ -50,7 +50,7 @@ public class MermaidClear : MonoBehaviour
                     if (!giveItemOnce)
                     {
                         //닿았을 때 띠롱소리
-                        audio[0].Play();
+                        _audio[0].Play();
                         giveItemOnce = true;
                         //코루틴호출
                         StartCoroutine(NoItem());
@@ -64,12 +64,12 @@ public class MermaidClear : MonoBehaviour
     {
         anim.enabled = true;
         anim.SetBool("Clear", true);
-        audio[1].Play();
+        _audio[1].Play();
     }
     private void Cheers()
     {
-        audio[2].Play();
-        audio[3].Play();
+        _audio[2].Play();
+        _audio[3].Play();
     }
 
     IEnumerator ShowTexts()
@@ -103,7 +103,7 @@ public class MermaidClear : MonoBehaviour
 
     private void Swiming()
     {
-        audio[4].Play();
+        _audio[4].Play();
         GetComponent<ObstacleController>().enabled = true;
     }
     private void HitPlayer()
@@ -111,7 +111,7 @@ public class MermaidClear : MonoBehaviour
         player.gameObject.SetActive(false);
         this.transform.position = new Vector3(0, 0, 0);
         anim.SetBool("Hit", true);
-        audio[5].Play();
+        _audio[5].Play();
         StartCoroutine(ShowNoClearTexts());
     }
 

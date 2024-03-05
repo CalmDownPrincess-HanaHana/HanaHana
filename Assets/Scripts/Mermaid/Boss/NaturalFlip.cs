@@ -5,11 +5,11 @@ using UnityEngine;
 public class NaturalFlip : MonoBehaviour
 {
     private Vector3 previousPosition;
-    SpriteRenderer renderer;
+    SpriteRenderer _renderer;
     void Start()
     {
         previousPosition = transform.position;
-        renderer = GetComponent<SpriteRenderer>();
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -26,11 +26,11 @@ public class NaturalFlip : MonoBehaviour
             direction.Normalize();
             if (direction.x < 0)
             {
-                renderer.flipX = true;
+                _renderer.flipX = true;
             }
             if (direction.x > 0)
             {
-                renderer.flipX = false;
+                _renderer.flipX = false;
             }
         }
     }

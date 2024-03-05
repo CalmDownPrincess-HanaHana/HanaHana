@@ -88,8 +88,6 @@ public class ObstacleController : MonoBehaviour
     [SerializeField]
     private bool isMovingPlatform = false; //만약 움직이는 발판이라면 //★이름모호. isMovingPlatform 추천
 
-    [SerializeField]
-    private bool isLeftDown = false; //moveside에서 왼쪽이랑 아래쪽으로 먼저 가는지
 
     [SerializeField]
     private IntoColor color; // into Change할 color결정
@@ -152,7 +150,7 @@ public class ObstacleController : MonoBehaviour
     private Animator anim;
 
     //색변환 위한 변수
-    private Renderer renderer;
+    private Renderer _renderer;
     private Color my_color;
     private bool is_expired = false;
     private bool is_start = true;
@@ -216,13 +214,13 @@ public class ObstacleController : MonoBehaviour
     {
         initialPosition = transform.position;
         tilemap = GetComponent<Tilemap>();
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
 
         //불투명으로 바뀌게 하는거면 시작부터 투명하게
         if (obType == ObType.ChangeColor && color == IntoColor.Opaque)
         {
             my_color = new Color(0f, 0f, 0f, 0f);
-            renderer.material.color = my_color;
+            _renderer.material.color = my_color;
         }
         else if (obType == ObType.Follow)
         {
@@ -358,10 +356,10 @@ public class ObstacleController : MonoBehaviour
         switch (rend_order)
         {
             case RendererOrder.Def:
-                renderer.sortingOrder = 0;
+                _renderer.sortingOrder = 0;
                 break;
             case RendererOrder.Mostback:
-                renderer.sortingOrder = 1;
+                _renderer.sortingOrder = 1;
                 break;
         }
     }
@@ -449,15 +447,15 @@ public class ObstacleController : MonoBehaviour
     {
         if (is_start)
         {
-            renderer = GetComponent<Renderer>();
+            _renderer = GetComponent<Renderer>();
             switch (color)
             {
                 case IntoColor.TransParent:
-                    renderer.material.color = new Color(1f, 1f, 1f, 1f);
+                    _renderer.material.color = new Color(1f, 1f, 1f, 1f);
                     my_color = new Color(1f, 1f, 1f, 1f);
                     break;
                 case IntoColor.Opaque:
-                    renderer.material.color = new Color(1f, 1f, 1f, 0f);
+                    _renderer.material.color = new Color(1f, 1f, 1f, 0f);
                     my_color = new Color(1f, 1f, 1f, 0f);
                     break;
             }
@@ -477,7 +475,7 @@ public class ObstacleController : MonoBehaviour
                         is_expired = true;
                     }
                     // 오브젝트의 머티리얼 또는 스프라이트 렌더러의 색상 설정
-                    renderer.material.color = my_color;
+                    _renderer.material.color = my_color;
                     break;
                 case IntoColor.Opaque:
                     my_color.a += 0.05f; // 알파 값 조정
@@ -489,7 +487,7 @@ public class ObstacleController : MonoBehaviour
                         isMoving = false;
                     }
                     // 오브젝트의 머티리얼 또는 스프라이트 렌더러의 색상 설정
-                    renderer.material.color = my_color;
+                    _renderer.material.color = my_color;
                     break;
             }
         }

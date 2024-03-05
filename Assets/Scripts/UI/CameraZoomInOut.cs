@@ -13,7 +13,7 @@ public class CameraZoomInOut : MonoBehaviour
     public Vector3[] points;
     [SerializeField] zoomCriteria zoomCriter;
     int pointIndex=0;
-    Camera camera;
+    Camera _camera;
     MovingController movingController;
     public float zoomSpeed=0.07f;
     float movingSpeed;
@@ -27,7 +27,7 @@ public class CameraZoomInOut : MonoBehaviour
         {
             Destroy(GetComponent<MovingController>());
         }
-        camera = GetComponent<Camera>();
+        _camera = GetComponent<Camera>();
         movingController = GetComponent<MovingController>();
         if (movingController != null)
         {
@@ -52,7 +52,7 @@ public class CameraZoomInOut : MonoBehaviour
                 }
                 catch(Exception e)
                 {
-                    Debug.Log("인덱스범위 초과. 관련 컴포넌트 비활성화");
+                    Debug.Log(e.ToString()+"인덱스범위 초과. 관련 컴포넌트 비활성화");
                     Invoke("DeactiveComponents", 1.5f);
                     TutorialTextScript.isSummaryOver=true;
                 }
@@ -85,17 +85,17 @@ public class CameraZoomInOut : MonoBehaviour
 
     IEnumerator ZoomInAndOut()
     {
-        while (!(camera.orthographicSize >=1.9f&&camera.orthographicSize <= 2.0f))
+        while (!(_camera.orthographicSize >=1.9f&&_camera.orthographicSize <= 2.0f))
         {
-            camera.orthographicSize -= zoomSpeed;
+            _camera.orthographicSize -= zoomSpeed;
             yield return null;
         }
-        while (!(camera.orthographicSize >= 4.9f && camera.orthographicSize <= 5.0f))
+        while (!(_camera.orthographicSize >= 4.9f && _camera.orthographicSize <= 5.0f))
         {
-            camera.orthographicSize += zoomSpeed;
+            _camera.orthographicSize += zoomSpeed;
             yield return null;
         }
-        camera.orthographicSize = 5f;
+        _camera.orthographicSize = 5f;
         if (movingController != null)
         {
             movingController.speed = movingSpeed;

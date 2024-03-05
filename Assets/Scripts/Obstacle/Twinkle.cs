@@ -8,7 +8,7 @@ using UnityEngine;
 public class Twinkle : MonoBehaviour
 {
     //렌더러가져옴 (스프라이트렌더러, 타일맵렌더러 부모클래스)
-    private Renderer renderer;
+    private Renderer _renderer;
     //색 바꿔주게 변수 생성
     private Color my_color;
 
@@ -30,9 +30,9 @@ public class Twinkle : MonoBehaviour
 
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
         my_color = new Color(1f, 1f, 1f, 1f);
-        renderer.material.color = my_color;
+        _renderer.material.color = my_color;
         StartCoroutine(TwinkleCoroutine());
     }
 
@@ -44,7 +44,7 @@ public class Twinkle : MonoBehaviour
             while (my_color.a > 0f)
             {
                 my_color.a -= 0.05f;
-                renderer.material.color = my_color;
+                _renderer.material.color = my_color;
                 yield return new WaitForSeconds(0.01f);
             }
             // 투명하면 대기

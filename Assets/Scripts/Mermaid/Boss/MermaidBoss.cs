@@ -11,7 +11,7 @@ public class MermaidBoss : MonoBehaviour
     public Slider hp;
     public GameObject[] patterns;
     public GameObject player;
-    public AudioSource[] audio;
+    public AudioSource[] _audio;
     public GameObject fadeUI;
     invincibilityForSeconds playerInvicibility;
     Player playerScript;
@@ -53,12 +53,12 @@ public class MermaidBoss : MonoBehaviour
         //화면흔들린다.
         _camera.transform.DOShakePosition(3f, new Vector3(0.5f, 0.5f, 0));
         //무너지는 소리
-        audio[0].Play();
+        _audio[0].Play();
 
         //비누방울 깨진다.
         yield return new WaitForSeconds(2.5f);
         //비누방울 깨지는 소리
-        audio[1].Play();
+        _audio[1].Play();
         yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().enabled = true;
         //페이드아웃

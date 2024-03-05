@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class invincibilityForSeconds : ParentObstacleController
 {
-    Renderer renderer;
+    Renderer _renderer;
     [SerializeField] private string beforeTag = "Untagged";
     [SerializeField] private int beforelayer = 10;
     [SerializeField] private string afterTag = "Enemy";
@@ -12,14 +12,14 @@ public class invincibilityForSeconds : ParentObstacleController
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<Renderer>();
-        renderer.material.color = new Color(1f, 1f, 1f, 0.5f);
+        _renderer = GetComponent<Renderer>();
+        _renderer.material.color = new Color(1f, 1f, 1f, 0.5f);
         this.tag = beforeTag;
         this.gameObject.layer = beforelayer;
     }
     public override IEnumerator Activate()
     {
-        renderer.material.color = new Color(1f, 1f, 1f, 1f);
+        _renderer.material.color = new Color(1f, 1f, 1f, 1f);
         this.gameObject.layer = afterlayer;
         this.tag = afterTag;
         yield return base.Activate(); // 부모 클래스의 Activate 메서드 실행 

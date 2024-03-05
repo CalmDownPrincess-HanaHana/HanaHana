@@ -8,7 +8,6 @@ public class Ladder : MonoBehaviour
     public float slidingSpeed = 0.5f; // 미끄러질 속도 조절
     public AudioSource audioSource;
 
-    [SerializeField] float jumpingSpeed = 12f;
     private bool isSliding = false;
     private bool autoExit = false;
     private GameObject playerOnWall;

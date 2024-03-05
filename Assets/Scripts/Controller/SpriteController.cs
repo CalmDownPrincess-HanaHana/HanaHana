@@ -30,7 +30,7 @@ public class SpriteController : ParentObstacleController
         Y
     }
 
-    private Renderer renderer;
+    private Renderer _renderer;
     private SpriteRenderer spriteRenderer;
     private Tilemap tilemap;
     private Vector3Int cellPosition;
@@ -110,23 +110,23 @@ public class SpriteController : ParentObstacleController
         switch (rendererOrder)
         {
             case RendererOrder.Default:
-                renderer.sortingLayerName = "Default";
+                _renderer.sortingLayerName = "Default";
                 break;
             case RendererOrder.Layer1:
-                renderer.sortingLayerName = "Layer1";
+                _renderer.sortingLayerName = "Layer1";
                 break;
             case RendererOrder.Layer2:
-                renderer.sortingLayerName = "Layer2";
+                _renderer.sortingLayerName = "Layer2";
                 break;
             case RendererOrder.Layer3:
-                renderer.sortingLayerName = "Layer3";
+                _renderer.sortingLayerName = "Layer3";
                 break;
             case RendererOrder.UI:
-                renderer.sortingLayerName = "UI";
+                _renderer.sortingLayerName = "UI";
                 break;
         }
 
-        renderer.sortingOrder = orderNumber;
+        _renderer.sortingOrder = orderNumber;
 
         yield return null;
     }
@@ -177,10 +177,10 @@ public class SpriteController : ParentObstacleController
         yield return null;
     }
 
-    private void Awake()
+    new private void Awake()
     {
         base.Awake();
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 }

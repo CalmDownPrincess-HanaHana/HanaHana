@@ -86,7 +86,7 @@ public class RotateController : ParentObstacleController
                                       //사실 ismoving과 별개로 움직이기 때문에 이걸 굳이 부모 activate를 실행하지 않아도 되지만 후에 test할때를 위해 그냥 실행하겠음. 
     }
 
-    private void Awake()
+    new private void Awake()
     {
         base.Awake();
     }

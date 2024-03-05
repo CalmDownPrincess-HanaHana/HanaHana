@@ -8,7 +8,7 @@ public class EventController : MonoBehaviour
     private GameObject fix_panel;
 
     [SerializeField]
-    private GameObject camera;
+    private GameObject _camera;
 
     [SerializeField]
     private GameObject Soul; //움직이는 커다란 정령
@@ -25,7 +25,7 @@ public class EventController : MonoBehaviour
     {
         // 패널의 CanvasRenderer 컴포넌트 가져오기
         panelRenderer = fix_panel.GetComponent<CanvasRenderer>();
-        camScript = camera.GetComponent<CameraController>();
+        camScript = _camera.GetComponent<CameraController>();
     }
 
 

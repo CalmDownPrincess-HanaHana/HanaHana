@@ -17,7 +17,7 @@ public class CircleMovement : MonoBehaviour
     [SerializeField]
     private bool isOpposite = false;
 
-    float posX, posY, angle = 0f;
+    float posX, posY = 0f;
 
     void Awake()
     {

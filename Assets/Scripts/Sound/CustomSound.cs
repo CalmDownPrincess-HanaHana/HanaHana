@@ -7,7 +7,7 @@ public class CustomSound : MonoBehaviour
     Slider slider;
     [SerializeField] bool effect = false;
     [SerializeField] bool bgm = false;
-    AudioSource[] audio;
+    AudioSource[] _audio;
     //초기세팅 사운드 값
     float settingSoundValue=1f;
 
@@ -16,8 +16,8 @@ public class CustomSound : MonoBehaviour
 
         slider = GetComponent<Slider>();
         // 현재 오브젝트에 달려있는 모든 AudioSource 컴포넌트를 가져옴
-        audio = GetComponents<AudioSource>();
-        if (audio != null)
+        _audio = GetComponents<AudioSource>();
+        if (_audio != null)
         {
             //초기세팅 값 가져오기
             if (bgm)
@@ -30,7 +30,7 @@ public class CustomSound : MonoBehaviour
             }
             //초기세팅값적용
             // 가져온 모든 AudioSource에 대해 작업 수행
-            foreach (AudioSource audioSource in audio)
+            foreach (AudioSource audioSource in _audio)
             {
                 audioSource.volume = settingSoundValue;
             }
@@ -63,7 +63,7 @@ public class CustomSound : MonoBehaviour
                 PlayerPrefs.SetFloat("effectValue", slider.value);
             }
         }
-        if (audio != null)
+        if (_audio != null)
         {
 
             if (bgm)
@@ -73,7 +73,7 @@ public class CustomSound : MonoBehaviour
                 {
                     settingSoundValue = PlayerPrefs.GetFloat("bgmValue", 1f);
                     // 가져온 모든 AudioSource에 대해 작업 수행
-                    foreach (AudioSource audioSource in audio)
+                    foreach (AudioSource audioSource in _audio)
                     {
                         audioSource.volume = settingSoundValue;
                     }
@@ -86,7 +86,7 @@ public class CustomSound : MonoBehaviour
                 {
                     settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
                     // 가져온 모든 AudioSource에 대해 작업 수행
-                    foreach (AudioSource audioSource in audio)
+                    foreach (AudioSource audioSource in _audio)
                     {
                         audioSource.volume = settingSoundValue;
                     }

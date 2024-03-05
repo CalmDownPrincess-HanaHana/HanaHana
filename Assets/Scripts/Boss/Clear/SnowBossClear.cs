@@ -16,7 +16,7 @@ public class SnowBossClear : MonoBehaviour
     private bool fade_out = false;
     //타이머
     private float timer = 0;
-    [SerializeField] AudioSource[] audio;
+    [SerializeField] AudioSource[] _audio;
     [SerializeField] GameObject goToEndingPotal;
 
     private Player playerScript;
@@ -48,7 +48,7 @@ public class SnowBossClear : MonoBehaviour
                 case "true":
                     if (!giveItemOnce)
                     {
-                        audio[0].Play();
+                        _audio[0].Play();
                         anim.SetBool("isCalm", false);
                         anim.SetBool("isClear", true);
                         Invoke("SqueekSound", 2.2f);
@@ -64,7 +64,7 @@ public class SnowBossClear : MonoBehaviour
                     if (!giveItemOnce)
                     {
                         //닿았을 때 띠롱소리
-                        audio[0].Play();
+                        _audio[0].Play();
                         //애니메이션 바꾸기
                         anim.SetBool("isCalm", false);
                         anim.SetBool("isClear", false);
@@ -123,28 +123,28 @@ public class SnowBossClear : MonoBehaviour
     }
     private void TwinkleEyes()
     {
-        audio[4].Play();
+        _audio[4].Play();
     }
     private void CatchPlayer()
     {
-        audio[5].Play();
+        _audio[5].Play();
     }
     private void ThrowPlayer()
     {
-        audio[6].Play();
+        _audio[6].Play();
     }
     private void ThrowedPlayer()
     {
-        audio[7].Play();
+        _audio[7].Play();
     }
     private void SqueekSound()
     {
-        audio[1].Play();
+        _audio[1].Play();
     }
     private void Cheers()
     {
-        audio[2].Play();
-        audio[3].Play();
+        _audio[2].Play();
+        _audio[3].Play();
     }
     IEnumerator ShowTextsAndStage()
     {

@@ -1,4 +1,4 @@
-﻿using DG.Tweening;
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -24,7 +24,6 @@ public class MirrorReflect : MonoBehaviour
     [SerializeField] private List<AudioClip> _audioClips;
     private float angle = 0f;
     private bool _isActivatedBefore = false;
-    private bool _isPlaying = false;
 
     private void Start()
     {

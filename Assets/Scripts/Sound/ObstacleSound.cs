@@ -12,7 +12,7 @@ public class ObstacleSound : MonoBehaviour
     [SerializeField]
     private bool isCol = false;
     //오디오넣기
-    private AudioSource audio;
+    private AudioSource _audio;
     //오디오 작동시키기 위한 조건변수
     [SerializeField]
     private bool isMoving = false;
@@ -48,16 +48,16 @@ public class ObstacleSound : MonoBehaviour
         if (settingSoundValue != PlayerPrefs.GetFloat("effectValue", 1f))
         {
             settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
-            audio.volume = settingSoundValue;
+            _audio.volume = settingSoundValue;
         }
         //오디오 들어있고 조건변수 켜지면
-        if (audio != null && isMoving)
+        if (_audio != null && isMoving)
         {
             //오디오가 반복재생 체크 안 되어있으면
-            if (!audio.loop)
+            if (!_audio.loop)
             {
                 //재생
-                audio.Play();
+                _audio.Play();
                 //조건변수 꺼줘서 또 무한재생 안되도록
                 isMoving = false;
             }
@@ -68,27 +68,27 @@ public class ObstacleSound : MonoBehaviour
     void Awake()
     {
         //오디오소스 컴포넌트 가져오기
-        audio = GetComponent<AudioSource>();
+        _audio = GetComponent<AudioSource>();
         //초기세팅 효과음값 가져오기
         settingSoundValue = PlayerPrefs.GetFloat("effectValue", 1f);
         //초기세팅값적용
-        audio.volume = settingSoundValue;
+        _audio.volume = settingSoundValue;
     }
 
     //보이면 활성화 
     private void OnBecameVisible()
     {
-        if (audio != null)
+        if (_audio != null)
         {
-            audio.enabled = true;
+            _audio.enabled = true;
         }
     }
     //안보이면 비활성화
     private void OnBecameInvisible()
     {
-        if (audio != null)
+        if (_audio != null)
         {
-            audio.enabled = false;
+            _audio.enabled = false;
         }
     }
 

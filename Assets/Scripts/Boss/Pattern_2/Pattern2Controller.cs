@@ -17,7 +17,7 @@ public class Pattern2Controller : MonoBehaviour
     private List<string> bossAnimation = new List<string> { "isCollectingEnergy" };
 
     public List<GameObject> bossPatterns = new List<GameObject>();
-    [SerializeField] Camera camera;
+    [SerializeField] Camera _camera;
 
     [SerializeField] GameObject patternChangeGO;
 
@@ -91,7 +91,7 @@ public class Pattern2Controller : MonoBehaviour
         patternChangeGO.SetActive(true);
 
         // camera shaking
-        camera.transform.DOShakePosition(3f, new Vector3(0.1f, 0.1f, 0));
+        _camera.transform.DOShakePosition(3f, new Vector3(0.1f, 0.1f, 0));
 
         // 눈비비기
         animator.SetBool("isHideEye", true);
