@@ -38,9 +38,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/SnowBoss1.unity
-    guid: 7c004ea22ed9c2244be6181fcd39080d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/SnowBoss2.unity
     guid: 5b06262420e379542a620973a93752ac
