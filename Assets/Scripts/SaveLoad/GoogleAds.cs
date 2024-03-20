@@ -86,16 +86,9 @@ public class GoogleAds : MonoBehaviour
         if (Random.Range(0f, 1f) <= randomPos && !hasTriggered)
         {
             LoadInterstitialAd();
-            ShowInterstitialAd();
+            Invoke("ShowInterstitialAd", 0.2f); // 0.2초 후에 ShowInterstitialAd 메서드를 호출합니다.
             hasTriggered = true;
              PlayerPrefs.SetInt("flagAd", hasTriggered ? 1 : 0);
-        }
-        
-        if(hasTriggered){
-            if(Random.Range(0f, 1f)<= 0.1f){
-                LoadInterstitialAd();
-                ShowInterstitialAd();
-            }
         }
         
     }
